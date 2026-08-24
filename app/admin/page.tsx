@@ -1,21 +1,40 @@
 import Link from "next/link";
 import { integrationsReady } from "@/lib/env";
-import { mockWebsites } from "@/lib/mock-data";
+import { websiteStats } from "@/lib/websites";
 
-export default function AdminDashboard() {
+export default async function AdminDashboard() {
+  const stats = await websiteStats();
+
   return (
     <main>
-      <div className="admin-page-head"><div><p className="eyebrow">TRUELOVE ADMIN</p><h1>Overview</h1><p>Platform foundation is ready for the generator workflow.</p></div><Link className="button primary" href="/admin/websites/create">+ Create Website</Link></div>
-      <div className="stat-grid">
-        <div className="stat-card"><span>Websites</span><strong>{mockWebsites.length}</strong><small>mock mode</small></div>
-        <div className="stat-card"><span>Published</span><strong>{mockWebsites.filter((item) => item.status === "published").length}</strong><small>ready to open</small></div>
-        <div className="stat-card"><span>Supabase</span><strong>{integrationsReady.supabase ? "ON" : "OFF"}</strong><small>{integrationsReady.supabase ? "connected" : "using mock data"}</small></div>
-        <div className="stat-card"><span>Cloudinary</span><strong>{integrationsReady.cloudinary ? "ON" : "OFF"}</strong><small>{integrationsReady.cloudinary ? "connected" : "media phase next"}</small></div>
+      <div className="admin-page-head">
+        <div>
+          <p className="eyebrow">TRUELOVE ADMIN</p>
+          <h1>Overview</h1>
+          <p>Phase 2: Prisma + Supabase PostgreSQL + reusable animation system.</p>
+        </div>
+        <Link className="button primary" href="/admin/websites/create">+ Create Website</Link>
       </div>
+
+      <div className="stat-grid">
+        <div className="stat-card"><span>Websites</span><strong>{stats.total}</strong><small>{stats.mode === "database" ? "database" : "mock fallback"}</small></div>
+        <div className="stat-card"><span>Published</span><strong>{stats.published}</strong><small>public gifts</small></div>
+        <div className="stat-card"><span>Prisma DB</span><strong>{integrationsReady.prisma ? "ON" : "OFF"}</strong><small>{integrationsReady.prisma ? "runtime ready" : "add DATABASE_URL"}</small></div>
+        <div className="stat-card"><span>Cloudinary</span><strong>{integrationsReady.cloudinary ? "ON" : "OFF"}</strong><small>{integrationsReady.cloudinary ? "connected" : "upload phase next"}</small></div>
+      </div>
+
       <section className="admin-panel">
-        <div className="panel-title"><div><h2>Architecture checkpoint</h2><p>What is already wired in this setup.</p></div></div>
+        <div className="panel-title"><h2>Phase 2 checkpoint</h2><p>Core systems now included in this build.</p></div>
         <div className="check-grid">
-          <span>✓ Next.js App Router</span><span>✓ Dynamic /[slug]</span><span>✓ Admin layout</span><span>✓ Template Registry</span><span>✓ Package config</span><span>✓ Renderer map</span><span>✓ Supabase adapters</span><span>✓ Cloudinary adapter</span><span>✓ Mock fallback mode</span>
+          <span>✓ Prisma 7 architecture</span>
+          <span>✓ Supabase PostgreSQL target</span>
+          <span>✓ Runtime pooled DB URL</span>
+          <span>✓ Direct migration URL</span>
+          <span>✓ Database seed</span>
+          <span>✓ Dynamic /[slug]</span>
+          <span>✓ API create website</span>
+          <span>✓ Motion component library</span>
+          <span>✓ 3D template effects</span>
         </div>
       </section>
     </main>

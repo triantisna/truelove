@@ -11,6 +11,7 @@ export interface WebsiteRecord {
   message: string;
   eventDate?: string;
   musicUrl?: string;
+  theme?: string;
   status: WebsiteStatus;
   expiresAt?: string;
   createdAt: string;

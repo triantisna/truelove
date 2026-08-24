@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { notFound } from "next/navigation";
 import { WebsiteRenderer } from "@/lib/website-renderer";
 import { getWebsiteBySlug } from "@/lib/websites";

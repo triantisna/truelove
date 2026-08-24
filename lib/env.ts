@@ -1,4 +1,6 @@
 export const env = {
+  databaseUrl: process.env.DATABASE_URL,
+  directUrl: process.env.DIRECT_URL,
   supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
   supabaseAnonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
@@ -10,6 +12,8 @@ export const env = {
 };
 
 export const integrationsReady = {
-  supabase: Boolean(env.supabaseUrl && env.supabaseAnonKey),
+  prisma: Boolean(env.databaseUrl),
+  migrations: Boolean(env.directUrl),
+  supabaseProject: Boolean(env.supabaseUrl),
   cloudinary: Boolean(env.cloudinaryCloudName && env.cloudinaryApiKey && env.cloudinaryApiSecret)
 };
