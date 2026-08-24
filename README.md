@@ -56,3 +56,6 @@ The remaining occasions stay registered as planned templates until their final U
 ## Next phase
 
 Cloudinary upload + media manager + edit website flow + template-specific dynamic fields.
+
+## V2.2 Build Fix
+- Fixed Framer Motion `Pressable` typing by using `HTMLMotionProps<"button">` instead of React `ButtonHTMLAttributes`, preventing the `onAnimationStart` type collision during Next.js type checking.
