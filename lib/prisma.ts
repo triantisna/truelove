@@ -9,9 +9,11 @@ function createPrismaClient() {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) return null;
 
+  // Vercel instances are ephemeral. Keep the per-instance pool deliberately
+  // small; Supabase's transaction pooler handles broader concurrency.
   const adapter = new PrismaPg({
     connectionString,
-    max: process.env.NODE_ENV === "production" ? 3 : 5,
+    max: process.env.NODE_ENV === "production" ? 1 : 5,
     connectionTimeoutMillis: 10_000,
     idleTimeoutMillis: 30_000
   });

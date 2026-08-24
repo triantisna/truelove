@@ -2,6 +2,8 @@ import Link from "next/link";
 import { integrationsReady } from "@/lib/env";
 import { websiteStats } from "@/lib/websites";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboard() {
   const stats = await websiteStats();
 
