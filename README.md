@@ -59,3 +59,6 @@ Cloudinary upload + media manager + edit website flow + template-specific dynami
 
 ## V2.2 Build Fix
 - Fixed Framer Motion `Pressable` typing by using `HTMLMotionProps<"button">` instead of React `ButtonHTMLAttributes`, preventing the `onAnimationStart` type collision during Next.js type checking.
+
+## V2.3 JSON type fix
+If upgrading from V2.2, replace `lib/validation.ts` and `lib/websites.ts`. The dynamic `content` payload is now validated as JSON-safe data and converted to Prisma `InputJsonValue` at the database boundary.

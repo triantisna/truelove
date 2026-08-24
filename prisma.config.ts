@@ -1,9 +1,17 @@
 import "dotenv/config";
 import { defineConfig } from "prisma/config";
 
-// Keep Prisma Client generation build-safe on Vercel before the real database
-// is connected. Migrate/seed commands should use a real DIRECT_URL or DATABASE_URL.
-const prismaDatasourceUrl =
+/**
+ * Prisma 7 reads its CLI datasource from prisma.config.ts.
+ *
+ * - DIRECT_URL: Session pooler/direct connection used by migrate/seed tooling.
+ * - DATABASE_URL: Runtime pooled connection used by the Next.js app.
+ * - Placeholder: lets `prisma generate` succeed on Vercel before DB envs exist.
+ *
+ * `DIRECT_URL` is our environment-variable name; Prisma 7 no longer has a
+ * separate `datasource.directUrl` config property.
+ */
+const cliDatabaseUrl =
   process.env.DIRECT_URL ??
   process.env.DATABASE_URL ??
   "postgresql://placeholder:placeholder@localhost:5432/truelove";
@@ -15,6 +23,6 @@ export default defineConfig({
     seed: "tsx prisma/seed.ts"
   },
   datasource: {
-    url: prismaDatasourceUrl
+    url: cliDatabaseUrl
   }
 });

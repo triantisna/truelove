@@ -1,0 +1,156 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum TemplateStatus {
+  ACTIVE
+  PLANNED
+  ARCHIVED
+}
+
+enum WebsiteStatus {
+  DRAFT
+  PREVIEW
+  PUBLISHED
+  EXPIRED
+  ARCHIVED
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+  AUDIO
+}
+
+enum PaymentStatus {
+  UNPAID
+  PARTIAL
+  PAID
+  REFUNDED
+}
+
+enum OrderStatus {
+  NEW
+  WAITING_PAYMENT
+  PAID
+  PROCESSING
+  REVISION
+  COMPLETED
+  CANCELLED
+}
+
+model Template {
+  id           String         @id @default(cuid())
+  key          String         @unique
+  name         String
+  category     String
+  description  String?
+  previewImage String?        @map("preview_image")
+  fields       Json
+  status       TemplateStatus @default(ACTIVE)
+  sortOrder    Int            @default(0) @map("sort_order")
+  createdAt    DateTime       @default(now()) @map("created_at")
+  updatedAt    DateTime       @updatedAt @map("updated_at")
+  websites     Website[]
+  orders       Order[]
+
+  @@index([category, status])
+  @@map("templates")
+}
+
+model Package {
+  id               String    @id @default(cuid())
+  key              String    @unique
+  name             String
+  price            Int
+  description      String?
+  features         Json
+  allowText        Boolean   @default(false) @map("allow_text")
+  allowMusic       Boolean   @default(false) @map("allow_music")
+  allowCustomTheme Boolean   @default(false) @map("allow_custom_theme")
+  allowCustomLayout Boolean  @default(false) @map("allow_custom_layout")
+  active           Boolean   @default(true)
+  sortOrder        Int       @default(0) @map("sort_order")
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+  websites         Website[]
+  orders           Order[]
+
+  @@index([active, sortOrder])
+  @@map("packages")
+}
+
+model Website {
+  id           String        @id @default(cuid())
+  slug         String        @unique
+  templateId   String        @map("template_id")
+  packageId    String        @map("package_id")
+  senderName   String        @map("sender_name")
+  receiverName String        @map("receiver_name")
+  title        String
+  message      String?       @db.Text
+  eventDate    DateTime?     @map("event_date")
+  musicUrl     String?       @map("music_url")
+  theme        String?       @default("romantic")
+  content      Json          @default("{}")
+  status       WebsiteStatus @default(DRAFT)
+  expiresAt    DateTime?     @map("expires_at")
+  publishedAt  DateTime?     @map("published_at")
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+
+  template Template       @relation(fields: [templateId], references: [id], onDelete: Restrict)
+  package  Package        @relation(fields: [packageId], references: [id], onDelete: Restrict)
+  media    WebsiteMedia[]
+  orders   Order[]
+
+  @@index([status, createdAt])
+  @@index([templateId])
+  @@map("websites")
+}
+
+model WebsiteMedia {
+  id        String    @id @default(cuid())
+  websiteId String    @map("website_id")
+  type      MediaType
+  url       String
+  publicId  String?   @map("public_id")
+  caption   String?
+  sortOrder Int       @default(0) @map("sort_order")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+
+  website Website @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+
+  @@index([websiteId, type, sortOrder])
+  @@map("website_media")
+}
+
+model Order {
+  id                String        @id @default(cuid())
+  customerName      String        @map("customer_name")
+  customerWhatsapp  String        @map("customer_whatsapp")
+  occasion          String
+  templateId        String?       @map("template_id")
+  packageId         String?       @map("package_id")
+  websiteId         String?       @map("website_id")
+  price             Int
+  paymentStatus     PaymentStatus @default(UNPAID) @map("payment_status")
+  orderStatus       OrderStatus   @default(NEW) @map("order_status")
+  notes             String?       @db.Text
+  createdAt         DateTime      @default(now()) @map("created_at")
+  updatedAt         DateTime      @updatedAt @map("updated_at")
+
+  template Template? @relation(fields: [templateId], references: [id], onDelete: SetNull)
+  package  Package?  @relation(fields: [packageId], references: [id], onDelete: SetNull)
+  website  Website?  @relation(fields: [websiteId], references: [id], onDelete: SetNull)
+
+  @@index([orderStatus, createdAt])
+  @@index([customerWhatsapp])
+  @@map("orders")
+}
