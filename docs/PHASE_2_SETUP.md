@@ -75,3 +75,14 @@ Add the same `DATABASE_URL` and `DIRECT_URL` in Vercel Project Settings → Envi
 The runtime URL should use Supabase transaction pooling because Vercel functions are serverless/auto-scaling. The migration URL should use direct/session connectivity.
 
 Then deploy. `npm run build` automatically runs `prisma generate` before `next build`.
+
+## Vercel build before database connection
+
+`prisma generate` does not need a live database. The project therefore uses a harmless local placeholder URL only when neither `DIRECT_URL` nor `DATABASE_URL` is configured. Runtime data remains in mock mode until `DATABASE_URL` is set.
+
+For production database setup, add both variables in Vercel Project Settings → Environment Variables:
+
+- `DATABASE_URL`: Supabase transaction pooler (serverless/runtime, usually port 6543)
+- `DIRECT_URL`: Supabase session pooler or direct connection (migrations/tooling, usually port 5432)
+
+Never commit real database passwords into GitHub.
