@@ -1,13 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { motion, type HTMLMotionProps } from "framer-motion";
+import type { ReactNode } from "react";
+
+type PressableProps = Omit<HTMLMotionProps<"button">, "children"> & {
+  children: ReactNode;
+};
 
 export default function Pressable({
   children,
   className = "",
   ...props
-}: ButtonHTMLAttributes<HTMLButtonElement> & { children: ReactNode }) {
+}: PressableProps) {
   return (
     <motion.button
       {...props}
