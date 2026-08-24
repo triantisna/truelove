@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { getWebsiteBySlug as getMockWebsiteBySlug, mockWebsites } from "@/lib/mock-data";
 import type { WebsiteInput } from "@/lib/validation";
+import type { Prisma } from "@/generated/prisma/client";
 import type { WebsiteRecord, WebsiteStatus } from "@/types/website";
 
 function normalizeStatus(status: string): WebsiteStatus {
@@ -116,7 +117,7 @@ export async function createWebsite(input: WebsiteInput): Promise<WebsiteRecord>
       eventDate: input.eventDate ? new Date(input.eventDate) : null,
       musicUrl: input.musicUrl || null,
       theme: input.theme,
-      content: input.content,
+      content: input.content as Prisma.InputJsonValue,
       status: statusMap[input.status],
       publishedAt: input.status === "published" ? new Date() : null
     },
