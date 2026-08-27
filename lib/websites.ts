@@ -9,22 +9,47 @@ function normalizeStatus(status: string): WebsiteStatus {
 }
 
 function toWebsiteRecord(row: any): WebsiteRecord {
+  const content = (row.content ?? {}) as Record<string, unknown>;
+
   return {
     id: row.id,
     slug: row.slug,
     templateId: row.template?.key ?? row.templateId,
     packageId: row.package?.key ?? row.packageId,
-    senderName: row.senderName,
-    receiverName: row.receiverName,
-    title: row.title,
-    message: row.message ?? "",
-    eventDate: row.eventDate?.toISOString?.() ?? row.eventDate ?? undefined,
-    musicUrl: row.musicUrl ?? undefined,
-    theme: row.theme ?? "romantic",
+
+    senderName: String(content.sender_name ?? ""),
+    receiverName: String(content.receiver_name ?? ""),
+    title: String(content.title ?? ""),
+    message: String(content.message ?? ""),
+
+    eventDate:
+      typeof content.event_date === "string"
+        ? content.event_date
+        : undefined,
+
+    musicUrl:
+      typeof content.music_url === "string"
+        ? content.music_url
+        : undefined,
+
+    theme:
+      typeof content.theme === "string"
+        ? content.theme
+        : "romantic",
+
     status: normalizeStatus(row.status),
-    expiresAt: row.expiresAt?.toISOString?.() ?? row.expiresAt ?? undefined,
-    createdAt: row.createdAt?.toISOString?.() ?? row.createdAt,
-    content: (row.content ?? {}) as Record<string, unknown>,
+
+    expiresAt:
+      row.expiresAt?.toISOString?.() ??
+      row.expiresAt ??
+      undefined,
+
+    createdAt:
+      row.createdAt?.toISOString?.() ??
+      row.createdAt,
+
+    content,
+
     media: (row.media ?? []).map((media: any) => ({
       id: media.id,
       websiteId: media.websiteId,
@@ -110,16 +135,34 @@ export async function createWebsite(input: WebsiteInput): Promise<WebsiteRecord>
       slug: input.slug,
       templateId: template.id,
       packageId: packageRecord.id,
-      senderName: input.senderName,
-      receiverName: input.receiverName,
-      title: input.title,
-      message: input.message,
-      eventDate: input.eventDate ? new Date(input.eventDate) : null,
-      musicUrl: input.musicUrl || null,
-      theme: input.theme,
-      content: input.content as Prisma.InputJsonValue,
+
+      content: {
+        ...(input.content as Prisma.InputJsonObject),
+
+        sender_name: input.senderName,
+        receiver_name: input.receiverName,
+        title: input.title,
+        message: input.message,
+
+        ...(input.eventDate
+          ? { event_date: input.eventDate }
+          : {}),
+
+        ...(input.musicUrl
+          ? { music_url: input.musicUrl }
+          : {}),
+
+        ...(input.theme
+          ? { theme: input.theme }
+          : {})
+      },
+
       status: statusMap[input.status],
-      publishedAt: input.status === "published" ? new Date() : null
+
+      publishedAt:
+        input.status === "published"
+          ? new Date()
+          : null
     },
     include: { template: true, package: true, media: true }
   });

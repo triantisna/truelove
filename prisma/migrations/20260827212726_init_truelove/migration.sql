@@ -21,7 +21,7 @@ CREATE TABLE "templates" (
     "category" TEXT NOT NULL,
     "description" TEXT,
     "preview_image" TEXT,
-    "fields" JSONB NOT NULL,
+    "schema" JSONB NOT NULL,
     "status" "TemplateStatus" NOT NULL DEFAULT 'ACTIVE',
     "sort_order" INTEGER NOT NULL DEFAULT 0,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -56,13 +56,6 @@ CREATE TABLE "websites" (
     "slug" TEXT NOT NULL,
     "template_id" TEXT NOT NULL,
     "package_id" TEXT NOT NULL,
-    "sender_name" TEXT NOT NULL,
-    "receiver_name" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "message" TEXT,
-    "event_date" TIMESTAMP(3),
-    "music_url" TEXT,
-    "theme" TEXT DEFAULT 'romantic',
     "content" JSONB NOT NULL DEFAULT '{}',
     "status" "WebsiteStatus" NOT NULL DEFAULT 'DRAFT',
     "expires_at" TIMESTAMP(3),
@@ -77,6 +70,7 @@ CREATE TABLE "websites" (
 CREATE TABLE "website_media" (
     "id" TEXT NOT NULL,
     "website_id" TEXT NOT NULL,
+    "field_key" TEXT NOT NULL,
     "type" "MediaType" NOT NULL,
     "url" TEXT NOT NULL,
     "public_id" TEXT,
@@ -129,7 +123,7 @@ CREATE INDEX "websites_status_created_at_idx" ON "websites"("status", "created_a
 CREATE INDEX "websites_template_id_idx" ON "websites"("template_id");
 
 -- CreateIndex
-CREATE INDEX "website_media_website_id_type_sort_order_idx" ON "website_media"("website_id", "type", "sort_order");
+CREATE INDEX "website_media_website_id_field_key_idx" ON "website_media"("website_id", "field_key");
 
 -- CreateIndex
 CREATE INDEX "orders_order_status_created_at_idx" ON "orders"("order_status", "created_at");

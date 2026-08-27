@@ -67,7 +67,7 @@ export type TemplateCountAggregateOutputType = {
   category: number
   description: number
   previewImage: number
-  fields: number
+  schema: number
   status: number
   sortOrder: number
   createdAt: number
@@ -117,7 +117,7 @@ export type TemplateCountAggregateInputType = {
   category?: true
   description?: true
   previewImage?: true
-  fields?: true
+  schema?: true
   status?: true
   sortOrder?: true
   createdAt?: true
@@ -218,7 +218,7 @@ export type TemplateGroupByOutputType = {
   category: string
   description: string | null
   previewImage: string | null
-  fields: runtime.JsonValue
+  schema: runtime.JsonValue
   status: $Enums.TemplateStatus
   sortOrder: number
   createdAt: Date
@@ -255,7 +255,7 @@ export type TemplateWhereInput = {
   category?: Prisma.StringFilter<"Template"> | string
   description?: Prisma.StringNullableFilter<"Template"> | string | null
   previewImage?: Prisma.StringNullableFilter<"Template"> | string | null
-  fields?: Prisma.JsonFilter<"Template">
+  schema?: Prisma.JsonFilter<"Template">
   status?: Prisma.EnumTemplateStatusFilter<"Template"> | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFilter<"Template"> | number
   createdAt?: Prisma.DateTimeFilter<"Template"> | Date | string
@@ -271,7 +271,7 @@ export type TemplateOrderByWithRelationInput = {
   category?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   previewImage?: Prisma.SortOrderInput | Prisma.SortOrder
-  fields?: Prisma.SortOrder
+  schema?: Prisma.SortOrder
   status?: Prisma.SortOrder
   sortOrder?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -290,7 +290,7 @@ export type TemplateWhereUniqueInput = Prisma.AtLeast<{
   category?: Prisma.StringFilter<"Template"> | string
   description?: Prisma.StringNullableFilter<"Template"> | string | null
   previewImage?: Prisma.StringNullableFilter<"Template"> | string | null
-  fields?: Prisma.JsonFilter<"Template">
+  schema?: Prisma.JsonFilter<"Template">
   status?: Prisma.EnumTemplateStatusFilter<"Template"> | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFilter<"Template"> | number
   createdAt?: Prisma.DateTimeFilter<"Template"> | Date | string
@@ -306,7 +306,7 @@ export type TemplateOrderByWithAggregationInput = {
   category?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   previewImage?: Prisma.SortOrderInput | Prisma.SortOrder
-  fields?: Prisma.SortOrder
+  schema?: Prisma.SortOrder
   status?: Prisma.SortOrder
   sortOrder?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -328,7 +328,7 @@ export type TemplateScalarWhereWithAggregatesInput = {
   category?: Prisma.StringWithAggregatesFilter<"Template"> | string
   description?: Prisma.StringNullableWithAggregatesFilter<"Template"> | string | null
   previewImage?: Prisma.StringNullableWithAggregatesFilter<"Template"> | string | null
-  fields?: Prisma.JsonWithAggregatesFilter<"Template">
+  schema?: Prisma.JsonWithAggregatesFilter<"Template">
   status?: Prisma.EnumTemplateStatusWithAggregatesFilter<"Template"> | $Enums.TemplateStatus
   sortOrder?: Prisma.IntWithAggregatesFilter<"Template"> | number
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Template"> | Date | string
@@ -342,7 +342,7 @@ export type TemplateCreateInput = {
   category: string
   description?: string | null
   previewImage?: string | null
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.TemplateStatus
   sortOrder?: number
   createdAt?: Date | string
@@ -358,7 +358,7 @@ export type TemplateUncheckedCreateInput = {
   category: string
   description?: string | null
   previewImage?: string | null
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.TemplateStatus
   sortOrder?: number
   createdAt?: Date | string
@@ -374,7 +374,7 @@ export type TemplateUpdateInput = {
   category?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   previewImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumTemplateStatusFieldUpdateOperationsInput | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -390,7 +390,7 @@ export type TemplateUncheckedUpdateInput = {
   category?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   previewImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumTemplateStatusFieldUpdateOperationsInput | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -406,7 +406,7 @@ export type TemplateCreateManyInput = {
   category: string
   description?: string | null
   previewImage?: string | null
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.TemplateStatus
   sortOrder?: number
   createdAt?: Date | string
@@ -420,7 +420,7 @@ export type TemplateUpdateManyMutationInput = {
   category?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   previewImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumTemplateStatusFieldUpdateOperationsInput | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -434,7 +434,7 @@ export type TemplateUncheckedUpdateManyInput = {
   category?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   previewImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumTemplateStatusFieldUpdateOperationsInput | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -448,7 +448,7 @@ export type TemplateCountOrderByAggregateInput = {
   category?: Prisma.SortOrder
   description?: Prisma.SortOrder
   previewImage?: Prisma.SortOrder
-  fields?: Prisma.SortOrder
+  schema?: Prisma.SortOrder
   status?: Prisma.SortOrder
   sortOrder?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -560,7 +560,7 @@ export type TemplateCreateWithoutWebsitesInput = {
   category: string
   description?: string | null
   previewImage?: string | null
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.TemplateStatus
   sortOrder?: number
   createdAt?: Date | string
@@ -575,7 +575,7 @@ export type TemplateUncheckedCreateWithoutWebsitesInput = {
   category: string
   description?: string | null
   previewImage?: string | null
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.TemplateStatus
   sortOrder?: number
   createdAt?: Date | string
@@ -606,7 +606,7 @@ export type TemplateUpdateWithoutWebsitesInput = {
   category?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   previewImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumTemplateStatusFieldUpdateOperationsInput | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -621,7 +621,7 @@ export type TemplateUncheckedUpdateWithoutWebsitesInput = {
   category?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   previewImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumTemplateStatusFieldUpdateOperationsInput | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -636,7 +636,7 @@ export type TemplateCreateWithoutOrdersInput = {
   category: string
   description?: string | null
   previewImage?: string | null
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.TemplateStatus
   sortOrder?: number
   createdAt?: Date | string
@@ -651,7 +651,7 @@ export type TemplateUncheckedCreateWithoutOrdersInput = {
   category: string
   description?: string | null
   previewImage?: string | null
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.TemplateStatus
   sortOrder?: number
   createdAt?: Date | string
@@ -682,7 +682,7 @@ export type TemplateUpdateWithoutOrdersInput = {
   category?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   previewImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumTemplateStatusFieldUpdateOperationsInput | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -697,7 +697,7 @@ export type TemplateUncheckedUpdateWithoutOrdersInput = {
   category?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   previewImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  schema?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumTemplateStatusFieldUpdateOperationsInput | $Enums.TemplateStatus
   sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -752,7 +752,7 @@ export type TemplateSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   category?: boolean
   description?: boolean
   previewImage?: boolean
-  fields?: boolean
+  schema?: boolean
   status?: boolean
   sortOrder?: boolean
   createdAt?: boolean
@@ -769,7 +769,7 @@ export type TemplateSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   category?: boolean
   description?: boolean
   previewImage?: boolean
-  fields?: boolean
+  schema?: boolean
   status?: boolean
   sortOrder?: boolean
   createdAt?: boolean
@@ -783,7 +783,7 @@ export type TemplateSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   category?: boolean
   description?: boolean
   previewImage?: boolean
-  fields?: boolean
+  schema?: boolean
   status?: boolean
   sortOrder?: boolean
   createdAt?: boolean
@@ -797,14 +797,14 @@ export type TemplateSelectScalar = {
   category?: boolean
   description?: boolean
   previewImage?: boolean
-  fields?: boolean
+  schema?: boolean
   status?: boolean
   sortOrder?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type TemplateOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "name" | "category" | "description" | "previewImage" | "fields" | "status" | "sortOrder" | "createdAt" | "updatedAt", ExtArgs["result"]["template"]>
+export type TemplateOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "name" | "category" | "description" | "previewImage" | "schema" | "status" | "sortOrder" | "createdAt" | "updatedAt", ExtArgs["result"]["template"]>
 export type TemplateInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   websites?: boolean | Prisma.Template$websitesArgs<ExtArgs>
   orders?: boolean | Prisma.Template$ordersArgs<ExtArgs>
@@ -826,7 +826,7 @@ export type $TemplatePayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     category: string
     description: string | null
     previewImage: string | null
-    fields: runtime.JsonValue
+    schema: runtime.JsonValue
     status: $Enums.TemplateStatus
     sortOrder: number
     createdAt: Date
@@ -1262,7 +1262,7 @@ export interface TemplateFieldRefs {
   readonly category: Prisma.FieldRef<"Template", 'String'>
   readonly description: Prisma.FieldRef<"Template", 'String'>
   readonly previewImage: Prisma.FieldRef<"Template", 'String'>
-  readonly fields: Prisma.FieldRef<"Template", 'Json'>
+  readonly schema: Prisma.FieldRef<"Template", 'Json'>
   readonly status: Prisma.FieldRef<"Template", 'TemplateStatus'>
   readonly sortOrder: Prisma.FieldRef<"Template", 'Int'>
   readonly createdAt: Prisma.FieldRef<"Template", 'DateTime'>

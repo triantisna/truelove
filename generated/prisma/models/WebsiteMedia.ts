@@ -37,6 +37,7 @@ export type WebsiteMediaSumAggregateOutputType = {
 export type WebsiteMediaMinAggregateOutputType = {
   id: string | null
   websiteId: string | null
+  fieldKey: string | null
   type: $Enums.MediaType | null
   url: string | null
   publicId: string | null
@@ -49,6 +50,7 @@ export type WebsiteMediaMinAggregateOutputType = {
 export type WebsiteMediaMaxAggregateOutputType = {
   id: string | null
   websiteId: string | null
+  fieldKey: string | null
   type: $Enums.MediaType | null
   url: string | null
   publicId: string | null
@@ -61,6 +63,7 @@ export type WebsiteMediaMaxAggregateOutputType = {
 export type WebsiteMediaCountAggregateOutputType = {
   id: number
   websiteId: number
+  fieldKey: number
   type: number
   url: number
   publicId: number
@@ -83,6 +86,7 @@ export type WebsiteMediaSumAggregateInputType = {
 export type WebsiteMediaMinAggregateInputType = {
   id?: true
   websiteId?: true
+  fieldKey?: true
   type?: true
   url?: true
   publicId?: true
@@ -95,6 +99,7 @@ export type WebsiteMediaMinAggregateInputType = {
 export type WebsiteMediaMaxAggregateInputType = {
   id?: true
   websiteId?: true
+  fieldKey?: true
   type?: true
   url?: true
   publicId?: true
@@ -107,6 +112,7 @@ export type WebsiteMediaMaxAggregateInputType = {
 export type WebsiteMediaCountAggregateInputType = {
   id?: true
   websiteId?: true
+  fieldKey?: true
   type?: true
   url?: true
   publicId?: true
@@ -206,6 +212,7 @@ export type WebsiteMediaGroupByArgs<ExtArgs extends runtime.Types.Extensions.Int
 export type WebsiteMediaGroupByOutputType = {
   id: string
   websiteId: string
+  fieldKey: string
   type: $Enums.MediaType
   url: string
   publicId: string | null
@@ -241,6 +248,7 @@ export type WebsiteMediaWhereInput = {
   NOT?: Prisma.WebsiteMediaWhereInput | Prisma.WebsiteMediaWhereInput[]
   id?: Prisma.StringFilter<"WebsiteMedia"> | string
   websiteId?: Prisma.StringFilter<"WebsiteMedia"> | string
+  fieldKey?: Prisma.StringFilter<"WebsiteMedia"> | string
   type?: Prisma.EnumMediaTypeFilter<"WebsiteMedia"> | $Enums.MediaType
   url?: Prisma.StringFilter<"WebsiteMedia"> | string
   publicId?: Prisma.StringNullableFilter<"WebsiteMedia"> | string | null
@@ -254,6 +262,7 @@ export type WebsiteMediaWhereInput = {
 export type WebsiteMediaOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   websiteId?: Prisma.SortOrder
+  fieldKey?: Prisma.SortOrder
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   publicId?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -270,6 +279,7 @@ export type WebsiteMediaWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.WebsiteMediaWhereInput[]
   NOT?: Prisma.WebsiteMediaWhereInput | Prisma.WebsiteMediaWhereInput[]
   websiteId?: Prisma.StringFilter<"WebsiteMedia"> | string
+  fieldKey?: Prisma.StringFilter<"WebsiteMedia"> | string
   type?: Prisma.EnumMediaTypeFilter<"WebsiteMedia"> | $Enums.MediaType
   url?: Prisma.StringFilter<"WebsiteMedia"> | string
   publicId?: Prisma.StringNullableFilter<"WebsiteMedia"> | string | null
@@ -283,6 +293,7 @@ export type WebsiteMediaWhereUniqueInput = Prisma.AtLeast<{
 export type WebsiteMediaOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   websiteId?: Prisma.SortOrder
+  fieldKey?: Prisma.SortOrder
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   publicId?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -303,6 +314,7 @@ export type WebsiteMediaScalarWhereWithAggregatesInput = {
   NOT?: Prisma.WebsiteMediaScalarWhereWithAggregatesInput | Prisma.WebsiteMediaScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"WebsiteMedia"> | string
   websiteId?: Prisma.StringWithAggregatesFilter<"WebsiteMedia"> | string
+  fieldKey?: Prisma.StringWithAggregatesFilter<"WebsiteMedia"> | string
   type?: Prisma.EnumMediaTypeWithAggregatesFilter<"WebsiteMedia"> | $Enums.MediaType
   url?: Prisma.StringWithAggregatesFilter<"WebsiteMedia"> | string
   publicId?: Prisma.StringNullableWithAggregatesFilter<"WebsiteMedia"> | string | null
@@ -314,6 +326,7 @@ export type WebsiteMediaScalarWhereWithAggregatesInput = {
 
 export type WebsiteMediaCreateInput = {
   id?: string
+  fieldKey: string
   type: $Enums.MediaType
   url: string
   publicId?: string | null
@@ -327,6 +340,7 @@ export type WebsiteMediaCreateInput = {
 export type WebsiteMediaUncheckedCreateInput = {
   id?: string
   websiteId: string
+  fieldKey: string
   type: $Enums.MediaType
   url: string
   publicId?: string | null
@@ -338,6 +352,7 @@ export type WebsiteMediaUncheckedCreateInput = {
 
 export type WebsiteMediaUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  fieldKey?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumMediaTypeFieldUpdateOperationsInput | $Enums.MediaType
   url?: Prisma.StringFieldUpdateOperationsInput | string
   publicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -351,6 +366,7 @@ export type WebsiteMediaUpdateInput = {
 export type WebsiteMediaUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   websiteId?: Prisma.StringFieldUpdateOperationsInput | string
+  fieldKey?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumMediaTypeFieldUpdateOperationsInput | $Enums.MediaType
   url?: Prisma.StringFieldUpdateOperationsInput | string
   publicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -363,6 +379,7 @@ export type WebsiteMediaUncheckedUpdateInput = {
 export type WebsiteMediaCreateManyInput = {
   id?: string
   websiteId: string
+  fieldKey: string
   type: $Enums.MediaType
   url: string
   publicId?: string | null
@@ -374,6 +391,7 @@ export type WebsiteMediaCreateManyInput = {
 
 export type WebsiteMediaUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  fieldKey?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumMediaTypeFieldUpdateOperationsInput | $Enums.MediaType
   url?: Prisma.StringFieldUpdateOperationsInput | string
   publicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -386,6 +404,7 @@ export type WebsiteMediaUpdateManyMutationInput = {
 export type WebsiteMediaUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   websiteId?: Prisma.StringFieldUpdateOperationsInput | string
+  fieldKey?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumMediaTypeFieldUpdateOperationsInput | $Enums.MediaType
   url?: Prisma.StringFieldUpdateOperationsInput | string
   publicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -408,6 +427,7 @@ export type WebsiteMediaOrderByRelationAggregateInput = {
 export type WebsiteMediaCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   websiteId?: Prisma.SortOrder
+  fieldKey?: Prisma.SortOrder
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   publicId?: Prisma.SortOrder
@@ -424,6 +444,7 @@ export type WebsiteMediaAvgOrderByAggregateInput = {
 export type WebsiteMediaMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   websiteId?: Prisma.SortOrder
+  fieldKey?: Prisma.SortOrder
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   publicId?: Prisma.SortOrder
@@ -436,6 +457,7 @@ export type WebsiteMediaMaxOrderByAggregateInput = {
 export type WebsiteMediaMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   websiteId?: Prisma.SortOrder
+  fieldKey?: Prisma.SortOrder
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   publicId?: Prisma.SortOrder
@@ -497,6 +519,7 @@ export type EnumMediaTypeFieldUpdateOperationsInput = {
 
 export type WebsiteMediaCreateWithoutWebsiteInput = {
   id?: string
+  fieldKey: string
   type: $Enums.MediaType
   url: string
   publicId?: string | null
@@ -508,6 +531,7 @@ export type WebsiteMediaCreateWithoutWebsiteInput = {
 
 export type WebsiteMediaUncheckedCreateWithoutWebsiteInput = {
   id?: string
+  fieldKey: string
   type: $Enums.MediaType
   url: string
   publicId?: string | null
@@ -549,6 +573,7 @@ export type WebsiteMediaScalarWhereInput = {
   NOT?: Prisma.WebsiteMediaScalarWhereInput | Prisma.WebsiteMediaScalarWhereInput[]
   id?: Prisma.StringFilter<"WebsiteMedia"> | string
   websiteId?: Prisma.StringFilter<"WebsiteMedia"> | string
+  fieldKey?: Prisma.StringFilter<"WebsiteMedia"> | string
   type?: Prisma.EnumMediaTypeFilter<"WebsiteMedia"> | $Enums.MediaType
   url?: Prisma.StringFilter<"WebsiteMedia"> | string
   publicId?: Prisma.StringNullableFilter<"WebsiteMedia"> | string | null
@@ -560,6 +585,7 @@ export type WebsiteMediaScalarWhereInput = {
 
 export type WebsiteMediaCreateManyWebsiteInput = {
   id?: string
+  fieldKey: string
   type: $Enums.MediaType
   url: string
   publicId?: string | null
@@ -571,6 +597,7 @@ export type WebsiteMediaCreateManyWebsiteInput = {
 
 export type WebsiteMediaUpdateWithoutWebsiteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  fieldKey?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumMediaTypeFieldUpdateOperationsInput | $Enums.MediaType
   url?: Prisma.StringFieldUpdateOperationsInput | string
   publicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -582,6 +609,7 @@ export type WebsiteMediaUpdateWithoutWebsiteInput = {
 
 export type WebsiteMediaUncheckedUpdateWithoutWebsiteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  fieldKey?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumMediaTypeFieldUpdateOperationsInput | $Enums.MediaType
   url?: Prisma.StringFieldUpdateOperationsInput | string
   publicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -593,6 +621,7 @@ export type WebsiteMediaUncheckedUpdateWithoutWebsiteInput = {
 
 export type WebsiteMediaUncheckedUpdateManyWithoutWebsiteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  fieldKey?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumMediaTypeFieldUpdateOperationsInput | $Enums.MediaType
   url?: Prisma.StringFieldUpdateOperationsInput | string
   publicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -607,6 +636,7 @@ export type WebsiteMediaUncheckedUpdateManyWithoutWebsiteInput = {
 export type WebsiteMediaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   websiteId?: boolean
+  fieldKey?: boolean
   type?: boolean
   url?: boolean
   publicId?: boolean
@@ -620,6 +650,7 @@ export type WebsiteMediaSelect<ExtArgs extends runtime.Types.Extensions.Internal
 export type WebsiteMediaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   websiteId?: boolean
+  fieldKey?: boolean
   type?: boolean
   url?: boolean
   publicId?: boolean
@@ -633,6 +664,7 @@ export type WebsiteMediaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.
 export type WebsiteMediaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   websiteId?: boolean
+  fieldKey?: boolean
   type?: boolean
   url?: boolean
   publicId?: boolean
@@ -646,6 +678,7 @@ export type WebsiteMediaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.
 export type WebsiteMediaSelectScalar = {
   id?: boolean
   websiteId?: boolean
+  fieldKey?: boolean
   type?: boolean
   url?: boolean
   publicId?: boolean
@@ -655,7 +688,7 @@ export type WebsiteMediaSelectScalar = {
   updatedAt?: boolean
 }
 
-export type WebsiteMediaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "websiteId" | "type" | "url" | "publicId" | "caption" | "sortOrder" | "createdAt" | "updatedAt", ExtArgs["result"]["websiteMedia"]>
+export type WebsiteMediaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "websiteId" | "fieldKey" | "type" | "url" | "publicId" | "caption" | "sortOrder" | "createdAt" | "updatedAt", ExtArgs["result"]["websiteMedia"]>
 export type WebsiteMediaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   website?: boolean | Prisma.WebsiteDefaultArgs<ExtArgs>
 }
@@ -674,6 +707,7 @@ export type $WebsiteMediaPayload<ExtArgs extends runtime.Types.Extensions.Intern
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     websiteId: string
+    fieldKey: string
     type: $Enums.MediaType
     url: string
     publicId: string | null
@@ -1107,6 +1141,7 @@ export interface Prisma__WebsiteMediaClient<T, Null = never, ExtArgs extends run
 export interface WebsiteMediaFieldRefs {
   readonly id: Prisma.FieldRef<"WebsiteMedia", 'String'>
   readonly websiteId: Prisma.FieldRef<"WebsiteMedia", 'String'>
+  readonly fieldKey: Prisma.FieldRef<"WebsiteMedia", 'String'>
   readonly type: Prisma.FieldRef<"WebsiteMedia", 'MediaType'>
   readonly url: Prisma.FieldRef<"WebsiteMedia", 'String'>
   readonly publicId: Prisma.FieldRef<"WebsiteMedia", 'String'>

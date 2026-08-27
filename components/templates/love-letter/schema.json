@@ -1,0 +1,79 @@
+{
+  "templateKey": "dear-you",
+  "templateName": "Dear You",
+
+  "fields": {
+    "text": [
+      {
+        "key": "senderName",
+        "label": "Your Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "Enter sender name"
+      },
+      {
+        "key": "receiverName",
+        "label": "Partner Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "Enter receiver name"
+      },
+      {
+        "key": "heroTitle",
+        "label": "Hero Title",
+        "type": "text",
+        "required": true,
+        "placeholder": "For My Love"
+      },
+      {
+        "key": "openingText",
+        "label": "Opening Text",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "key": "mainMessage",
+        "label": "Main Message",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "key": "closingText",
+        "label": "Closing Text",
+        "type": "textarea",
+        "required": false
+      }
+    ],
+
+    "image": [
+      {
+        "key": "heroImage",
+        "label": "Hero Image",
+        "multiple": false,
+        "required": true
+      },
+      {
+        "key": "gallery",
+        "label": "Photo Gallery",
+        "multiple": true,
+        "required": false
+      },
+      {
+        "key": "closingImage",
+        "label": "Closing Image",
+        "multiple": false,
+        "required": false
+      }
+    ],
+
+    "audio": [
+      {
+        "key": "backgroundMusic",
+        "label": "Background Music",
+        "required": false
+      }
+    ],
+
+    "video": []
+  }
+}
