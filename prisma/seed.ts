@@ -3,6 +3,7 @@ import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import {
   PrismaClient,
+  Prisma,
   TemplateStatus,
   WebsiteStatus
 } from "../generated/prisma/client";
@@ -39,7 +40,7 @@ async function main() {
         category: template.category,
         description: template.description,
         previewImage: template.previewImage,
-        schema: template.fields,
+        schema: template.schema as unknown as Prisma.InputJsonValue,
         status: template.active
           ? TemplateStatus.ACTIVE
           : TemplateStatus.PLANNED,
@@ -52,7 +53,7 @@ async function main() {
         category: template.category,
         description: template.description,
         previewImage: template.previewImage,
-        schema: template.fields,
+        schema: template.schema as unknown as Prisma.InputJsonValue,
         status: template.active
           ? TemplateStatus.ACTIVE
           : TemplateStatus.PLANNED,
