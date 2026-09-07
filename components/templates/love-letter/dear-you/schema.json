@@ -1,0 +1,77 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Your Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Enter sender name"
+    },
+    {
+      "key": "receiverName",
+      "label": "Partner Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Enter receiver name"
+    },
+    {
+      "key": "heroTitle",
+      "label": "Hero Title",
+      "type": "text",
+      "required": true,
+      "placeholder": "For My Love"
+    },
+    {
+      "key": "openingText",
+      "label": "Opening Text",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Write your opening..."
+    },
+    {
+      "key": "mainMessage",
+      "label": "Main Message",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Write your message..."
+    },
+    {
+      "key": "closingText",
+      "label": "Closing Text",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Write your closing..."
+    },
+    {
+      "key": "heroImage",
+      "label": "Hero Image",
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "description": "Main image displayed in the hero section."
+    },
+    {
+      "key": "gallery",
+      "label": "Photo Gallery",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Photos displayed in the memory gallery."
+    },
+    {
+      "key": "closingImage",
+      "label": "Closing Image",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Optional image displayed near the closing section."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music",
+      "type": "music",
+      "required": false,
+      "placeholder": "https://..."
+    }
+  ]
+}

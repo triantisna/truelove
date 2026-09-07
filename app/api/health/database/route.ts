@@ -1,11 +1,11 @@
-import { NextResponse } from "next/server";
-import { databaseDiagnostics } from "@/lib/db-health";
+import { NextResponse } from 'next/server';
+import { databaseDiagnostics } from '@/lib/db-health';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const diagnostics = await databaseDiagnostics();
   return NextResponse.json(diagnostics, {
-    status: diagnostics.configured && !diagnostics.connected ? 503 : 200
+    status: diagnostics.configured && !diagnostics.connected ? 503 : 200,
   });
 }

@@ -1,10 +1,18 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+import LogoutButton from '@/components/admin/LogoutButton';
+
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className="admin-shell">
       <aside className="admin-sidebar">
-        <Link className="brand light" href="/">TRUELOVE<span>.</span></Link>
+        <Link className="brand light" href="/">
+          TRUELOVE<span>.</span>
+        </Link>
         <p className="sidebar-label">ADMIN PANEL</p>
         <nav>
           <Link href="/admin">Overview</Link>
@@ -15,6 +23,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <span className="disabled-link">Templates · next</span>
           <span className="disabled-link">Settings · next</span>
         </nav>
+        <LogoutButton />
       </aside>
       <div className="admin-content">{children}</div>
     </div>

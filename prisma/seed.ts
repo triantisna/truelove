@@ -1,38 +1,58 @@
-import "dotenv/config";
+import 'dotenv/config';
 
-import { PrismaPg } from "@prisma/adapter-pg";
+import { hash } from 'bcryptjs';
+import { PrismaPg } from '@prisma/adapter-pg';
 import {
   PrismaClient,
   Prisma,
   TemplateStatus,
-  WebsiteStatus
-} from "../generated/prisma/client";
+  WebsiteStatus,
+} from '../generated/prisma/client';
 
-import { templates } from "../config/templates";
-import { packages } from "../config/packages";
+import { templates } from '../config/templates';
+import { packages } from '../config/packages';
 
-const connectionString =
-  process.env.DIRECT_URL || process.env.DATABASE_URL;
+const connectionString = process.env.DIRECT_URL || process.env.DATABASE_URL;
 
 if (!connectionString) {
-  throw new Error(
-    "DIRECT_URL or DATABASE_URL is required to seed TRUELOVE."
-  );
+  throw new Error('DIRECT_URL or DATABASE_URL is required to seed TRUELOVE.');
 }
 
 const adapter = new PrismaPg({
-  connectionString
+  connectionString,
 });
 
 const prisma = new PrismaClient({
-  adapter
+  adapter,
 });
 
 async function main() {
+  const adminEmail = process.env.ADMIN_EMAIL || 'admin@truelove.local';
+  const adminPassword = process.env.ADMIN_PASSWORD || 'change-me-now';
+  const hashedPassword = await hash(adminPassword, 10);
+
+  await prisma.user.upsert({
+    where: {
+      email: adminEmail,
+    },
+    update: {
+      password: hashedPassword,
+      role: 'ADMIN',
+    },
+    create: {
+      name: 'Admin Truelove',
+      email: adminEmail,
+      password: hashedPassword,
+      role: 'ADMIN',
+    },
+  });
+
+  console.log(`Admin account seeded: ${adminEmail}`);
+
   for (const [index, template] of templates.entries()) {
     await prisma.template.upsert({
       where: {
-        key: template.id
+        key: template.id,
       },
 
       update: {
@@ -44,7 +64,7 @@ async function main() {
         status: template.active
           ? TemplateStatus.ACTIVE
           : TemplateStatus.PLANNED,
-        sortOrder: index
+        sortOrder: index,
       },
 
       create: {
@@ -57,15 +77,15 @@ async function main() {
         status: template.active
           ? TemplateStatus.ACTIVE
           : TemplateStatus.PLANNED,
-        sortOrder: index
-      }
+        sortOrder: index,
+      },
     });
   }
 
   for (const [index, item] of packages.entries()) {
     await prisma.package.upsert({
       where: {
-        key: item.id
+        key: item.id,
       },
 
       update: {
@@ -78,7 +98,7 @@ async function main() {
         allowCustomTheme: item.allowCustomTheme,
         allowCustomLayout: item.allowCustomLayout,
         sortOrder: index,
-        active: true
+        active: true,
       },
 
       create: {
@@ -92,34 +112,32 @@ async function main() {
         allowCustomTheme: item.allowCustomTheme,
         allowCustomLayout: item.allowCustomLayout,
         sortOrder: index,
-        active: true
-      }
+        active: true,
+      },
     });
   }
 
-  const template =
-    await prisma.template.findUniqueOrThrow({
-      where: {
-        key: "love-letter-01"
-      }
-    });
+  const template = await prisma.template.findUniqueOrThrow({
+    where: {
+      key: 'love-letter-01',
+    },
+  });
 
-  const packageRecord =
-    await prisma.package.findUniqueOrThrow({
-      where: {
-        key: "paket-murah"
-      }
-    });
+  const packageRecord = await prisma.package.findUniqueOrThrow({
+    where: {
+      key: 'paket-murah',
+    },
+  });
 
   await prisma.website.upsert({
     where: {
-      slug: "for-melvina"
+      slug: 'for-melvina',
     },
 
     update: {},
 
     create: {
-      slug: "for-melvina",
+      slug: 'for-melvina',
       templateId: template.id,
       packageId: packageRecord.id,
 
@@ -127,23 +145,23 @@ async function main() {
       publishedAt: new Date(),
 
       content: {
-        sender_name: "Arzaniel",
-        receiver_name: "Melvina",
-        title: "A little thing for you",
+        sender_name: 'Arzaniel',
+        receiver_name: 'Melvina',
+        title: 'A little thing for you',
 
         message:
-          "I wanted to make something that feels more personal than a normal message. Thank you for making ordinary days feel special.",
+          'I wanted to make something that feels more personal than a normal message. Thank you for making ordinary days feel special.',
 
         reasons: [
-          "You make ordinary days feel lighter.",
-          "You somehow make chaos feel like home.",
-          "You are still my favorite person to tell everything to."
-        ]
-      }
-    }
+          'You make ordinary days feel lighter.',
+          'You somehow make chaos feel like home.',
+          'You are still my favorite person to tell everything to.',
+        ],
+      },
+    },
   });
 
-  console.log("TRUELOVE seed complete.");
+  console.log('TRUELOVE seed complete.');
 }
 
 main()
