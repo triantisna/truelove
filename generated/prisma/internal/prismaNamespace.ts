@@ -401,6 +401,7 @@ export const ModelName = {
   Package: 'Package',
   Website: 'Website',
   WebsiteMedia: 'WebsiteMedia',
+  Music: 'Music',
   Order: 'Order',
   User: 'User',
   Account: 'Account',
@@ -421,7 +422,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "template" | "package" | "website" | "websiteMedia" | "order" | "user" | "account" | "session" | "verificationToken"
+    modelProps: "template" | "package" | "website" | "websiteMedia" | "music" | "order" | "user" | "account" | "session" | "verificationToken"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -718,6 +719,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.WebsiteMediaCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.WebsiteMediaCountAggregateOutputType> | number
+        }
+      }
+    }
+    Music: {
+      payload: Prisma.$MusicPayload<ExtArgs>
+      fields: Prisma.MusicFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.MusicFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.MusicFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload>
+        }
+        findFirst: {
+          args: Prisma.MusicFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.MusicFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload>
+        }
+        findMany: {
+          args: Prisma.MusicFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload>[]
+        }
+        create: {
+          args: Prisma.MusicCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload>
+        }
+        createMany: {
+          args: Prisma.MusicCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.MusicCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload>[]
+        }
+        delete: {
+          args: Prisma.MusicDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload>
+        }
+        update: {
+          args: Prisma.MusicUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload>
+        }
+        deleteMany: {
+          args: Prisma.MusicDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.MusicUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.MusicUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload>[]
+        }
+        upsert: {
+          args: Prisma.MusicUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MusicPayload>
+        }
+        aggregate: {
+          args: Prisma.MusicAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateMusic>
+        }
+        groupBy: {
+          args: Prisma.MusicGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MusicGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.MusicCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MusicCountAggregateOutputType> | number
         }
       }
     }
@@ -1172,6 +1247,7 @@ export const WebsiteScalarFieldEnum = {
   slug: 'slug',
   templateId: 'templateId',
   packageId: 'packageId',
+  musicId: 'musicId',
   content: 'content',
   status: 'status',
   expiresAt: 'expiresAt',
@@ -1197,6 +1273,18 @@ export const WebsiteMediaScalarFieldEnum = {
 } as const
 
 export type WebsiteMediaScalarFieldEnum = (typeof WebsiteMediaScalarFieldEnum)[keyof typeof WebsiteMediaScalarFieldEnum]
+
+
+export const MusicScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  url: 'url',
+  publicId: 'publicId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MusicScalarFieldEnum = (typeof MusicScalarFieldEnum)[keyof typeof MusicScalarFieldEnum]
 
 
 export const OrderScalarFieldEnum = {
@@ -1615,6 +1703,7 @@ export type GlobalOmitConfig = {
   package?: Prisma.PackageOmit
   website?: Prisma.WebsiteOmit
   websiteMedia?: Prisma.WebsiteMediaOmit
+  music?: Prisma.MusicOmit
   order?: Prisma.OrderOmit
   user?: Prisma.UserOmit
   account?: Prisma.AccountOmit

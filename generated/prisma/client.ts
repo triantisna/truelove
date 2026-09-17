@@ -62,6 +62,11 @@ export type Website = Prisma.WebsiteModel
  */
 export type WebsiteMedia = Prisma.WebsiteMediaModel
 /**
+ * Model Music
+ * 
+ */
+export type Music = Prisma.MusicModel
+/**
  * Model Order
  * 
  */

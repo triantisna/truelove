@@ -55,6 +55,7 @@ export const ModelName = {
   Package: 'Package',
   Website: 'Website',
   WebsiteMedia: 'WebsiteMedia',
+  Music: 'Music',
   Order: 'Order',
   User: 'User',
   Account: 'Account',
@@ -120,6 +121,7 @@ export const WebsiteScalarFieldEnum = {
   slug: 'slug',
   templateId: 'templateId',
   packageId: 'packageId',
+  musicId: 'musicId',
   content: 'content',
   status: 'status',
   expiresAt: 'expiresAt',
@@ -145,6 +147,18 @@ export const WebsiteMediaScalarFieldEnum = {
 } as const
 
 export type WebsiteMediaScalarFieldEnum = (typeof WebsiteMediaScalarFieldEnum)[keyof typeof WebsiteMediaScalarFieldEnum]
+
+
+export const MusicScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  url: 'url',
+  publicId: 'publicId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MusicScalarFieldEnum = (typeof MusicScalarFieldEnum)[keyof typeof MusicScalarFieldEnum]
 
 
 export const OrderScalarFieldEnum = {

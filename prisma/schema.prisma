@@ -97,6 +97,8 @@ model Website {
   templateId String @map("template_id")
   packageId  String @map("package_id")
 
+  musicId    String? @map("music_id")
+
   // Semua isi website template disimpan disini
   content     Json          @default("{}")
   status      WebsiteStatus @default(DRAFT)
@@ -107,6 +109,8 @@ model Website {
 
   template Template @relation(fields: [templateId], references: [id], onDelete: Restrict)
   package  Package  @relation(fields: [packageId], references: [id], onDelete: Restrict)
+
+  music    Music?   @relation(fields: [musicId], references: [id], onDelete: SetNull)
 
   media  WebsiteMedia[]
   orders Order[]
@@ -132,6 +136,19 @@ model WebsiteMedia {
 
   @@index([websiteId, fieldKey])
   @@map("website_media")
+}
+
+model Music {
+  id        String   @id @default(cuid())
+  title     String   
+  url       String   
+  publicId  String?  @map("public_id") 
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  websites  Website[]
+
+  @@map("music")
 }
 
 model Order {
