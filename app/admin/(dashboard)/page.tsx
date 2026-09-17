@@ -1,11 +1,48 @@
 import Link from 'next/link';
-import { integrationsReady } from '@/lib/env';
-import { websiteStats } from '@/lib/websites';
+
+import { prisma } from '@/lib/prisma';
 
 export const dynamic = 'force-dynamic';
 
+const rupiah = new Intl.NumberFormat('id-ID', {
+  style: 'currency',
+  currency: 'IDR',
+  maximumFractionDigits: 0,
+});
+
 export default async function AdminDashboard() {
-  const stats = await websiteStats();
+  if (!prisma) {
+    throw new Error('DATABASE_NOT_CONFIGURED');
+  }
+
+  const [totalOrders, revenue, publishedWebsites, recentOrders] =
+    await Promise.all([
+      prisma.order.count(),
+      prisma.order.aggregate({
+        _sum: {
+          price: true,
+        },
+        where: {
+          paymentStatus: 'PAID',
+        },
+      }),
+      prisma.website.count({
+        where: {
+          status: 'PUBLISHED',
+        },
+      }),
+      prisma.order.findMany({
+        take: 5,
+        orderBy: {
+          createdAt: 'desc',
+        },
+        include: {
+          package: true,
+        },
+      }),
+    ]);
+
+  const totalRevenue = revenue._sum.price ?? 0;
 
   return (
     <main>
@@ -13,9 +50,7 @@ export default async function AdminDashboard() {
         <div>
           <p className="eyebrow">TRUELOVE ADMIN</p>
           <h1>Overview</h1>
-          <p>
-            Phase 2: Prisma + Supabase PostgreSQL + reusable animation system.
-          </p>
+          <p>Monitor your latest sales and active websites.</p>
         </div>
         <Link className="button primary" href="/admin/websites/create">
           + Create Website
@@ -24,48 +59,50 @@ export default async function AdminDashboard() {
 
       <div className="stat-grid">
         <div className="stat-card">
-          <span>Websites</span>
-          <strong>{stats.total}</strong>
-          <small>
-            {stats.mode === 'database' ? 'database' : 'mock fallback'}
-          </small>
+          <span>Total Pendapatan</span>
+          <strong>{rupiah.format(totalRevenue)}</strong>
+          <small>all orders</small>
         </div>
         <div className="stat-card">
-          <span>Published</span>
-          <strong>{stats.published}</strong>
-          <small>public gifts</small>
+          <span>Total Pesanan Masuk</span>
+          <strong>{totalOrders}</strong>
+          <small>all orders</small>
         </div>
         <div className="stat-card">
-          <span>Prisma DB</span>
-          <strong>{integrationsReady.prisma ? 'ON' : 'OFF'}</strong>
-          <small>
-            {integrationsReady.prisma ? 'runtime ready' : 'add DATABASE_URL'}
-          </small>
-        </div>
-        <div className="stat-card">
-          <span>Cloudinary</span>
-          <strong>{integrationsReady.cloudinary ? 'ON' : 'OFF'}</strong>
-          <small>
-            {integrationsReady.cloudinary ? 'connected' : 'upload phase next'}
-          </small>
+          <span>Website Aktif</span>
+          <strong>{publishedWebsites}</strong>
+          <small>published websites</small>
         </div>
       </div>
 
-      <section className="admin-panel">
+      <section className="admin-panel table-panel">
         <div className="panel-title">
-          <h2>Phase 2 checkpoint</h2>
-          <p>Core systems now included in this build.</p>
+          <h2>Recent Orders</h2>
+          <p>The five latest customer orders.</p>
         </div>
-        <div className="check-grid">
-          <span>✓ Prisma 7 architecture</span>
-          <span>✓ Supabase PostgreSQL target</span>
-          <span>✓ Runtime pooled DB URL</span>
-          <span>✓ Direct migration URL</span>
-          <span>✓ Database seed</span>
-          <span>✓ Dynamic /[slug]</span>
-          <span>✓ API create website</span>
-          <span>✓ Motion component library</span>
-          <span>✓ 3D template effects</span>
+        <div className="data-table">
+          <div className="data-row overview-row data-head">
+            <span>Customer</span>
+            <span>Occasion</span>
+            <span>Package</span>
+            <span>Price</span>
+            <span>Payment Status</span>
+          </div>
+          {recentOrders.map((order) => (
+            <div className="data-row overview-row" key={order.id}>
+              <strong>{order.customerName}</strong>
+              <span>{order.occasion}</span>
+              <span>{order.package?.name ?? '—'}</span>
+              <strong>{rupiah.format(order.price)}</strong>
+              <span>{order.paymentStatus}</span>
+            </div>
+          ))}
+          {recentOrders.length === 0 ? (
+            <div className="empty-state">
+              <strong>No orders yet</strong>
+              <p>New customer orders will appear here.</p>
+            </div>
+          ) : null}
         </div>
       </section>
     </main>

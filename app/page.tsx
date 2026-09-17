@@ -7,7 +7,6 @@ import TiltCard from '@/components/motion/TiltCard';
 import GlowOrbs from '@/components/motion/GlowOrbs';
 import { categories } from '@/config/categories';
 import { packages } from '@/config/packages';
-import { templates } from '@/config/templates';
 import type { OccasionSlug } from '@/types/template';
 
 const money = new Intl.NumberFormat('id-ID');
@@ -43,25 +42,17 @@ export default function HomePage() {
         price: Number(selectedPackage.price),
       };
 
-      console.log('Sending payload:', payload);
-
       const response = await fetch('/api/orders', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) {
-        throw new Error('ORDER_CREATE_FAILED');
-      }
+      if (!response.ok) throw new Error('ORDER_CREATE_FAILED');
 
       const whatsappText = `Halo admin Truelove! Saya ${name}, mau pesan paket ${selectedPackage.name} untuk acara ${selectedOccasion.name}.`;
-      const encodedText = encodeURIComponent(whatsappText);
-
       window.open(
-        `https://wa.me/6287804835801?text=${encodedText}`,
+        `https://wa.me/6287804835801?text=${encodeURIComponent(whatsappText)}`,
         '_blank',
       );
     } catch {
@@ -80,44 +71,42 @@ export default function HomePage() {
             TRUELOVE<span>.</span>
           </Link>
           <div className="nav-actions">
-            <Link href="/for-melvina">Demo</Link>
-            <Link href="/admin" className="button small ghost">
-              Admin
-            </Link>
+            <Link href="/for-melvina">Demo Interaktif</Link>
           </div>
         </nav>
         <div className="hero-copy">
           <Reveal>
-            <p className="eyebrow">INTERACTIVE DIGITAL GIFT STUDIO</p>
+            <p className="eyebrow">STUDIO HADIAH DIGITAL INTERAKTIF</p>
             <h1>
-              Give them a link
+              Berikan mereka kejutan manis
               <br />
-              they&apos;ll remember.
+              melalui sebuah link.
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="hero-lead">
-              TRUELOVE turns names, photos, words, and music into personalized
-              romantic experiences.
+              TRUELOVE merangkai nama, foto, kata-kata, dan musik menjadi
+              pengalaman romantis yang personal dan tak terlupakan.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
             <div className="hero-actions">
               <Link className="button primary" href="/for-melvina">
-                Open animated demo
+                Lihat Demo Interaktif
               </Link>
-              <Link className="button ghost" href="/admin/websites/create">
-                Open generator
+              <Link className="button ghost" href="#order">
+                Pesan Sekarang
               </Link>
             </div>
           </Reveal>
         </div>
       </section>
 
+      {/* SECTION 1: MOMEN SPESIAL */}
       <section className="content-section">
         <Reveal>
-          <p className="eyebrow">OCCASIONS</p>
-          <h2>One platform, different moments.</h2>
+          <p className="eyebrow">MOMEN SPESIAL</p>
+          <h2>Pilih momen, temukan desainnya.</h2>
         </Reveal>
         <div className="category-grid">
           {categories.map((item) => (
@@ -126,84 +115,116 @@ export default function HomePage() {
                 <span>{item.emoji}</span>
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
+                <div className="card-action">Eksplorasi Desain ➔</div>
               </TiltCard>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="content-section alternate">
-        <Reveal>
-          <p className="eyebrow">TEMPLATE REGISTRY</p>
-          <h2>Templates are components, not separate websites.</h2>
-        </Reveal>
-        <div className="template-list">
-          {templates.map((template, index) => (
-            <Reveal key={template.id} delay={Math.min(index * 0.035, 0.2)}>
-              <div className="template-row">
+      {/* SECTION 2: BENTO BOX (Cara Kerja & Paket Gabung dengan BG Beda) */}
+      <section className="content-section bento-section alternate-light">
+        {/* Kiri: Cara Kerja */}
+        <div className="bento-left">
+          <Reveal>
+            <p className="eyebrow">CARA KERJA</p>
+            <h2>Website siap dalam 3 langkah mudah.</h2>
+          </Reveal>
+          <div className="steps-vertical">
+            <Reveal delay={0.1}>
+              <div className="step-item">
+                <div className="step-num">01</div>
                 <div>
-                  <span className="tiny-label">{template.category}</span>
-                  <h3>{template.name}</h3>
+                  <h4>Pilih Paket & Desain</h4>
+                  <p>Temukan yang paling pas untuk momenmu.</p>
                 </div>
-                <p>{template.description}</p>
-                <span className={template.active ? 'badge active' : 'badge'}>
-                  {template.active ? 'Active' : 'Planned'}
-                </span>
               </div>
             </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="content-section">
-        <Reveal>
-          <p className="eyebrow">PACKAGES</p>
-          <h2>Simple choices. One engine underneath.</h2>
-        </Reveal>
-        <div className="package-grid">
-          {packages.map((item) => (
-            <Reveal key={item.id}>
-              <TiltCard className="package-card">
-                <span className="price">Rp{money.format(item.price)}</span>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-              </TiltCard>
+            <Reveal delay={0.2}>
+              <div className="step-item">
+                <div className="step-num">02</div>
+                <div>
+                  <h4>Kirim Materi via WA</h4>
+                  <p>Kirim foto, teks, dan lagu favorit kalian.</p>
+                </div>
+              </div>
             </Reveal>
-          ))}
+            <Reveal delay={0.3}>
+              <div className="step-item">
+                <div className="step-num">03</div>
+                <div>
+                  <h4>Link Siap Dibagikan</h4>
+                  <p>Kejutan manismu siap dinikmati olehnya.</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Kanan: Paket Harga (Grid 3 Kolom) */}
+        <div className="bento-right">
+          <Reveal>
+            <p className="eyebrow">PAKET HARGA</p>
+            <h2>Transparan, tanpa biaya tersembunyi.</h2>
+          </Reveal>
+          <div className="bento-packages">
+            {packages.map((item, index) => {
+              const isPopular =
+                item.name.includes('Premium') ||
+                item.name.includes('Pro') ||
+                index === 1;
+              return (
+                <Reveal key={item.id} delay={0.1 * index}>
+                  <div
+                    className={`bento-package-card ${
+                      isPopular ? 'popular' : ''
+                    }`}
+                  >
+                    <div className="bento-package-head">
+                      <h3>{item.name}</h3>
+                      <span className="price">
+                        Rp{money.format(item.price)}
+                      </span>
+                    </div>
+                    <p>{item.description}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      <section className="content-section alternate">
+      {/* SECTION 4: FORM PEMESANAN (Dark Wine BG) */}
+      <section id="order" className="content-section alternate">
         <Reveal>
-          <p className="eyebrow">ORDER NOW</p>
-          <h2>Make your moment unforgettable.</h2>
+          <p className="eyebrow">PESAN SEKARANG</p>
+          <h2>Ciptakan momen tak terlupakan hari ini.</h2>
         </Reveal>
         <form className="order-form" onSubmit={handleOrder}>
           <label>
-            Name
+            Nama Lengkap
             <input
               required
               value={name}
-              onChange={(event) => setName(event.target.value)}
-              placeholder="Your name"
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Masukkan nama Anda"
             />
           </label>
           <label>
-            WhatsApp
+            Nomor WhatsApp
             <input
               required
               value={whatsapp}
-              onChange={(event) => setWhatsapp(event.target.value)}
-              placeholder="08xxxxxxxxxx"
+              onChange={(e) => setWhatsapp(e.target.value)}
+              placeholder="Contoh: 081234567890"
             />
           </label>
           <label>
-            Occasion
+            Pilih Acara/Momen
             <select
               value={occasion}
-              onChange={(event) =>
-                setOccasion(event.target.value as OccasionSlug)
-              }
+              onChange={(e) => setOccasion(e.target.value as OccasionSlug)}
             >
               {categories.map((item) => (
                 <option key={item.slug} value={item.slug}>
@@ -213,8 +234,11 @@ export default function HomePage() {
             </select>
           </label>
           <label>
-            Package
-            <select value={packageId} onChange={(event) => setPackageId(event.target.value)}>
+            Pilih Paket
+            <select
+              value={packageId}
+              onChange={(e) => setPackageId(e.target.value)}
+            >
               {packages.map((item) => (
                 <option key={item.id} value={item.id}>
                   {item.name} — Rp{money.format(item.price)}
@@ -222,9 +246,13 @@ export default function HomePage() {
               ))}
             </select>
           </label>
-          {orderError ? <p role="alert">{orderError}</p> : null}
-          <button className="button primary" type="submit" disabled={submitting}>
-            {submitting ? 'Sending…' : 'Pesan via WhatsApp'}
+          {orderError && <p role="alert">{orderError}</p>}
+          <button
+            className="button primary"
+            type="submit"
+            disabled={submitting}
+          >
+            {submitting ? 'Mengirim…' : 'Pesan via WhatsApp'}
           </button>
         </form>
       </section>

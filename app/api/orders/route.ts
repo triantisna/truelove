@@ -8,6 +8,7 @@ type CreateOrderPayload = {
   occasion: string;
   packageId: string;
   price: number;
+  paymentStatus?: 'UNPAID' | 'PAID';
   notes?: string | null;
 };
 
@@ -27,6 +28,9 @@ function isCreateOrderPayload(value: unknown): value is CreateOrderPayload {
     typeof payload.packageId === 'string' &&
     typeof payload.price === 'number' &&
     Number.isFinite(payload.price) &&
+    (payload.paymentStatus === undefined ||
+      payload.paymentStatus === 'UNPAID' ||
+      payload.paymentStatus === 'PAID') &&
     (payload.notes === undefined ||
       payload.notes === null ||
       typeof payload.notes === 'string')
@@ -72,6 +76,7 @@ export async function POST(request: Request) {
         occasion: payload.occasion.trim(),
         packageId: packageRecord.id,
         price: payload.price,
+        paymentStatus: payload.paymentStatus || 'UNPAID',
         notes: payload.notes ?? null,
       },
     });

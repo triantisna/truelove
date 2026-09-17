@@ -1,3 +1,6 @@
+import Link from 'next/link';
+
+import OrderActions from '@/components/admin/OrderActions';
 import { prisma } from '@/lib/prisma';
 
 export const dynamic = 'force-dynamic';
@@ -35,21 +38,25 @@ export default async function OrdersPage() {
           <h1>Orders</h1>
           <p>Review customer orders and their current status.</p>
         </div>
+        <Link className="button primary" href="/admin/orders/create">
+          + Tambah Manual
+        </Link>
       </div>
 
       <section className="admin-panel table-panel">
         <div className="data-table">
-          <div className="data-row data-head">
+          <div className="data-row orders-row data-head">
             <span>Date</span>
             <span>Customer</span>
             <span>Occasion</span>
             <span>Package</span>
             <span>Price</span>
             <span>Status</span>
+            <span>Actions</span>
           </div>
 
           {orders.map((order) => (
-            <div className="data-row order-row" key={order.id}>
+            <div className="data-row orders-row" key={order.id}>
               <span>{dateFormatter.format(order.createdAt)}</span>
               <div>
                 <strong>{order.customerName}</strong>
@@ -58,13 +65,27 @@ export default async function OrdersPage() {
               <span>{order.occasion}</span>
               <span>{order.package?.name ?? '—'}</span>
               <strong>{rupiah.format(order.price)}</strong>
-              <span
-                className={`badge ${
-                  order.orderStatus === 'COMPLETED' ? 'active' : ''
-                }`}
-              >
-                {order.orderStatus}
-              </span>
+              <div className="order-statuses">
+                <span
+                  className={`badge ${
+                    order.paymentStatus === 'PAID' ? 'paid' : 'unpaid'
+                  }`}
+                >
+                  {order.paymentStatus}
+                </span>
+                <span
+                  className={`badge ${
+                    order.orderStatus === 'COMPLETED' ? 'active' : 'status'
+                  }`}
+                >
+                  {order.orderStatus}
+                </span>
+              </div>
+              {order.paymentStatus === 'UNPAID' ? (
+                <OrderActions orderId={order.id} />
+              ) : (
+                <span className="muted-action">—</span>
+              )}
             </div>
           ))}
 

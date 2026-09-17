@@ -18,7 +18,6 @@ export default function AdminLayout({
           <Link href="/admin">Overview</Link>
           <Link href="/admin/websites">Websites</Link>
           <Link href="/admin/websites/create">Create Website</Link>
-          <Link href="/admin/setup">Database Setup</Link>
           <Link href="/admin/orders">Orders</Link>
           <span className="disabled-link">Templates · next</span>
           <span className="disabled-link">Settings · next</span>
