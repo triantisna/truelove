@@ -5,6 +5,7 @@ import { useMemo, useState } from 'react';
 
 import TemplatePicker from '@/components/admin/TemplatePicker';
 import PackagePicker from '@/components/admin/PackagePicker';
+import MusicPicker from '@/components/admin/MusicPicker';
 import MediaUploader, {
   type UploadedMedia,
 } from '@/components/admin/MediaUploader';
@@ -128,7 +129,7 @@ export default function CreateWebsiteForm({
             rows={5}
             value={value}
             placeholder={field.placeholder}
-            required={field.required}
+            required={field.required === true}
             onChange={(event) => updateContent(field.key, event.target.value)}
           />
 
@@ -139,6 +140,21 @@ export default function CreateWebsiteForm({
 
     const value = typeof rawValue === 'string' ? rawValue : '';
 
+    if (field.type === 'music') {
+      return (
+        <label key={field.key}>
+          {field.label}
+          {field.required ? ' *' : ''}
+          <MusicPicker
+            onChange={(eventValue) => updateContent(field.key, eventValue)}
+            required={field.required === true}
+            value={value}
+          />
+          {field.description ? <small>{field.description}</small> : null}
+        </label>
+      );
+    }
+
     return (
       <label key={field.key}>
         {field.label}
@@ -146,10 +162,10 @@ export default function CreateWebsiteForm({
         {field.required ? ' *' : ''}
 
         <input
-          type={field.type === 'music' ? 'url' : 'text'}
+          type="text"
           value={value}
           placeholder={field.placeholder}
-          required={field.required}
+          required={field.required === true}
           onChange={(event) => updateContent(field.key, event.target.value)}
         />
 
@@ -215,11 +231,13 @@ export default function CreateWebsiteForm({
 
           eventDate: null,
 
-          musicUrl: selectedPackage?.allowMusic
+          musicId: selectedPackage?.allowMusic
             ? typeof content.backgroundMusic === 'string'
               ? content.backgroundMusic
               : ''
             : '',
+
+          musicUrl: '',
 
           theme: 'romantic',
 

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { listWebsites } from '@/lib/websites';
+// 1. IMPORT KOMPONEN BARU DI SINI
+import QRModalAction from '@/components/admin/QRModalAction';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,7 +23,6 @@ export default async function WebsitesPage() {
 
       <section className="admin-panel table-panel">
         <div className="data-table">
-          {/* Class websites-row sudah ditambahkan di sini */}
           <div className="data-row websites-row data-head">
             <span>Slug</span>
             <span>Template</span>
@@ -44,8 +45,11 @@ export default async function WebsitesPage() {
               </span>
               <span
                 className="table-actions"
-                style={{ display: 'flex', gap: '12px', alignItems: 'center' }}
+                style={{ display: 'flex', gap: '16px', alignItems: 'center' }}
               >
+                {/* 2. PASANG TOMBOL QR DI SEBELAH KIRI EDIT */}
+                <QRModalAction slug={site.slug} />
+
                 <Link
                   href={`/admin/websites/${site.id}/edit`}
                   style={{ fontWeight: '600', textDecoration: 'underline' }}

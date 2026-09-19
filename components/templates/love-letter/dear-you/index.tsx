@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 
 import FloatingHearts from '@/components/motion/FloatingHearts';
+import FloatingMusicPlayer from '@/components/motion/FloatingMusicPlayer';
 import Pressable from '@/components/motion/Pressable';
 
 import type { WebsiteRecord } from '@/types/website';
@@ -43,6 +44,17 @@ export default function LoveLetter01({ website }: { website: WebsiteRecord }) {
   const [reasonIndex, setReasonIndex] = useState(0);
 
   const content = website.content ?? {};
+
+  // AMAN & PINTAR: Menangkap URL musik dari relasi DB, atau fallback ke konten lama.
+  let rawMusicUrl =
+    (website as any).music?.url ||
+    website.musicUrl ||
+    getString(content, 'backgroundMusic');
+
+  // Validasi ketat: HANYA izinkan yang berformat URL (http/https).
+  // Jika isinya CUID (seperti "cmu..."), langsung buang (jadikan string kosong)!
+  const musicUrl =
+    rawMusicUrl && rawMusicUrl.startsWith('http') ? rawMusicUrl : '';
 
   const senderName = getString(content, 'senderName', website.senderName);
 
@@ -101,6 +113,7 @@ export default function LoveLetter01({ website }: { website: WebsiteRecord }) {
   return (
     <main className="experience-shell love-letter-theme cinematic-experience">
       <FloatingHearts />
+      <FloatingMusicPlayer url={musicUrl} isOpened={opened} />
 
       <div className="experience-vignette" aria-hidden="true" />
 

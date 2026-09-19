@@ -10,6 +10,9 @@ export interface WebsiteRecord {
   title: string;
   message: string;
   eventDate?: string;
+  music?: {
+    url: string;
+  };
   musicUrl?: string;
   theme?: string;
   status: WebsiteStatus;

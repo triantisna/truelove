@@ -73,6 +73,12 @@ function toWebsiteRecord(row: any): WebsiteRecord {
       content.event_date?.toString?.() ??
       undefined,
 
+    music: row.music
+      ? {
+          url: row.music.url,
+        }
+      : undefined,
+
     musicUrl:
       getStringContent(content, 'backgroundMusic') ||
       getStringContent(content, 'music') ||
@@ -132,6 +138,8 @@ export async function getWebsiteBySlug(
 
       package: true,
 
+      music: true,
+
       media: {
         orderBy: {
           sortOrder: 'asc',
@@ -163,6 +171,8 @@ export async function getWebsiteById(
       template: true,
 
       package: true,
+
+      music: true,
 
       media: {
         orderBy: {
@@ -442,6 +452,8 @@ export async function createWebsite(
 
       packageId: packageRecord.id,
 
+      musicId: input.musicId || null,
+
       content: content as Prisma.InputJsonValue,
 
       status: statusMap[input.status],
@@ -468,6 +480,8 @@ export async function createWebsite(
       template: true,
 
       package: true,
+
+      music: true,
 
       media: true,
     },
@@ -538,6 +552,8 @@ export async function updateWebsite(
 
       packageId: packageRecord.id,
 
+      musicId: input.musicId || null,
+
       content: content as Prisma.InputJsonValue,
 
       status: statusMap[input.status],
@@ -549,6 +565,8 @@ export async function updateWebsite(
       template: true,
 
       package: true,
+
+      music: true,
 
       media: {
         orderBy: {

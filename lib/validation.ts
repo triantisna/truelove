@@ -3,8 +3,6 @@ import { getTemplateById } from '@/config/templates';
 
 /**
  * JSON value accepted by the TRUELOVE dynamic content field.
- * Keeping this JSON-safe prevents Prisma Json fields from receiving
- * arbitrary values such as functions, Date objects, or undefined.
  */
 export type JsonValue =
   string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue };
@@ -20,13 +18,17 @@ const jsonValueSchema: z.ZodType<JsonValue> = z.lazy(() =>
   ]),
 );
 
-const mediaContentSchema = z.object({
-  url: z.string().url(),
-  publicId: z.string().min(1),
-  resourceType: z.string().min(1).optional(),
-  caption: z.string().optional(),
-  sortOrder: z.number().int().nonnegative().optional(),
-});
+// FIX 1: Terima format object baru ATAU string URL lama agar data lama tidak error
+const mediaContentSchema = z.union([
+  z.object({
+    url: z.string().url(),
+    publicId: z.string().min(1),
+    resourceType: z.string().min(1).optional(),
+    caption: z.string().optional(),
+    sortOrder: z.number().int().nonnegative().optional(),
+  }),
+  z.string().url(),
+]);
 
 function buildTemplateContentSchema(
   templateId: string,
@@ -41,33 +43,32 @@ function buildTemplateContentSchema(
   const shape: Record<string, z.ZodType> = {};
 
   for (const field of template.schema.fields) {
+    // FIX 2: Music sekarang divalidasi sebagai string biasa (karena isinya ID).
+    // FIX 3: Semua tipe media langsung dibuat nullable() & optional() agar bisa dikosongkan Admin.
     let fieldSchema: z.ZodType =
       field.type === 'media'
         ? field.multiple
-          ? z.array(mediaContentSchema)
-          : mediaContentSchema
-        : field.type === 'music'
-          ? z.string().url()
-          : z.string();
+          ? z.array(mediaContentSchema).nullable().optional()
+          : mediaContentSchema.nullable().optional()
+        : z.string();
 
     if (status === 'draft') {
       if (field.type !== 'media') {
         fieldSchema = fieldSchema.or(z.literal(''));
       }
-
       fieldSchema = fieldSchema.nullable().optional();
     } else if (field.required) {
+      // Jika Publish & Required, paksa string text agar tidak kosong (Kecuali media)
       if (field.type !== 'media') {
         fieldSchema = fieldSchema.pipe(z.string().trim().min(1));
       }
     } else {
-      if (field.type === 'media' && !field.multiple) {
-        fieldSchema = fieldSchema.nullable();
-      } else if (field.type === 'music') {
-        fieldSchema = z.string().url().or(z.literal(''));
+      if (field.type === 'music') {
+        fieldSchema = z.string().or(z.literal(''));
       }
-
-      fieldSchema = fieldSchema.optional();
+      if (field.type !== 'media') {
+        fieldSchema = fieldSchema.optional();
+      }
     }
 
     shape[field.key] = fieldSchema;
@@ -104,39 +105,42 @@ function validateContentForTemplate(
   }
 }
 
-export const websiteInputSchema = z.object({
-  slug: z
-    .string()
-    .min(3)
-    .max(80)
-    .regex(/^[a-z0-9-]+$/),
-  templateId: z.string().min(1),
-  packageId: z.string().min(1),
-  senderName: z.string().min(1).max(80),
-  receiverName: z.string().min(1).max(80),
-  title: z.string().min(1).max(140),
-  message: z.string().max(5000).optional().default(''),
-  eventDate: z.string().optional().nullable(),
-  musicUrl: z.string().url().optional().nullable().or(z.literal('')),
-  theme: z.string().max(40).optional().default('romantic'),
-  content: z.record(z.string(), jsonValueSchema).optional().default({}),
-  status: z.enum(['draft', 'preview', 'published']).default('draft'),
-}).superRefine((input, context) => {
-  if (!getTemplateById(input.templateId)) {
-    context.addIssue({
-      code: 'custom',
-      path: ['templateId'],
-      message: 'Template is not registered.',
-    });
-    return;
-  }
+export const websiteInputSchema = z
+  .object({
+    slug: z
+      .string()
+      .min(3)
+      .max(80)
+      .regex(/^[a-z0-9-]+$/),
+    templateId: z.string().min(1),
+    packageId: z.string().min(1),
+    senderName: z.string().min(1).max(80),
+    receiverName: z.string().min(1).max(80),
+    title: z.string().min(1).max(140),
+    message: z.string().max(5000).optional().default(''),
+    eventDate: z.string().optional().nullable(),
+    musicId: z.string().optional().nullable(),
+    musicUrl: z.string().url().optional().nullable().or(z.literal('')),
+    theme: z.string().max(40).optional().default('romantic'),
+    content: z.record(z.string(), jsonValueSchema).optional().default({}),
+    status: z.enum(['draft', 'preview', 'published']).default('draft'),
+  })
+  .superRefine((input, context) => {
+    if (!getTemplateById(input.templateId)) {
+      context.addIssue({
+        code: 'custom',
+        path: ['templateId'],
+        message: 'Template is not registered.',
+      });
+      return;
+    }
 
-  validateContentForTemplate(
-    input.templateId,
-    input.content,
-    input.status,
-    context,
-  );
-});
+    validateContentForTemplate(
+      input.templateId,
+      input.content,
+      input.status,
+      context,
+    );
+  });
 
 export type WebsiteInput = z.infer<typeof websiteInputSchema>;

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 import TemplatePicker from '@/components/admin/TemplatePicker';
 import PackagePicker from '@/components/admin/PackagePicker';
+import MusicPicker from '@/components/admin/MusicPicker';
 import MediaUploader, {
   type UploadedMedia,
 } from '@/components/admin/MediaUploader';
@@ -44,7 +45,7 @@ export default function EditWebsiteForm({ website }: Props) {
 
     event_date: website.eventDate ?? '',
 
-    music: website.musicUrl ?? '',
+    music: '',
 
     ...(website.content as Record<string, ContentValue>),
   });
@@ -130,7 +131,7 @@ export default function EditWebsiteForm({ website }: Props) {
             rows={5}
             value={value}
             placeholder={field.placeholder}
-            required={field.required}
+            required={field.required === true}
             onChange={(event) => updateContent(field.key, event.target.value)}
           />
         </label>
@@ -147,9 +148,24 @@ export default function EditWebsiteForm({ website }: Props) {
           <input
             type="date"
             value={value}
-            required={field.required}
+            required={field.required === true}
             onChange={(event) => updateContent(field.key, event.target.value)}
           />
+        </label>
+      );
+    }
+
+    if (field.type === 'music') {
+      return (
+        <label key={field.key}>
+          {field.label}
+          {field.required ? ' *' : ''}
+          <MusicPicker
+            onChange={(eventValue) => updateContent(field.key, eventValue)}
+            required={field.required === true}
+            value={value}
+          />
+          {field.description ? <small>{field.description}</small> : null}
         </label>
       );
     }
@@ -161,10 +177,10 @@ export default function EditWebsiteForm({ website }: Props) {
         {field.required ? ' *' : ''}
 
         <input
-          type={field.type === 'music' ? 'url' : 'text'}
+          type="text"
           value={value}
           placeholder={field.placeholder}
-          required={field.required}
+          required={field.required === true}
           onChange={(event) => updateContent(field.key, event.target.value)}
         />
 
@@ -206,7 +222,11 @@ export default function EditWebsiteForm({ website }: Props) {
 
           eventDate: content.event_date || null,
 
-          musicUrl: selectedPackage?.allowMusic ? (content.music ?? '') : '',
+          musicId: selectedPackage?.allowMusic
+            ? (content.backgroundMusic ?? '')
+            : '',
+
+          musicUrl: '',
 
           theme: 'romantic',
 
