@@ -1,0 +1,108 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Pasangan (Receiver)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Melvina"
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Kamu (Sender)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Arzaniel"
+    },
+    {
+      "key": "age",
+      "label": "Umur / Perayaan Ke-",
+      "type": "text",
+      "required": true,
+      "placeholder": "24"
+    },
+    {
+      "key": "tapText",
+      "label": "Teks Instruksi Awal",
+      "type": "text",
+      "required": true,
+      "placeholder": "Tap to turn on the lights 💡"
+    },
+    {
+      "key": "heroTitle",
+      "label": "Judul Utama",
+      "type": "text",
+      "required": true,
+      "placeholder": "Happy Birthday My Love!"
+    },
+    {
+      "key": "openingText",
+      "label": "Kalimat Pembuka",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Hari ini adalah harimu..."
+    },
+    {
+      "key": "mainMessage",
+      "label": "Pesan Utama",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Terima kasih sudah lahir ke dunia..."
+    },
+    {
+      "key": "wish1",
+      "label": "Harapan / Wish 1",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Semoga kamu selalu sehat..."
+    },
+    {
+      "key": "wish2",
+      "label": "Harapan / Wish 2",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Semoga mimpimu tercapai..."
+    },
+    {
+      "key": "wish3",
+      "label": "Harapan / Wish 3",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Dan kita selalu bersama..."
+    },
+    {
+      "key": "closingText",
+      "label": "Kalimat Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "I love you to the moon and back."
+    },
+    {
+      "key": "heroImage",
+      "label": "Foto Utama (Hero)",
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Momen (Max 4 Foto)",
+      "type": "media",
+      "multiple": true,
+      "required": false
+    },
+    {
+      "key": "closingImage",
+      "label": "Foto Penutup (Closing)",
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Lagu Latar",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

@@ -193,14 +193,6 @@ export default function CreateWebsiteForm({
     });
 
     try {
-      /*
-       * Convert UploadedMedia objects into
-       * JSON-safe content before sending them
-       * to the website API.
-       *
-       * The complete media metadata remains
-       * available inside content for now.
-       */
       const response = await fetch('/api/websites', {
         method: 'POST',
 

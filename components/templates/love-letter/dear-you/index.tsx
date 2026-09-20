@@ -230,7 +230,17 @@ export default function LoveLetter01({ website }: { website: WebsiteRecord }) {
                     duration: 0.7,
                   }}
                 >
-                  <img src={heroImage} alt={`For ${receiverName}`} />
+                  <img
+                    src={heroImage}
+                    alt={`For ${receiverName}`}
+                    style={{
+                      width: '100%',
+                      maxHeight: '400px',
+                      objectFit: 'cover',
+                      borderRadius: '16px',
+                      marginBottom: '24px',
+                    }}
+                  />
                 </motion.figure>
               ) : null}
 
@@ -363,7 +373,20 @@ export default function LoveLetter01({ website }: { website: WebsiteRecord }) {
                     amount: 0.5,
                   }}
                 >
-                  <img src={closingImage} alt="A special memory" />
+                  <img
+                    src={closingImage}
+                    alt="A special memory"
+                    style={{
+                      width: '160px',
+                      height: '160px',
+                      objectFit: 'cover',
+                      borderRadius: '50%',
+                      margin: '0 auto',
+                      display: 'block',
+                      border: '4px solid white',
+                      boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
+                    }}
+                  />
                 </motion.figure>
               ) : null}
 

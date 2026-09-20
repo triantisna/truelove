@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useEffect } from 'react';
 import Reveal from '@/components/motion/Reveal';
 import TiltCard from '@/components/motion/TiltCard';
 import GlowOrbs from '@/components/motion/GlowOrbs';
@@ -18,6 +18,17 @@ export default function HomePage() {
   const [packageId, setPackageId] = useState(packages[0]?.id ?? '');
   const [submitting, setSubmitting] = useState(false);
   const [orderError, setOrderError] = useState('');
+
+  // Menangkap parameter dari URL (misal: /?occasion=birthday)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const occasionFromUrl = params.get('occasion');
+
+    // Kalau ada parameter dan cocok dengan list kategori kita, set otomatis!
+    if (occasionFromUrl && categories.some((c) => c.slug === occasionFromUrl)) {
+      setOccasion(occasionFromUrl as OccasionSlug);
+    }
+  }, []);
 
   async function handleOrder(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -110,14 +121,20 @@ export default function HomePage() {
         </Reveal>
         <div className="category-grid">
           {categories.map((item) => (
-            <Reveal key={item.slug}>
-              <TiltCard className="category-card">
-                <span>{item.emoji}</span>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <div className="card-action">Eksplorasi Desain ➔</div>
-              </TiltCard>
-            </Reveal>
+            <Link
+              href={`/explore/${item.slug}`}
+              key={item.slug}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <Reveal>
+                <TiltCard className="category-card">
+                  <span>{item.emoji}</span>
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  <div className="card-action">Eksplorasi Desain ➔</div>
+                </TiltCard>
+              </Reveal>
+            </Link>
           ))}
         </div>
       </section>
