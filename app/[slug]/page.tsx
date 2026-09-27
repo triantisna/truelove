@@ -19,16 +19,15 @@ export async function generateMetadata({
     };
   }
 
-  // Kita casting ke tipe record yang aman
   const content = (website.content as Record<string, any>) || {};
 
-  // 1. Ambil Judul (Prioritas: heroTitle > title > default)
+  // 1. Ambil Judul
   const title =
     content.heroTitle ||
     website.title ||
     `Kejutan Spesial untuk ${website.receiverName || 'Kamu'}`;
 
-  // 2. Ambil Deskripsi (Ambil max 110 karakter dari pesan)
+  // 2. Ambil Deskripsi
   let description =
     content.mainMessage ||
     website.message ||
@@ -37,8 +36,9 @@ export async function generateMetadata({
     description = description.substring(0, 107) + '...';
   }
 
-  // 3. Ambil Gambar Thumbnail (Prioritas: Data Media terbaru > Gambar Legacy lama > Default Amplop)
-  let imageUrl = 'https://truelove-kappa.vercel.app//default-og.jpg'; // Kita kasih default jaga-jaga
+  // 3. Ambil Gambar (Fix Double Slash)
+  let imageUrl = 'https://truelove-kappa.vercel.app/default-og.jpg';
+
   if (website.media && website.media.length > 0) {
     const imageMedia = website.media.find((m) => m.type === 'image');
     if (imageMedia?.url) imageUrl = imageMedia.url;
@@ -51,14 +51,25 @@ export async function generateMetadata({
     imageUrl = content.heroImage.url;
   }
 
+  // 👇 TRIK CLOUDINARY: Paksa resize gambar biar ukurannya disukai WhatsApp (1200x630, size kecil)
+  if (imageUrl.includes('cloudinary.com') && imageUrl.includes('/upload/')) {
+    // Menghapus parameter format yang mungkin udah ada, ganti dengan settingan OG
+    imageUrl = imageUrl.replace(
+      /\/upload\/(v\d+\/)?(?:[a-zA-Z0-9_,-]+\/)?/,
+      '/upload/w_1200,h_630,c_fill,q_80,f_jpg/',
+    );
+  }
+
+  // Pastikan URL bersih dari double slash
+  const pageUrl = `https://truelove-kappa.vercel.app/${slug}`;
+
   return {
     title,
     description,
     openGraph: {
       title,
       description,
-      // Nanti kalau domain udah beli, ganti "truelove.id" ke domain asli
-      url: `https://truelove-kappa.vercel.app//${slug}`,
+      url: pageUrl,
       siteName: 'TRUELOVE Digital Gifts',
       images: [
         {
@@ -76,6 +87,8 @@ export async function generateMetadata({
       description,
       images: [imageUrl],
     },
+    // 👇 Tambahan metadataBase sangat disarankan oleh Next.js untuk Vercel
+    metadataBase: new URL('https://truelove-kappa.vercel.app'),
   };
 }
 
