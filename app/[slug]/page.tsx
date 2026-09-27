@@ -38,7 +38,7 @@ export async function generateMetadata({
   }
 
   // 3. Ambil Gambar Thumbnail (Prioritas: Data Media terbaru > Gambar Legacy lama > Default Amplop)
-  let imageUrl = 'https://truelove.id/default-og.jpg'; // Kita kasih default jaga-jaga
+  let imageUrl = 'https://truelove-kappa.vercel.app//default-og.jpg'; // Kita kasih default jaga-jaga
   if (website.media && website.media.length > 0) {
     const imageMedia = website.media.find((m) => m.type === 'image');
     if (imageMedia?.url) imageUrl = imageMedia.url;
@@ -58,7 +58,7 @@ export async function generateMetadata({
       title,
       description,
       // Nanti kalau domain udah beli, ganti "truelove.id" ke domain asli
-      url: `https://truelove.id/${slug}`,
+      url: `https://truelove-kappa.vercel.app//${slug}`,
       siteName: 'TRUELOVE Digital Gifts',
       images: [
         {
