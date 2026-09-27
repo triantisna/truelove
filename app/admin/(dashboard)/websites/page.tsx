@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { listWebsites } from '@/lib/websites';
-// 1. IMPORT KOMPONEN BARU DI SINI
 import QRModalAction from '@/components/admin/QRModalAction';
+import DeleteWebsiteAction from '@/components/admin/DeleteWebsiteAction';
 
 export const dynamic = 'force-dynamic';
 
@@ -65,6 +65,7 @@ export default async function WebsitesPage() {
                     (Draft)
                   </span>
                 )}
+                <DeleteWebsiteAction id={site.id} slug={site.slug} />
               </span>
             </div>
           ))}

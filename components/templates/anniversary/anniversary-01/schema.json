@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "key": "unlockDate",
+      "label": "Tanggal & Waktu Buka (Countdown)",
+      "type": "date",
+      "required": true,
+      "description": "Website akan terkunci dan menampilkan countdown hingga waktu ini."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Pasangan (Penerima)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "heroTitle",
+      "label": "Judul Utama (Hero)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Happy 3rd Anniversary, My Love"
+    },
+    {
+      "key": "heroImage",
+      "label": "Foto Utama (Hero Arch)",
+      "type": "media",
+      "required": true
+    },
+    {
+      "key": "timeline",
+      "label": "Timeline Perjalanan (Max 3-4 Momen)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Upload foto momen. Tulis Caption dengan format: TANGGAL | CERITA (Contoh: 12 Feb 2023 | Pertama kali kita ketemu di kafe itu)."
+    },
+    {
+      "key": "mainMessage",
+      "label": "Surat Cinta (Deep Confession)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tuliskan pesan terdalam untuk pasanganmu."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Memori",
+      "type": "media",
+      "multiple": true,
+      "required": false
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

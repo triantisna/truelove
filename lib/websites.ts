@@ -381,7 +381,7 @@ function extractMedia(content: Record<string, JsonValue>): {
       continue;
     }
 
-    delete contentWithoutMedia[fieldKey];
+    // delete contentWithoutMedia[fieldKey];
 
     values.forEach((item, index) => {
       media.push({
@@ -499,9 +499,7 @@ export async function updateWebsite(
   }
 
   const existing = await prisma.website.findUnique({
-    where: {
-      id,
-    },
+    where: { id },
   });
 
   if (!existing) {
@@ -510,15 +508,11 @@ export async function updateWebsite(
 
   const [template, packageRecord] = await Promise.all([
     prisma.template.findUnique({
-      where: {
-        key: input.templateId,
-      },
+      where: { key: input.templateId },
     }),
 
     prisma.package.findUnique({
-      where: {
-        key: input.packageId,
-      },
+      where: { key: input.packageId },
     }),
   ]);
 
@@ -536,38 +530,55 @@ export async function updateWebsite(
     published: 'PUBLISHED',
   } as const;
 
-  const content = buildWebsiteContent(input);
+  // 👇 INI YANG KETINGGALAN! Kita ekstrak medianya dulu seperti di fungsi create
+  const { content: contentWithoutMedia, media } = extractMedia(
+    input.content ?? {},
+  );
+
+  // Lalu gabungkan sisa contentnya
+  const content = buildWebsiteContent({
+    ...input,
+    content: contentWithoutMedia,
+  });
 
   const shouldPublish = input.status === 'published';
 
+  // Eksekusi update menggunakan Prisma Transaction biar aman
   const row = await prisma.website.update({
-    where: {
-      id,
-    },
-
+    where: { id },
     data: {
       slug: input.slug,
-
       templateId: template.id,
-
       packageId: packageRecord.id,
-
       musicId: input.musicId || null,
-
       content: content as Prisma.InputJsonValue,
-
       status: statusMap[input.status],
-
       publishedAt: shouldPublish ? (existing.publishedAt ?? new Date()) : null,
+
+      // 👇 INI LOGIKA UNTUK MENYIMPAN MEDIA SAAT EDIT
+      media: {
+        // 1. Hapus semua catatan media lama di database untuk website ini
+        deleteMany: {},
+        // 2. Masukkan ulang media yang baru (kalau ada)
+        ...(media.length > 0
+          ? {
+              create: media.map((item) => ({
+                fieldKey: item.fieldKey,
+                type: getMediaType(item.resourceType),
+                url: item.url,
+                publicId: item.publicId,
+                caption: item.caption,
+                sortOrder: item.sortOrder,
+              })),
+            }
+          : {}),
+      },
     },
 
     include: {
       template: true,
-
       package: true,
-
       music: true,
-
       media: {
         orderBy: {
           sortOrder: 'asc',
@@ -577,4 +588,17 @@ export async function updateWebsite(
   });
 
   return toWebsiteRecord(row);
+}
+
+export async function deleteWebsite(id: string) {
+  if (!prisma) {
+    throw new Error('DATABASE_NOT_CONFIGURED');
+  }
+
+  // Berkat onDelete: Cascade di schema.prisma,
+  // menghapus Website otomatis menghapus baris di tabel WebsiteMedia dan Order.
+  const deleted = await prisma.website.delete({
+    where: { id },
+  });
+  return deleted;
 }

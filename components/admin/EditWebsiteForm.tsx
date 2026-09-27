@@ -15,9 +15,7 @@ import type { WebsiteRecord } from '@/types/website';
 
 type SaveState = {
   type: 'idle' | 'success' | 'error';
-
   message: string;
-
   url?: string;
 };
 
@@ -29,22 +27,14 @@ type Props = {
 
 export default function EditWebsiteForm({ website }: Props) {
   const [templateId, setTemplateId] = useState(website.templateId);
-
   const [packageId, setPackageId] = useState(website.packageId);
-
   const [slug, setSlug] = useState(website.slug);
-
   const [content, setContent] = useState<Record<string, ContentValue>>({
     sender_name: website.senderName,
-
     receiver_name: website.receiverName,
-
     title: website.title,
-
     message: website.message,
-
     event_date: website.eventDate ?? '',
-
     music: '',
 
     ...(website.content as Record<string, ContentValue>),

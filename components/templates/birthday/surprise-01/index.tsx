@@ -25,6 +25,19 @@ function getGallery(content: Record<string, any>) {
   );
 }
 
+function getImage(content: Record<string, any>, key: string): string {
+  const value = content[key];
+  if (!value) return '';
+
+  // Kalau formatnya masih string lama
+  if (typeof value === 'string') return value;
+
+  // Kalau formatnya object dari Cloudinary/WebsiteMedia (yang bener)
+  if (typeof value === 'object' && value.url) return value.url;
+
+  return '';
+}
+
 export default function BirthdaySurprise01({
   website,
 }: {
@@ -56,8 +69,8 @@ export default function BirthdaySurprise01({
   const wishes = [wish1, wish2, wish3].filter((w) => w.trim() !== '');
 
   const closingText = getString(content, 'closingText', '');
-  const heroImage = getString(content, 'heroImage');
-  const closingImage = getString(content, 'closingImage');
+  const heroImage = getImage(content, 'heroImage');
+  const closingImage = getImage(content, 'closingImage');
   const gallery = getGallery(content);
 
   // Fungsi saat layar diklik

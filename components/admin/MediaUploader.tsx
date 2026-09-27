@@ -6,6 +6,7 @@ export type UploadedMedia = {
   url: string;
   publicId: string;
   resourceType: string;
+  caption?: string; // 👇 Tambahan: Menyimpan teks caption/tanggal
   width?: number;
   height?: number;
   format?: string;
@@ -114,6 +115,7 @@ export default function MediaUploader({
             typeof result.resource_type === 'string'
               ? result.resource_type
               : 'image',
+          caption: '', // Default caption kosong saat baru upload
           width: typeof result.width === 'number' ? result.width : undefined,
           height: typeof result.height === 'number' ? result.height : undefined,
           format: typeof result.format === 'string' ? result.format : undefined,
@@ -123,7 +125,6 @@ export default function MediaUploader({
 
       if (multiple) {
         const existing = Array.isArray(value) ? value : [];
-
         onChange([...existing, ...uploaded]);
       } else {
         onChange(uploaded[0] ?? null);
@@ -144,13 +145,26 @@ export default function MediaUploader({
   function removeFile(index: number) {
     if (multiple) {
       const current = Array.isArray(value) ? value : [];
-
       onChange(current.filter((_, itemIndex) => itemIndex !== index));
-
       return;
     }
-
     onChange(null);
+  }
+
+  // 👇 Tambahan: Fungsi untuk mengupdate caption/text
+  function updateCaption(index: number, newCaption: string) {
+    if (multiple) {
+      const current = Array.isArray(value) ? [...value] : [];
+      if (current[index]) {
+        current[index] = { ...current[index], caption: newCaption };
+        onChange(current);
+      }
+    } else {
+      const current = value as UploadedMedia;
+      if (current) {
+        onChange({ ...current, caption: newCaption });
+      }
+    }
   }
 
   return (
@@ -187,20 +201,65 @@ export default function MediaUploader({
       {files.length > 0 ? (
         <div className="media-uploader-grid">
           {files.map((item, index) => (
+            // 👇 Kita styling dikit kontainernya biar muat input teks
             <div
               key={`${item.publicId}-${index}`}
               className="media-uploader-item"
+              style={{
+                height: 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px',
+                paddingBottom: '8px',
+                overflow: 'visible',
+              }}
             >
-              <img src={item.url} alt={`Uploaded media ${index + 1}`} />
-
-              <button
-                type="button"
-                className="media-uploader-remove"
-                aria-label={`Remove image ${index + 1}`}
-                onClick={() => removeFile(index)}
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '1/1',
+                }}
               >
-                ×
-              </button>
+                <img
+                  src={item.url}
+                  alt={`Uploaded media ${index + 1}`}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                  }}
+                />
+                <button
+                  type="button"
+                  className="media-uploader-remove"
+                  aria-label={`Remove image ${index + 1}`}
+                  onClick={() => removeFile(index)}
+                  style={{ zIndex: 10 }}
+                >
+                  ×
+                </button>
+              </div>
+
+              {/* 👇 INI DIA: Form input khusus untuk Caption/Tanggal */}
+              <input
+                type="text"
+                placeholder={
+                  multiple ? 'Tulis caption...' : 'Caption gambar...'
+                }
+                value={item.caption || ''}
+                onChange={(e) => updateCaption(index, e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '6px 8px',
+                  fontSize: '0.75rem',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '6px',
+                  outline: 'none',
+                  background: '#fff',
+                }}
+              />
             </div>
           ))}
         </div>

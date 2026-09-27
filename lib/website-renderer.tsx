@@ -1,5 +1,5 @@
 import LoveLetter01 from '@/components/templates/love-letter/dear-you';
-import Anniversary01 from '@/components/templates/anniversary/Anniversary01';
+import Anniversary01 from '@/components/templates/anniversary/anniversary-01';
 import OurStory01 from '@/components/templates/story/OurStory01';
 import BirthdaySurprise01 from '@/components/templates/birthday/surprise-01';
 

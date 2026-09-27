@@ -1,4 +1,5 @@
-export type WebsiteStatus = "draft" | "preview" | "published" | "expired" | "archived";
+export type WebsiteStatus =
+  'draft' | 'preview' | 'published' | 'expired' | 'archived';
 
 export interface WebsiteRecord {
   id: string;
@@ -25,8 +26,9 @@ export interface WebsiteRecord {
 export interface WebsiteMedia {
   id: string;
   websiteId: string;
-  type: "image" | "video" | "audio";
+  type: 'image' | 'video' | 'audio';
   url: string;
+  publicId?: string | null;
   caption?: string;
   sortOrder: number;
 }
