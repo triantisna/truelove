@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic';
-
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { WebsiteRenderer } from '@/lib/website-renderer';
@@ -36,24 +34,30 @@ export async function generateMetadata({
     description = description.substring(0, 107) + '...';
   }
 
-  // 3. Ambil Gambar (Fix Double Slash)
+  // 3. Ambil Gambar Thumbnail (Prioritas: heroImage > Gambar pertama di database > Default)
   let imageUrl = 'https://truelove-kappa.vercel.app/default-og.jpg';
 
-  if (website.media && website.media.length > 0) {
-    const imageMedia = website.media.find((m) => m.type === 'image');
-    if (imageMedia?.url) imageUrl = imageMedia.url;
-  } else if (
+  // 1️⃣ PRIORITAS UTAMA: Cari foto yang spesifik dari input heroImage
+  if (
     typeof content.heroImage === 'string' &&
     content.heroImage.startsWith('http')
   ) {
     imageUrl = content.heroImage;
-  } else if (content.heroImage?.url) {
+  } else if (
+    content.heroImage &&
+    typeof content.heroImage === 'object' &&
+    content.heroImage.url
+  ) {
     imageUrl = content.heroImage.url;
   }
+  // 2️⃣ BACKUP: Kalau heroImage nggak ada (misal di template lain), baru comot foto pertama dari media
+  else if (website.media && website.media.length > 0) {
+    const imageMedia = website.media.find((m) => m.type === 'image');
+    if (imageMedia?.url) imageUrl = imageMedia.url;
+  }
 
-  // 👇 TRIK CLOUDINARY: Paksa resize gambar biar ukurannya disukai WhatsApp (1200x630, size kecil)
+  // Trik Cloudinary untuk kompresi Open Graph
   if (imageUrl.includes('cloudinary.com') && imageUrl.includes('/upload/')) {
-    // Menghapus parameter format yang mungkin udah ada, ganti dengan settingan OG
     imageUrl = imageUrl.replace(
       /\/upload\/(v\d+\/)?(?:[a-zA-Z0-9_,-]+\/)?/,
       '/upload/w_1200,h_630,c_fill,q_80,f_jpg/',
