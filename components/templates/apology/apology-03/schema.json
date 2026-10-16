@@ -1,0 +1,104 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "heroTitle",
+      "label": "Judul Pembuka",
+      "type": "text",
+      "required": true,
+      "placeholder": "Okay, hear me out..."
+    },
+    {
+      "key": "heroImage",
+      "label": "Foto Pembuka (Gaya Melas/Lucu)",
+      "type": "media",
+      "required": true,
+      "description": "Bisa foto muka melas atau foto lucu."
+    },
+    {
+      "key": "introMessage",
+      "label": "Pesan Pengantar",
+      "type": "textarea",
+      "required": true,
+      "description": "Pesan singkat mengakui kesalahan sebelum masuk ke laporan."
+    },
+    {
+      "key": "theCrime",
+      "label": "The Crime (Kesalahannya Apa)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Ketiduran pas kamu lagi cerita."
+    },
+    {
+      "key": "myExcuse",
+      "label": "My Excuse (Pembelaan Konyol)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Gravitasi kasur tiba-tiba menguat."
+    },
+    {
+      "key": "theVerdict",
+      "label": "The Verdict (Vonis)",
+      "type": "text",
+      "required": true,
+      "placeholder": "100% Guilty."
+    },
+    {
+      "key": "peaceOfferings",
+      "label": "Sogokan Perdamaian (Peace Offerings)",
+      "type": "textarea",
+      "required": true,
+      "description": "Janji-janji manis sebagai ganti rugi. PENTING: Pisahkan dengan Enter."
+    },
+    {
+      "key": "questionText",
+      "label": "Pertanyaan Jebakan",
+      "type": "text",
+      "required": true,
+      "placeholder": "So... are we good now?"
+    },
+    {
+      "key": "yesButtonText",
+      "label": "Teks Tombol YES",
+      "type": "text",
+      "required": true,
+      "placeholder": "Iya, dimaafin!"
+    },
+    {
+      "key": "noButtonTexts",
+      "label": "Teks Tombol NO (Yang akan berubah-ubah)",
+      "type": "textarea",
+      "required": true,
+      "description": "Teks yang ganti-gantian muncul saat tombol NO kabur. PENTING: Pisahkan dengan Enter."
+    },
+    {
+      "key": "successImage",
+      "label": "Foto Perayaan (Setelah klik YES)",
+      "type": "media",
+      "required": true
+    },
+    {
+      "key": "successMessage",
+      "label": "Pesan Setelah Dimaafkan",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music (Opsional)",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

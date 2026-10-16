@@ -1,0 +1,71 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "ambientImage",
+      "label": "Foto Latar Belakang (Ambient Blur)",
+      "type": "media",
+      "required": true,
+      "description": "Pilih satu foto kenangan. Foto ini akan di-blur secara ekstrem untuk menciptakan warna suasana (ambient light) pada background."
+    },
+    {
+      "key": "openingChat",
+      "label": "1. Pesan Sapaan (A Quiet Moment)",
+      "type": "textarea",
+      "required": true,
+      "description": "Sapaan pembuka yang tenang. (Contoh: Hey, ada sesuatu yang ingin aku sampaikan...)"
+    },
+    {
+      "key": "intentionChat",
+      "label": "2. Niat Percakapan (I'm Not Here to Argue)",
+      "type": "textarea",
+      "required": true,
+      "description": "Jelaskan bahwa kamu tidak sedang mengajak berdebat atau mencari pembenaran."
+    },
+    {
+      "key": "reflectionCards",
+      "label": "3. Refleksi (Looking Back)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tuliskan apa yang terjadi, apa yang kamu lewatkan, dan apa yang kamu sadari. PENTING: Pisahkan setiap poin dengan Enter (Baris Baru) agar menjadi kartu-kartu percakapan yang terpisah."
+    },
+    {
+      "key": "transitionImage",
+      "label": "Foto Transisi (Opsional)",
+      "type": "media",
+      "required": false,
+      "description": "Satu foto yang jelas sebelum masuk ke surat utama. Akan ditampilkan dengan filter sedikit pudar/desaturated."
+    },
+    {
+      "key": "mainLetter",
+      "label": "4. Surat Utama (What I Wish I Had Said)",
+      "type": "textarea",
+      "required": true,
+      "description": "Bagian paling personal. Layout akan berubah dari chat menjadi surat terbuka."
+    },
+    {
+      "key": "closingInvite",
+      "label": "5. Undangan Terbuka (When You're Ready)",
+      "type": "textarea",
+      "required": true,
+      "description": "Penutup tanpa tekanan atau tuntutan untuk segera membalas."
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music (Opsional)",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

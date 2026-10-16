@@ -1,0 +1,71 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Pasangan (Penerima)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "heroTitle",
+      "label": "Judul Kejutan (Tampil setelah balon pecah)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Happy Anniversary, Sayang!"
+    },
+    {
+      "key": "heroImage",
+      "label": "Foto Utama (Scrapbook Cover)",
+      "type": "media",
+      "required": true,
+      "description": "Foto pertama yang muncul setelah letupan confetti."
+    },
+    {
+      "key": "funStats",
+      "label": "Our Crazy Stats (Statistik Seru)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis momen seru kalian. Format: ANGKA/KATA | KETERANGAN. Pisahkan dengan Enter. (Contoh: 127 | hugs 🫂)"
+    },
+    {
+      "key": "gallery",
+      "label": "Messy Collage (Galeri Acak)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Pilih foto-foto seru/aib. Akan disusun bertumpuk ala kolase stiker."
+    },
+    {
+      "key": "punchlineText",
+      "label": "Teks Transisi Dramatis",
+      "type": "text",
+      "required": false,
+      "placeholder": "And somehow... I'd still choose all of it again."
+    },
+    {
+      "key": "mainMessage",
+      "label": "Surat Cinta (Kertas Buku Tulis)",
+      "type": "textarea",
+      "required": true,
+      "description": "Pesan dari hati yang paling dalam."
+    },
+    {
+      "key": "closingImage",
+      "label": "Foto Penutup (Polaroid Kecil)",
+      "type": "media",
+      "required": false
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

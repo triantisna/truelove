@@ -1,0 +1,79 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Pasangan (Penerima)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "heroTitle",
+      "label": "Judul Pembuka (Portal)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Welcome to Our Little Universe"
+    },
+    {
+      "key": "heroImage",
+      "label": "Foto Pertama (Gaya Polaroid)",
+      "type": "media",
+      "required": true,
+      "description": "Momen pertama kali cerita kalian dimulai."
+    },
+    {
+      "key": "storyBeganDate",
+      "label": "Caption Foto Pertama",
+      "type": "text",
+      "required": false,
+      "placeholder": "The day our story began..."
+    },
+    {
+      "key": "gallery",
+      "label": "Our Little Moments (Galeri)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Pilih beberapa foto. Akan ditampilkan dalam bentuk slider interaktif."
+    },
+    {
+      "key": "thingsILove",
+      "label": "Things I Love About You (Kartu Interaktif)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis 3-6 hal yang paling kamu suka darinya. PENTING: Pisahkan setiap poin dengan Enter (Baris Baru)."
+    },
+    {
+      "key": "mainMessage",
+      "label": "A Letter For You (Surat Utama)",
+      "type": "textarea",
+      "required": true,
+      "description": "Surat panjang dari hati ke hati."
+    },
+    {
+      "key": "closingImage",
+      "label": "Foto Penutup",
+      "type": "media",
+      "required": true,
+      "description": "Akan ditampilkan dengan frame lingkaran yang estetik."
+    },
+    {
+      "key": "closingText",
+      "label": "Teks Penutup",
+      "type": "text",
+      "required": false,
+      "placeholder": "To many more trips around the sun together."
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

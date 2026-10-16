@@ -1,0 +1,72 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "envelopeQuote",
+      "label": "Pesan Singkat di Sampul Amplop",
+      "type": "text",
+      "required": true,
+      "placeholder": "For you, with sincerity."
+    },
+    {
+      "key": "openingStatement",
+      "label": "1. Kalimat Pembuka (Before Anything Else)",
+      "type": "textarea",
+      "required": true,
+      "description": "Pengakuan awal tanpa membela diri."
+    },
+    {
+      "key": "acknowledgment",
+      "label": "2. Pengakuan Dampak (I Know I Hurt You)",
+      "type": "textarea",
+      "required": true,
+      "description": "Akui apa yang terjadi dan bagaimana itu menyakiti perasaannya."
+    },
+    {
+      "key": "reflections",
+      "label": "3. Refleksi (What I Should Have Done)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tuliskan hal yang seharusnya kamu lakukan/pahami. PENTING: Pisahkan tiap poin dengan Enter (Baris Baru) agar menjadi kartu."
+    },
+    {
+      "key": "mainLetter",
+      "label": "4. Surat Utama (A Letter, Just For You)",
+      "type": "textarea",
+      "required": true,
+      "description": "Surat panjang dari hati ke hati."
+    },
+    {
+      "key": "commitments",
+      "label": "5. Komitmen (What I Want To Change)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tuliskan perubahan nyata yang akan kamu lakukan. PENTING: Pisahkan tiap poin dengan Enter (Baris Baru)."
+    },
+    {
+      "key": "closingText",
+      "label": "6. Kalimat Penutup (Take Your Time)",
+      "type": "textarea",
+      "required": true,
+      "description": "Berikan dia ruang dan waktu, jangan menuntut jawaban."
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Gunakan instrumen yang sangat tenang jika ingin menambahkan musik, atau biarkan kosong untuk keheningan."
+    }
+  ]
+}
