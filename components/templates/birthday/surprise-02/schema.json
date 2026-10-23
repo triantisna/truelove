@@ -1,0 +1,71 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Birthday Star)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "introMessage",
+      "label": "Pesan Pembuka (Sebelum Kotak Dibuka)",
+      "type": "textarea",
+      "required": true,
+      "description": "Pengantar singkat yang manis sebelum penerima membuka kotak hadiah."
+    },
+    {
+      "key": "birthdayWish",
+      "label": "Ucapan Utama (The First Surprise)",
+      "type": "textarea",
+      "required": true,
+      "description": "Ucapan selamat ulang tahun yang tulus setelah kotak terbuka."
+    },
+    {
+      "key": "memoryImage",
+      "label": "Foto Kenangan (A Little Memory)",
+      "type": "media",
+      "required": true,
+      "description": "Satu foto spesial yang bermakna."
+    },
+    {
+      "key": "memoryCaption",
+      "label": "Caption Foto Kenangan",
+      "type": "textarea",
+      "required": true,
+      "description": "Cerita di balik foto tersebut."
+    },
+    {
+      "key": "personalLetter",
+      "label": "Surat Personal (A Gift of Words)",
+      "type": "textarea",
+      "required": true,
+      "description": "Pesan dari hati ke hati untuk merayakan hari kelahirannya."
+    },
+    {
+      "key": "moreThings",
+      "label": "Hal-Hal Spesial (More Little Things)",
+      "type": "textarea",
+      "required": true,
+      "description": "Harapan atau daftar hal kecil yang disukai. PENTING: Pisahkan setiap poin dengan Enter (Baris Baru)."
+    },
+    {
+      "key": "closingMessage",
+      "label": "Pesan Penutup (Your Day, Your Way)",
+      "type": "textarea",
+      "required": true,
+      "description": "Doa dan penutup yang hangat."
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music (Opsional)",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

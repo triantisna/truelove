@@ -1,0 +1,57 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Birthday Star)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "heroTitle",
+      "label": "Judul Utama (Hero Title)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Reasons You're Special"
+    },
+    {
+      "key": "introMessage",
+      "label": "1. Pesan Pembuka (A Few Things About You)",
+      "type": "textarea",
+      "required": true,
+      "description": "Pengantar hangat sebelum penerima membuka satu per satu alasan mengapa ia istimewa."
+    },
+    {
+      "key": "reasonsList",
+      "label": "2. Daftar Alasan / Kartu Apresiasi",
+      "type": "textarea",
+      "required": true,
+      "description": "Tuliskan alasan-alasan mengapa ia istimewa. Format: Gunakan tanda garis \"|\" untuk memisahkan Judul dan Isi. Contoh: Judul Kartu | Isi pesan yang mendalam. Pisahkan setiap kartu dengan Enter (Baris Baru)."
+    },
+    {
+      "key": "affirmationsList",
+      "label": "3. Afirmasi (Things I Hope You Never Forget)",
+      "type": "textarea",
+      "required": true,
+      "description": "Pesan pengingat positif. PENTING: Pisahkan setiap poin afirmasi dengan Enter (Baris Baru)."
+    },
+    {
+      "key": "birthdayWish",
+      "label": "4. Harapan Ulang Tahun (My Birthday Wish)",
+      "type": "textarea",
+      "required": true,
+      "description": "Doa dan harapan terbaik untuk tahun baru kehidupannya."
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music (Opsional)",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

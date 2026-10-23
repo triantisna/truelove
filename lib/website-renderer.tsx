@@ -2,6 +2,10 @@ import LoveLetter01 from '@/components/templates/love-letter/dear-you';
 import Anniversary01 from '@/components/templates/anniversary/anniversary-01';
 import OurStory01 from '@/components/templates/story/OurStory01';
 import BirthdaySurprise01 from '@/components/templates/birthday/surprise-01';
+import BirthdayBox from '@/components/templates/birthday/surprise-02';
+import TodayIsYours from '@/components/templates/birthday/surprise-03';
+import ReasonsYoureSpecial from '@/components/templates/birthday/surprise-04';
+import MemoryVault from '@/components/templates/birthday/surprise-05';
 import Anniversary02 from '@/components/templates/anniversary/anniversary-02';
 
 import type { WebsiteRecord } from '@/types/website';
@@ -15,6 +19,10 @@ const rendererMap = {
   'anniversary-01': Anniversary01,
   'our-story-01': OurStory01,
   'birthday-surprise-01': BirthdaySurprise01,
+  'birthday-surprise-02': BirthdayBox,
+  'birthday-surprise-03': TodayIsYours,
+  'birthday-surprise-04': ReasonsYoureSpecial,
+  'birthday-surprise-05': MemoryVault,
   'anniversary-02': Anniversary02,
   'anniversary-03': Anniversary03,
   'apology-01': Apology01,

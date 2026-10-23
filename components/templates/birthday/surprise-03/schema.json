@@ -1,0 +1,93 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Birthday Star)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "heroTitle",
+      "label": "Judul Perayaan (Hero Heading)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Today Is Yours"
+    },
+    {
+      "key": "heroSubtitle",
+      "label": "Sub-judul Perayaan",
+      "type": "text",
+      "required": true,
+      "placeholder": "Hari ini, dunia merayakan kehadiranmu."
+    },
+    {
+      "key": "introMessage",
+      "label": "1. Pesan Pengantar (The Celebration Begins)",
+      "type": "textarea",
+      "required": true,
+      "description": "Sapaan dan pengantar bahwa hari ini adalah hari spesialnya."
+    },
+    {
+      "key": "mainWish",
+      "label": "2. Ucapan Utama (It's Your Day!)",
+      "type": "textarea",
+      "required": true,
+      "description": "Ucapan selamat ulang tahun yang penuh kehangatan."
+    },
+    {
+      "key": "wishText",
+      "label": "3. Pesan Tiup Lilin (Make a Wish)",
+      "type": "textarea",
+      "required": true,
+      "description": "Pesan reflektif saat lilin dipadamkan."
+    },
+    {
+      "key": "reflectionMessage",
+      "label": "4. Apresiasi Perjalanan (A Year Worth Celebrating)",
+      "type": "textarea",
+      "required": true,
+      "description": "Pesan penghargaan atas kerja keras dan perjalanannya setahun ke belakang."
+    },
+    {
+      "key": "blessingsList",
+      "label": "5. Harapan & Doa (Birthday Blessings)",
+      "type": "textarea",
+      "required": true,
+      "description": "Daftar doa atau harapan kecil. PENTING: Pisahkan setiap poin dengan Enter (Baris Baru)."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Perayaan (Opsional)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Pilih beberapa foto kenangan terbaik bersama."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Galeri (Opsional)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tuliskan caption untuk setiap foto di galeri. PENTING: Pisahkan setiap caption dengan Enter (Baris Baru)."
+    },
+    {
+      "key": "closingMessage",
+      "label": "6. Pesan Penutup",
+      "type": "textarea",
+      "required": true,
+      "description": "Ucapan penutup perayaan."
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music (Opsional)",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

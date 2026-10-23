@@ -1,0 +1,88 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Birthday Star)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "passcode",
+      "label": "Kode Rahasia / Passcode Brankas",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: 1024 atau tanggal jadian/lahir",
+      "description": "Kode angka atau kata rahasia yang harus dimasukkan penerima untuk membuka kapsul waktu."
+    },
+    {
+      "key": "passcodeHint",
+      "label": "Petunjuk Kode (Passcode Hint)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tanggal pertama kita kenalan...",
+      "description": "Petunjuk opsional jika penerima lupa kodenya."
+    },
+    {
+      "key": "vaultTitle",
+      "label": "Judul Kapsul Waktu",
+      "type": "text",
+      "required": true,
+      "placeholder": "The Memory Vault"
+    },
+    {
+      "key": "introMessage",
+      "label": "1. Pesan Pembuka (Sebelum Brankas Dibuka)",
+      "type": "textarea",
+      "required": true,
+      "description": "Pesan misterius atau sambutan hangat sebelum mereka memasukkan kode."
+    },
+    {
+      "key": "chapter1",
+      "label": "2. Bab 1: The Beginning / Awal Cerita",
+      "type": "textarea",
+      "required": true,
+      "description": "Cerita atau kenangan saat pertama kali dekat atau awal mula perjalanan."
+    },
+    {
+      "key": "chapter2",
+      "label": "3. Bab 2: Inside Jokes & Little Secrets",
+      "type": "textarea",
+      "required": true,
+      "description": "Hal-hal konyol, candaan internal, atau rahasia kecil berdua."
+    },
+    {
+      "key": "vaultImages",
+      "label": "Galeri Kapsul Waktu (Foto-foto Kenangan)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Pilih beberapa foto terbaik yang tersimpan di dalam brankas."
+    },
+    {
+      "key": "futurePromises",
+      "label": "4. Bab 3: Future Letters (Harapan ke Depan)",
+      "type": "textarea",
+      "required": true,
+      "description": "Janji, harapan, atau hal yang ingin digapai bersama di tahun-tahun berikutnya. PENTING: Pisahkan dengan Enter."
+    },
+    {
+      "key": "closingMessage",
+      "label": "5. Pesan Penutup Kapsul Waktu",
+      "type": "textarea",
+      "required": true,
+      "description": "Doa dan penutup yang menyentuh hati."
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Signature)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music (Opsional)",
+      "type": "music",
+      "required": false
+    }
+  ]
+}
