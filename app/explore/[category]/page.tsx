@@ -27,6 +27,8 @@ export default function ExplorePage({
   }
 
   const activeTemplate = categoryTemplates[activeIndex];
+  // Parameter tier akan dikirim ke form order, default ke standard jika tidak ada
+  const activeTier = (activeTemplate as any)?.tier || 'standard';
 
   return (
     <>
@@ -41,7 +43,6 @@ export default function ExplorePage({
         .mobile-overlay { display: none; }
         .hamburger-btn { display: none; }
         
-        /* Gaya khusus untuk List Menu biar rapi dan anti bentrok */
         .template-list-item {
           padding: 14px 16px;
           border-radius: 12px;
@@ -52,6 +53,9 @@ export default function ExplorePage({
           transition: all 0.2s ease;
           border: 1px solid transparent;
           margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
         }
         .template-list-item:hover {
           background-color: #f9f9f9;
@@ -60,6 +64,16 @@ export default function ExplorePage({
           background-color: #fdf8f5;
           color: var(--wine, #8e354a);
           border-color: #f3ecea;
+        }
+
+        .premium-badge {
+          background: linear-gradient(135deg, #d4af37, #aa820a);
+          color: #fff;
+          font-size: 0.65rem;
+          padding: 2px 6px;
+          border-radius: 4px;
+          font-weight: bold;
+          letter-spacing: 0.5px;
         }
 
         @media (max-width: 768px) {
@@ -77,7 +91,6 @@ export default function ExplorePage({
       `}</style>
 
       <div className="explore-layout">
-        {/* Tombol Hamburger buat HP */}
         <button
           className="hamburger-btn"
           onClick={() => setIsMobileMenuOpen(true)}
@@ -96,15 +109,12 @@ export default function ExplorePage({
           </svg>
         </button>
 
-        {/* Overlay Gelap pas menu HP kebuka */}
         <div
           className={`mobile-overlay ${isMobileMenuOpen ? 'open' : ''}`}
           onClick={() => setIsMobileMenuOpen(false)}
         />
 
-        {/* SIDEBAR (MENU KIRI SIMPLE) */}
         <aside className={`explore-sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
-          {/* Header Sidebar */}
           <div
             style={{
               padding: '24px 24px 16px',
@@ -140,7 +150,6 @@ export default function ExplorePage({
             </button>
           </div>
 
-          {/* List Template */}
           <div style={{ flex: 1, padding: '0 16px', overflowY: 'auto' }}>
             {categoryTemplates.length === 0 ? (
               <p
@@ -163,16 +172,27 @@ export default function ExplorePage({
                     setIsMobileMenuOpen(false);
                   }}
                 >
-                  {template.name}
+                  <span
+                    style={{
+                      flex: 1,
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                    }}
+                  >
+                    {template.name}
+                  </span>
+                  {(template as any).tier === 'premium' && (
+                    <span className="premium-badge">PREMIUM</span>
+                  )}
                 </div>
               ))
             )}
           </div>
 
-          {/* Tombol Pesan (Tetap ada di bawah) */}
           <div style={{ padding: '24px', borderTop: '1px solid #eaeaea' }}>
             <Link
-              href={`/?occasion=${categorySlug}#order`}
+              href={`/?occasion=${categorySlug}&template=${activeTemplate?.id}&tier=${activeTier}#order`}
               className="button primary"
               style={{
                 width: '100%',
@@ -185,7 +205,6 @@ export default function ExplorePage({
           </div>
         </aside>
 
-        {/* MAIN AREA (LIVE DEMO KANAN) */}
         <main className="explore-main">
           {activeTemplate ? (
             <iframe

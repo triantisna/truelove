@@ -7,6 +7,7 @@ import TiltCard from '@/components/motion/TiltCard';
 import GlowOrbs from '@/components/motion/GlowOrbs';
 import { categories } from '@/config/categories';
 import { packages } from '@/config/packages';
+import { templates } from '@/config/templates';
 import type { OccasionSlug } from '@/types/template';
 
 const money = new Intl.NumberFormat('id-ID');
@@ -14,28 +15,47 @@ const money = new Intl.NumberFormat('id-ID');
 export default function HomePage() {
   const [name, setName] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
-  const [occasion, setOccasion] = useState(categories[0]?.slug ?? '');
+  const [occasion, setOccasion] = useState<OccasionSlug | ''>(
+    categories[0]?.slug ?? '',
+  );
   const [packageId, setPackageId] = useState(packages[0]?.id ?? '');
+  const [selectedTemplate, setSelectedTemplate] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [orderError, setOrderError] = useState('');
 
-  // Menangkap parameter dari URL (misal: /?occasion=birthday)
+  const availableTemplates = templates.filter((t) => t.category === occasion);
+  const selectedTemplateObj = templates.find((t) => t.id === selectedTemplate);
+
+  // Kalkulasi Harga Dinamis
+  const selectedPackage = packages.find((item) => item.id === packageId);
+  const basePrice = selectedPackage ? Number(selectedPackage.price) : 0;
+  const isPremiumTemplate = (selectedTemplateObj as any)?.tier === 'premium';
+  const premiumFee = isPremiumTemplate ? 20000 : 0;
+  const totalPrice = basePrice + premiumFee;
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const occasionFromUrl = params.get('occasion');
+    const templateFromUrl = params.get('template');
 
-    // Kalau ada parameter dan cocok dengan list kategori kita, set otomatis!
     if (occasionFromUrl && categories.some((c) => c.slug === occasionFromUrl)) {
       setOccasion(occasionFromUrl as OccasionSlug);
     }
+    if (templateFromUrl) {
+      setSelectedTemplate(templateFromUrl);
+    }
   }, []);
+
+  function handleOccasionChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    setOccasion(e.target.value as OccasionSlug);
+    setSelectedTemplate('');
+  }
 
   async function handleOrder(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
     setOrderError('');
 
-    const selectedPackage = packages.find((item) => item.id === packageId);
     const selectedOccasion = categories.find((item) => item.slug === occasion);
 
     if (!selectedPackage || !selectedOccasion) {
@@ -50,7 +70,7 @@ export default function HomePage() {
         customerWhatsapp: whatsapp,
         occasion: selectedOccasion.name,
         packageId: selectedPackage.id,
-        price: Number(selectedPackage.price),
+        price: totalPrice, // Mengirim total harga yang sudah ditambahkan biaya premium
       };
 
       const response = await fetch('/api/orders', {
@@ -61,7 +81,12 @@ export default function HomePage() {
 
       if (!response.ok) throw new Error('ORDER_CREATE_FAILED');
 
-      const whatsappText = `Halo admin Truelove! Saya ${name}, mau pesan paket ${selectedPackage.name} untuk acara ${selectedOccasion.name}.`;
+      const templateText = selectedTemplateObj
+        ? ` dengan desain: *${selectedTemplateObj.name}*${isPremiumTemplate ? ' (Premium)' : ''}`
+        : ' (belum menentukan desain)';
+
+      const whatsappText = `Halo admin Truelove! Saya ${name}, mau pesan paket *${selectedPackage.name}* untuk acara *${selectedOccasion.name}*${templateText}.\n\nTotal Tagihan: *Rp${money.format(totalPrice)}*.\nMohon info pembayarannya ya.`;
+
       window.open(
         `https://wa.me/6287804835801?text=${encodeURIComponent(whatsappText)}`,
         '_blank',
@@ -113,7 +138,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 1: MOMEN SPESIAL */}
       <section className="content-section">
         <Reveal>
           <p className="eyebrow">MOMEN SPESIAL</p>
@@ -139,9 +163,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 2: BENTO BOX (Cara Kerja & Paket Gabung dengan BG Beda) */}
       <section className="content-section bento-section alternate-light">
-        {/* Kiri: Cara Kerja */}
         <div className="bento-left">
           <Reveal>
             <p className="eyebrow">CARA KERJA</p>
@@ -178,7 +200,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Kanan: Paket Harga (Grid 3 Kolom) */}
         <div className="bento-right">
           <Reveal>
             <p className="eyebrow">PAKET HARGA</p>
@@ -212,7 +233,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 4: FORM PEMESANAN (Dark Wine BG) */}
+      {/* SECTION 4: FORM PEMESANAN */}
       <section id="order" className="content-section alternate">
         <Reveal>
           <p className="eyebrow">PESAN SEKARANG</p>
@@ -237,12 +258,10 @@ export default function HomePage() {
               placeholder="Contoh: 081234567890"
             />
           </label>
+
           <label>
             Pilih Acara/Momen
-            <select
-              value={occasion}
-              onChange={(e) => setOccasion(e.target.value as OccasionSlug)}
-            >
+            <select value={occasion} onChange={handleOccasionChange}>
               {categories.map((item) => (
                 <option key={item.slug} value={item.slug}>
                   {item.name}
@@ -250,8 +269,27 @@ export default function HomePage() {
               ))}
             </select>
           </label>
+
           <label>
-            Pilih Paket
+            Desain Terpilih (Opsional)
+            <select
+              value={selectedTemplate}
+              onChange={(e) => setSelectedTemplate(e.target.value)}
+            >
+              <option value="">-- Pilih Nanti / Konsultasi Dulu --</option>
+              {availableTemplates.map((t) => {
+                const isPremium = (t as any).tier === 'premium';
+                return (
+                  <option key={t.id} value={t.id}>
+                    {t.name} {isPremium ? '✨ (+20rb)' : ''}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+
+          <label>
+            Pilih Paket Dasar
             <select
               value={packageId}
               onChange={(e) => setPackageId(e.target.value)}
@@ -263,6 +301,59 @@ export default function HomePage() {
               ))}
             </select>
           </label>
+
+          {/* Kotak Rincian Harga Dinamis */}
+          <div
+            style={{
+              background: '#fff',
+              border: '1px solid #eaeaea',
+              borderRadius: '12px',
+              padding: '16px',
+              margin: '16px 0',
+              fontSize: '0.95rem',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                marginBottom: '8px',
+                color: '#555',
+              }}
+            >
+              <span>Paket Dasar ({selectedPackage?.name})</span>
+              <span>Rp{money.format(basePrice)}</span>
+            </div>
+            {isPremiumTemplate && (
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  marginBottom: '8px',
+                  color: '#d4af37',
+                  fontWeight: '500',
+                }}
+              >
+                <span>Add-on Desain Premium</span>
+                <span>+ Rp{money.format(premiumFee)}</span>
+              </div>
+            )}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                marginTop: '12px',
+                paddingTop: '12px',
+                borderTop: '1px dashed #ccc',
+                fontWeight: 'bold',
+                color: '#111',
+              }}
+            >
+              <span>Total Estimasi Pembayaran</span>
+              <span>Rp{money.format(totalPrice)}</span>
+            </div>
+          </div>
+
           {orderError && <p role="alert">{orderError}</p>}
           <button
             className="button primary"

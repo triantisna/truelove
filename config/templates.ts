@@ -7,6 +7,8 @@ import { memoryVaultConfig } from '@/components/templates/birthday/surprise-05/c
 import { anniversary01Config } from '@/components/templates/anniversary/anniversary-01/config';
 import { anniversary02Config } from '@/components/templates/anniversary/anniversary-02/config';
 import { anniversary03Config } from '@/components/templates/anniversary/anniversary-03/config';
+import { config as anniversary04Config } from '@/components/templates/anniversary/anniversary-04/config';
+import { config as anniversary05Config } from '@/components/templates/anniversary/anniversary-05/config';
 import { apology01Config } from '@/components/templates/apology/apology-01/config';
 import { apology02Config } from '@/components/templates/apology/apology-02/config';
 import { apology03Config } from '@/components/templates/apology/apology-03/config';
@@ -23,6 +25,8 @@ export const templates: TemplateDefinition[] = [
   anniversary01Config,
   anniversary02Config,
   anniversary03Config,
+  anniversary04Config,
+  anniversary05Config,
   apology01Config,
   apology02Config,
   apology03Config,

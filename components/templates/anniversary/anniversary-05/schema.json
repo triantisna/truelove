@@ -1,0 +1,90 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Tamu VIP)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Nadira"
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Kurator)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Bayu"
+    },
+    {
+      "key": "anniversaryTitle",
+      "label": "Judul Pameran",
+      "type": "text",
+      "required": true,
+      "placeholder": "Retrospektif Kita"
+    },
+    {
+      "key": "exhibitionSubtitle",
+      "label": "Subjudul Pameran",
+      "type": "text",
+      "required": true,
+      "placeholder": "Pameran tunggal tentang tiga tahun bersama"
+    },
+    {
+      "key": "anniversaryDate",
+      "label": "Tahun Pameran",
+      "type": "text",
+      "required": true,
+      "placeholder": "2026",
+      "description": "Isi dengan angka tahun untuk plakat galeri."
+    },
+    {
+      "key": "curatorNote",
+      "label": "Ruang 1: Curator's Note (Pengantar)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis pengantar pameran dari pengirim. Pisahkan paragraf dengan baris kosong."
+    },
+    {
+      "key": "gallery",
+      "label": "Ruang 2: Foto Karya Seni (Hall of Classics)",
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "description": "Setiap foto tampil sebagai satu lukisan berbingkai besar. Urutan foto harus sama dengan urutan plakat di bawah."
+    },
+    {
+      "key": "museumPlacards",
+      "label": "Ruang 2: Plakat Museum",
+      "type": "textarea",
+      "required": true,
+      "description": "Satu baris untuk satu foto (tekan Enter untuk foto selanjutnya). Format: Judul Karya | Medium (opsional) | Deskripsi. Contoh: Sore di Dago | Mixed media: Waktu & Cinta | Hari pertama berani pegang tangan."
+    },
+    {
+      "key": "abstractInstallations",
+      "label": "Ruang 3: Instalasi Abstrak",
+      "type": "textarea",
+      "required": true,
+      "description": "Kutipan atau janji singkat. Satu kalimat per baris (tekan Enter untuk memisah). Setiap baris akan muncul sebagai instalasi teks besar."
+    },
+    {
+      "key": "masterpieceWish",
+      "label": "Ruang 4: The Grand Unveil (Pesan Puncak)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis pesan dan harapan utama yang disembunyikan di balik bingkai kanvas. Pisahkan paragraf dengan baris kosong."
+    },
+    {
+      "key": "guestbookMessage",
+      "label": "Ruang 5: Kesan di Buku Tamu",
+      "type": "text",
+      "required": true,
+      "placeholder": "Pameran terindah yang pernah kukunjungi."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Musik diputar otomatis saat tombol 'Enter Gallery' ditekan."
+    }
+  ]
+}

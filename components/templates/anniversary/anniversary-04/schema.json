@@ -1,0 +1,174 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Pemeran Utama 1)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Anindya"
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Pemeran Utama 2)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Raka"
+    },
+    {
+      "key": "anniversaryTitle",
+      "label": "Judul Film Anniversary",
+      "type": "text",
+      "required": true,
+      "placeholder": "Tiga Tahun Bersamamu"
+    },
+    {
+      "key": "anniversaryDate",
+      "label": "Tanggal Jadian / Anniversary",
+      "type": "text",
+      "required": true,
+      "placeholder": "14 Februari 2023",
+      "description": "Dipakai untuk menghitung durasi film (lama hubungan)."
+    },
+    {
+      "key": "openingTagline",
+      "label": "Tagline Pembuka",
+      "type": "text",
+      "required": true,
+      "placeholder": "Sebuah kisah cinta dalam empat babak"
+    },
+    {
+      "key": "act1Title",
+      "label": "Judul Babak I (Awal Bertemu)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Hujan Sore di Kedai Kopi"
+    },
+    {
+      "key": "act1Location",
+      "label": "Lokasi Adegan Babak I",
+      "type": "text",
+      "required": true,
+      "placeholder": "Kedai Kopi Braga, Bandung"
+    },
+    {
+      "key": "act1Story",
+      "label": "Cerita Awal Pertemuan",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis cerita pertemuan pertama kalian. Pisahkan paragraf dengan baris kosong (Enter)."
+    },
+    {
+      "key": "act1Quote",
+      "label": "Kutipan Pendek",
+      "type": "text",
+      "required": true,
+      "placeholder": "Satu kalimat yang paling kamu ingat dari hari itu"
+    },
+    {
+      "key": "coverImage",
+      "label": "Foto Adegan Pertama (Babak I)",
+      "type": "media",
+      "required": true,
+      "description": "Foto kalian berdua, atau foto tempat kalian pertama kali bertemu."
+    },
+    {
+      "key": "galleryTitle",
+      "label": "Judul Babak II (Galeri Film)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Adegan Favorit Kita"
+    },
+    {
+      "key": "gallery",
+      "label": "Foto Kenangan (Pita Film)",
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "description": "Unggah beberapa foto. Urutan foto sama dengan urutan frame."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Tiap Foto",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris (tekan Enter untuk foto selanjutnya), sesuai urutan foto di atas."
+    },
+    {
+      "key": "soundtrackTitle",
+      "label": "Judul Babak III (Soundtrack)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Lagu yang Selalu Kita Putar"
+    },
+    {
+      "key": "soundtrackSong",
+      "label": "Judul Lagu",
+      "type": "text",
+      "required": true,
+      "placeholder": "Sore Tugu Pancoran"
+    },
+    {
+      "key": "soundtrackArtist",
+      "label": "Nama Penyanyi",
+      "type": "text",
+      "required": true,
+      "placeholder": "Tulus"
+    },
+    {
+      "key": "soundtrackMessage",
+      "label": "Cerita di Balik Lagu",
+      "type": "textarea",
+      "required": true,
+      "description": "Ceritakan kenapa lagu ini berarti bagi kalian."
+    },
+    {
+      "key": "epilogueTitle",
+      "label": "Judul Epilog & Credits",
+      "type": "text",
+      "required": true,
+      "placeholder": "Bersambung ke Selamanya"
+    },
+    {
+      "key": "directedBy",
+      "label": "Sutradara",
+      "type": "text",
+      "required": true,
+      "placeholder": "Cinta"
+    },
+    {
+      "key": "creditsList",
+      "label": "Daftar Kredit Tambahan",
+      "type": "textarea",
+      "required": true,
+      "description": "Satu baris satu kredit. Format: Peran | Nama. Contoh: Penata Musik | Playlist Kita Berdua"
+    },
+    {
+      "key": "finalButtonText",
+      "label": "Teks Tombol Surat",
+      "type": "text",
+      "required": true,
+      "placeholder": "Buka Surat Terakhir 💌"
+    },
+    {
+      "key": "finalLetter",
+      "label": "Surat Cinta Terakhir",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis surat penutup. Pisahkan paragraf dengan baris kosong."
+    },
+    {
+      "key": "finalSignature",
+      "label": "Tanda Tangan Surat",
+      "type": "text",
+      "required": true,
+      "placeholder": "Selalu milikmu, Raka"
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Background Music)",
+      "type": "music",
+      "required": false,
+      "description": "Musik akan diputar otomatis saat tombol Play Our Movie ditekan."
+    }
+  ]
+}
