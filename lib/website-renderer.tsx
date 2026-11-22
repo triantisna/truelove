@@ -1,4 +1,10 @@
 import LoveLetter01 from '@/components/templates/love-letter/dear-you';
+import LoveLetter02 from '@/components/templates/love-letter/loveletter-02';
+import LoveLetter03 from '@/components/templates/love-letter/loveletter-03';
+import LoveLetter04 from '@/components/templates/love-letter/loveletter-04';
+import LoveLetter05 from '@/components/templates/love-letter/loveletter-05';
+import LoveLetter06 from '@/components/templates/love-letter/loveletter-06';
+import LoveLetter07 from '@/components/templates/love-letter/loveletter-07';
 import Anniversary01 from '@/components/templates/anniversary/anniversary-01';
 import OurStory01 from '@/components/templates/story/OurStory01';
 import BirthdaySurprise01 from '@/components/templates/birthday/surprise-01';
@@ -18,6 +24,12 @@ import Apology03 from '@/components/templates/apology/apology-03';
 
 const rendererMap = {
   'love-letter-01': LoveLetter01,
+  'love-letter-02': LoveLetter02,
+  'love-letter-03': LoveLetter03,
+  'love-letter-04': LoveLetter04,
+  'love-letter-05': LoveLetter05,
+  'love-letter-06': LoveLetter06,
+  'love-letter-07': LoveLetter07,
   'anniversary-01': Anniversary01,
   'our-story-01': OurStory01,
   'birthday-surprise-01': BirthdaySurprise01,

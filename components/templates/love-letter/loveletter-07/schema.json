@@ -1,0 +1,230 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "placeholder": "Contoh: Dimas",
+      "description": "Nama kamu. Akan muncul sebagai tanda tangan di akhir surat.",
+      "required": true
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "placeholder": "Contoh: Laras",
+      "description": "Nama orang yang akan membuka arsip ini.",
+      "required": true
+    },
+    {
+      "key": "editionNumber",
+      "label": "Nomor Edisi",
+      "type": "text",
+      "placeholder": "Contoh: No. 007",
+      "description": "Nomor kecil di layar pembuka, seperti penomoran arsip. Boleh diisi angka favorit kalian."
+    },
+    {
+      "key": "openingLine",
+      "label": "Kalimat di Layar Pembuka",
+      "type": "text",
+      "placeholder": "Sebuah arsip kecil yang kusimpan untukmu",
+      "description": "Satu kalimat singkat di bawah nama penerima sebelum pita dilepas."
+    },
+    {
+      "key": "writtenDate",
+      "label": "Tanggal Surat",
+      "type": "text",
+      "placeholder": "Contoh: Minggu, 9 November 2025",
+      "description": "Tanggal yang tertulis di bagian atas surat."
+    },
+    {
+      "key": "location",
+      "label": "Kota Tempat Menulis",
+      "type": "text",
+      "placeholder": "Contoh: Yogyakarta",
+      "description": "Kota atau tempat kamu menulis surat ini."
+    },
+    {
+      "key": "topNoteTitle",
+      "label": "Top Notes: Judul Singkat",
+      "type": "text",
+      "placeholder": "Contoh: Jeruk pahit dan hujan pertama",
+      "description": "Gambaran singkat tentang hal pertama yang selalu kamu ingat darinya. Tampil di sisi depan kartu."
+    },
+    {
+      "key": "topNote",
+      "label": "Top Notes: Isi Pesan",
+      "type": "textarea",
+      "placeholder": "Hal pertama yang selalu kuingat darimu...",
+      "description": "Ceritakan hal pertama yang paling melekat di ingatanmu. Tampil saat kartu dibalik."
+    },
+    {
+      "key": "heartNoteTitle",
+      "label": "Heart Notes: Judul Singkat",
+      "type": "text",
+      "placeholder": "Contoh: Teh melati yang diseduh terlalu lama",
+      "description": "Gambaran singkat tentang hal yang membuatmu jatuh cinta setiap hari."
+    },
+    {
+      "key": "heartNote",
+      "label": "Heart Notes: Isi Pesan",
+      "type": "textarea",
+      "placeholder": "Hal yang paling membuatku jatuh cinta setiap hari...",
+      "description": "Ceritakan kebiasaan atau sifat kecil yang membuatmu jatuh cinta lagi dan lagi."
+    },
+    {
+      "key": "baseNoteTitle",
+      "label": "Base Notes: Judul Singkat",
+      "type": "text",
+      "placeholder": "Contoh: Kayu cendana, sore hari",
+      "description": "Gambaran singkat tentang perasaan yang tertinggal setiap kali kalian bersama."
+    },
+    {
+      "key": "baseNote",
+      "label": "Base Notes: Isi Pesan",
+      "type": "textarea",
+      "placeholder": "Perasaan yang selalu tertinggal setiap kali bersamamu...",
+      "description": "Ceritakan perasaan yang tetap tinggal di dadamu bahkan setelah kalian berpisah."
+    },
+    {
+      "key": "letterBody",
+      "label": "Isi Surat Utama",
+      "type": "textarea",
+      "placeholder": "Tulis surat panjangmu di sini. Beri satu baris kosong untuk pindah paragraf.",
+      "description": "Surat inti untuknya. Pisahkan paragraf dengan satu baris kosong supaya nyaman dibaca.",
+      "required": true
+    },
+    {
+      "key": "memory1When",
+      "label": "Kenangan 1: Waktu atau Bulan",
+      "type": "text",
+      "placeholder": "Contoh: Oktober",
+      "description": "Akan tampil di label arsip, misalnya ARSIP 01 · OKTOBER."
+    },
+    {
+      "key": "memory1Title",
+      "label": "Kenangan 1: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Stasiun Tugu, hujan tipis",
+      "description": "Nama singkat untuk momen ini."
+    },
+    {
+      "key": "memory1Story",
+      "label": "Kenangan 1: Cerita Singkat",
+      "type": "textarea",
+      "placeholder": "Ceritakan apa yang terjadi dan kenapa kamu menyimpannya...",
+      "description": "Dua sampai tiga kalimat sudah cukup."
+    },
+    {
+      "key": "memory2When",
+      "label": "Kenangan 2: Waktu atau Bulan",
+      "type": "text",
+      "placeholder": "Contoh: Januari",
+      "description": "Kosongkan seluruh bagian kenangan ini kalau tidak dipakai."
+    },
+    {
+      "key": "memory2Title",
+      "label": "Kenangan 2: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Warung soto di ujung gang",
+      "description": "Nama singkat untuk momen ini."
+    },
+    {
+      "key": "memory2Story",
+      "label": "Kenangan 2: Cerita Singkat",
+      "type": "textarea",
+      "placeholder": "Ceritakan momen kedua...",
+      "description": "Dua sampai tiga kalimat sudah cukup."
+    },
+    {
+      "key": "memory3When",
+      "label": "Kenangan 3: Waktu atau Bulan",
+      "type": "text",
+      "placeholder": "Contoh: April",
+      "description": "Kosongkan seluruh bagian kenangan ini kalau tidak dipakai."
+    },
+    {
+      "key": "memory3Title",
+      "label": "Kenangan 3: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Balkon kos yang sempit",
+      "description": "Nama singkat untuk momen ini."
+    },
+    {
+      "key": "memory3Story",
+      "label": "Kenangan 3: Cerita Singkat",
+      "type": "textarea",
+      "placeholder": "Ceritakan momen ketiga...",
+      "description": "Dua sampai tiga kalimat sudah cukup."
+    },
+    {
+      "key": "memory4When",
+      "label": "Kenangan 4: Waktu atau Bulan",
+      "type": "text",
+      "placeholder": "Contoh: Agustus",
+      "description": "Kosongkan seluruh bagian kenangan ini kalau tidak dipakai."
+    },
+    {
+      "key": "memory4Title",
+      "label": "Kenangan 4: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Toko buku bekas",
+      "description": "Nama singkat untuk momen ini."
+    },
+    {
+      "key": "memory4Story",
+      "label": "Kenangan 4: Cerita Singkat",
+      "type": "textarea",
+      "placeholder": "Ceritakan momen keempat...",
+      "description": "Dua sampai tiga kalimat sudah cukup."
+    },
+    {
+      "key": "mainPhoto",
+      "label": "Foto Utama",
+      "type": "media",
+      "multiple": false,
+      "description": "Satu foto favoritmu bersama dia. Akan tampil paling besar di galeri."
+    },
+    {
+      "key": "mainPhotoCaption",
+      "label": "Keterangan Foto Utama",
+      "type": "text",
+      "placeholder": "Contoh: Sore itu, sebelum hujan turun.",
+      "description": "Tulisan kecil di bawah foto utama."
+    },
+    {
+      "key": "galleryPhotos",
+      "label": "Foto Kenangan Lainnya",
+      "type": "media",
+      "multiple": true,
+      "description": "Tambahkan beberapa foto kenangan. Semuanya akan dipasang dalam bingkai putih hangat."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Keterangan Foto Kenangan",
+      "type": "textarea",
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan",
+      "description": "Tulis satu keterangan per baris. Baris pertama untuk foto pertama, dan seterusnya."
+    },
+    {
+      "key": "signature",
+      "label": "Tanda Tangan",
+      "type": "text",
+      "placeholder": "Contoh: Dimas",
+      "description": "Nama yang tertulis miring di akhir surat. Kalau kosong, dipakai nama pengirim."
+    },
+    {
+      "key": "promiseText",
+      "label": "Janji untuk Musim Berikutnya",
+      "type": "textarea",
+      "placeholder": "Tulis harapan atau janji untuk hari-hari yang akan datang...",
+      "description": "Pesan penutup yang hanya terbuka saat dia menekan tombol janji."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Lagu Latar",
+      "type": "music",
+      "description": "Lagu yang diputar saat pita dilepas. Pilih yang lembut dan hangat."
+    }
+  ]
+}

@@ -1,4 +1,10 @@
 import dearYou from '@/components/templates/love-letter/dear-you/config';
+import loveLetter02 from '@/components/templates/love-letter/loveletter-02/config';
+import loveLetter03 from '@/components/templates/love-letter/loveletter-03/config';
+import loveLetter04 from '@/components/templates/love-letter/loveletter-04/config';
+import loveLetter05 from '@/components/templates/love-letter/loveletter-05/config';
+import loveLetter06 from '@/components/templates/love-letter/loveletter-06/config';
+import loveLetter07 from '@/components/templates/love-letter/loveletter-07/config';
 import birthdaySurprise from '@/components/templates/birthday/surprise-01/config';
 import { birthdayBoxConfig } from '@/components/templates/birthday/surprise-02/config';
 import { todayIsYoursConfig } from '@/components/templates/birthday/surprise-03/config';
@@ -17,6 +23,12 @@ import type { TemplateDefinition } from '@/types/template';
 
 export const templates: TemplateDefinition[] = [
   dearYou,
+  loveLetter02,
+  loveLetter03,
+  loveLetter04,
+  loveLetter05,
+  loveLetter06,
+  loveLetter07,
   birthdaySurprise,
   birthdayBoxConfig,
   todayIsYoursConfig,

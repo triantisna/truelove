@@ -12,17 +12,11 @@ export type TemplateFieldType =
 
 export type TemplateField = {
   key: string;
-
   label: string;
-
   type: TemplateFieldType;
-
   description?: string;
-
   placeholder?: string;
-
   required?: boolean;
-
   multiple?: boolean;
 };
 
@@ -32,15 +26,10 @@ export type TemplateSchema = {
 
 export type TemplateConfig = {
   id: string;
-
   name: string;
-
   category: OccasionSlug;
-
   description: string;
-
   previewImage: string;
-
   active: boolean;
 };
 

@@ -1,0 +1,90 @@
+{
+  "fields": [
+    {
+      "key": "bookTitle",
+      "label": "Judul Buku / Sampul",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Bab Tentangmu"
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Dedikasi)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Sekar"
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Penulis)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Dimas"
+    },
+    {
+      "key": "dedicationQuote",
+      "label": "Kutipan Pembuka (Halaman Dedikasi)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Contoh: Jika hidupku adalah sebuah buku, kamu adalah bab favorit yang selalu ingin kuulang."
+    },
+    {
+      "key": "chapterTitle",
+      "label": "Judul Bab Surat Utama",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Tentang Cara Kamu Membuat Semuanya Terasa Pulang"
+    },
+    {
+      "key": "mainLetter",
+      "label": "Isi Surat Utama",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis surat panjangmu di sini. Pisahkan paragraf dengan baris kosong (Enter)."
+    },
+    {
+      "key": "heroImage",
+      "label": "Foto Utama (Editorial)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto terbaik yang ditampilkan di tengah halaman surat."
+    },
+    {
+      "key": "marginNotes",
+      "label": "Catatan Pinggir (Hal yang Aku Syukuri)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–5 hal kecil yang kamu syukuri darinya. Satu poin per baris (pisah dengan Enter)."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Penanda Halaman",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah beberapa foto kenangan bersama."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Tiap Foto Galeri",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris sesuai urutan foto galeri di atas."
+    },
+    {
+      "key": "closingText",
+      "label": "Kalimat Penutup (Epilog)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Terima kasih sudah menjadi bagian paling tenang di setiap halamanku."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Musik diputar otomatis saat tombol Buka Halaman Pertama ditekan."
+    }
+  ]
+}

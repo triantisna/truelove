@@ -1,0 +1,90 @@
+{
+  "fields": [
+    {
+      "key": "masthead",
+      "label": "Nama Koran / Masthead",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: THE SPECIAL EDITION"
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Laras"
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Penulis)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Bima"
+    },
+    {
+      "key": "headline",
+      "label": "Headline Utama",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Berita Utama: Aku Masih Jatuh Cinta Padamu Setiap Hari"
+    },
+    {
+      "key": "subheadline",
+      "label": "Sub-headline / Ringkasan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Sebuah edisi khusus yang diterbitkan hanya untuk satu pembaca."
+    },
+    {
+      "key": "heroImage",
+      "label": "Foto Halaman Depan",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Foto utama yang tampil di halaman depan koran."
+    },
+    {
+      "key": "mainLetter",
+      "label": "Artikel Utama (Isi Surat)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis surat panjangmu di sini. Pisahkan paragraf dengan Enter."
+    },
+    {
+      "key": "inBrief",
+      "label": "Kolom In Brief (Catatan Singkat)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 poin dengan format: Judul | Isi singkat (satu poin per baris)."
+    },
+    {
+      "key": "gallery",
+      "label": "Photo Essay (Galeri Foto)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah beberapa foto kenangan bersama."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Photo Essay",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris sesuai urutan foto di atas."
+    },
+    {
+      "key": "personalNotice",
+      "label": "Personal Notice (Pengumuman Penutup)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Dicari: teman perjalanan seumur hidup. Syarat: harus kamu."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik diputar saat edisi lengkap dibuka."
+    }
+  ]
+}

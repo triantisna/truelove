@@ -1,0 +1,195 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "placeholder": "Contoh: Raka",
+      "description": "Nama kamu. Akan muncul sebagai tanda tangan di akhir surat.",
+      "required": true
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "placeholder": "Contoh: Nadia",
+      "description": "Nama orang yang akan membaca surat ini.",
+      "required": true
+    },
+    {
+      "key": "writtenTime",
+      "label": "Jam Menulis Surat",
+      "type": "text",
+      "placeholder": "02:14 AM",
+      "description": "Jam yang tampil di layar pembuka. Tulis dengan format 02:14 AM supaya titik duanya bisa berkedip."
+    },
+    {
+      "key": "location",
+      "label": "Kota Tempat Menulis",
+      "type": "text",
+      "placeholder": "Contoh: Bandung",
+      "description": "Kota atau tempat kamu menulis surat ini."
+    },
+    {
+      "key": "writtenDate",
+      "label": "Tanggal Surat",
+      "type": "text",
+      "placeholder": "Contoh: Jumat, 14 Maret 2025",
+      "description": "Tanggal yang tercetak di bagian atas kertas surat."
+    },
+    {
+      "key": "openingLine",
+      "label": "Kalimat di Layar Pembuka",
+      "type": "text",
+      "placeholder": "Ditulis saat kamu sedang tertidur",
+      "description": "Satu kalimat singkat di atas nama penerima sebelum lampu dinyalakan."
+    },
+    {
+      "key": "draft1Time",
+      "label": "Pesan Tertahan #1: Jam",
+      "type": "text",
+      "placeholder": "01:12 AM",
+      "description": "Jam saat kamu hampir mengirim pesan ini."
+    },
+    {
+      "key": "draft1Text",
+      "label": "Pesan Tertahan #1: Isi",
+      "type": "textarea",
+      "placeholder": "Pesan yang hampir kamu kirim lalu kamu hapus lagi...",
+      "description": "Tulis seperti catatan di ponsel yang tidak jadi terkirim. Kosongkan kalau tidak dipakai."
+    },
+    {
+      "key": "draft2Time",
+      "label": "Pesan Tertahan #2: Jam",
+      "type": "text",
+      "placeholder": "01:47 AM",
+      "description": "Jam saat kamu hampir mengirim pesan ini."
+    },
+    {
+      "key": "draft2Text",
+      "label": "Pesan Tertahan #2: Isi",
+      "type": "textarea",
+      "placeholder": "Pesan kedua yang tertahan...",
+      "description": "Kosongkan kalau tidak dipakai."
+    },
+    {
+      "key": "draft3Time",
+      "label": "Pesan Tertahan #3: Jam",
+      "type": "text",
+      "placeholder": "02:03 AM",
+      "description": "Jam saat kamu hampir mengirim pesan ini."
+    },
+    {
+      "key": "draft3Text",
+      "label": "Pesan Tertahan #3: Isi",
+      "type": "textarea",
+      "placeholder": "Pesan ketiga yang tertahan...",
+      "description": "Kosongkan kalau tidak dipakai."
+    },
+    {
+      "key": "draft4Time",
+      "label": "Pesan Tertahan #4: Jam",
+      "type": "text",
+      "placeholder": "02:09 AM",
+      "description": "Jam saat kamu hampir mengirim pesan ini."
+    },
+    {
+      "key": "draft4Text",
+      "label": "Pesan Tertahan #4: Isi",
+      "type": "textarea",
+      "placeholder": "Pesan keempat yang tertahan...",
+      "description": "Kosongkan kalau tidak dipakai."
+    },
+    {
+      "key": "letterBody",
+      "label": "Isi Surat Utama",
+      "type": "textarea",
+      "placeholder": "Tulis surat panjangmu di sini. Beri satu baris kosong untuk pindah paragraf.",
+      "description": "Surat inti untuknya. Pisahkan paragraf dengan satu baris kosong supaya nyaman dibaca.",
+      "required": true
+    },
+    {
+      "key": "thing1",
+      "label": "Hal Kecil yang Kamu Suka #1",
+      "type": "text",
+      "placeholder": "Contoh: Caramu menyelipkan rambut ke belakang telinga saat berpikir",
+      "description": "Detail kecil darinya yang mungkin tidak dia sadari."
+    },
+    {
+      "key": "thing2",
+      "label": "Hal Kecil yang Kamu Suka #2",
+      "type": "text",
+      "placeholder": "Detail kecil lainnya...",
+      "description": "Kosongkan kalau tidak dipakai."
+    },
+    {
+      "key": "thing3",
+      "label": "Hal Kecil yang Kamu Suka #3",
+      "type": "text",
+      "placeholder": "Detail kecil lainnya...",
+      "description": "Kosongkan kalau tidak dipakai."
+    },
+    {
+      "key": "thing4",
+      "label": "Hal Kecil yang Kamu Suka #4",
+      "type": "text",
+      "placeholder": "Detail kecil lainnya...",
+      "description": "Kosongkan kalau tidak dipakai."
+    },
+    {
+      "key": "thing5",
+      "label": "Hal Kecil yang Kamu Suka #5",
+      "type": "text",
+      "placeholder": "Detail kecil lainnya...",
+      "description": "Kosongkan kalau tidak dipakai."
+    },
+    {
+      "key": "mainPhoto",
+      "label": "Foto Utama",
+      "type": "media",
+      "multiple": false,
+      "description": "Satu foto favoritmu bersama dia. Akan tampil paling besar di atas meja."
+    },
+    {
+      "key": "mainPhotoCaption",
+      "label": "Keterangan Foto Utama",
+      "type": "text",
+      "placeholder": "Contoh: Sore itu, sebelum hujan turun.",
+      "description": "Tulisan kecil di bawah foto utama."
+    },
+    {
+      "key": "galleryPhotos",
+      "label": "Foto Kenangan Lainnya",
+      "type": "media",
+      "multiple": true,
+      "description": "Tambahkan beberapa foto kenangan. Foto akan ditata seperti tergeletak di meja."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Keterangan Foto Kenangan",
+      "type": "textarea",
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan",
+      "description": "Tulis satu keterangan per baris. Baris pertama untuk foto pertama, dan seterusnya."
+    },
+    {
+      "key": "signature",
+      "label": "Tanda Tangan",
+      "type": "text",
+      "placeholder": "Contoh: Raka",
+      "description": "Nama yang tertulis miring di akhir surat. Kalau kosong, dipakai nama pengirim."
+    },
+    {
+      "key": "psText",
+      "label": "Isi P.S. Rahasia",
+      "type": "textarea",
+      "placeholder": "Catatan paling manis yang kamu simpan untuk terakhir...",
+      "description": "Pesan penutup yang hanya terbuka kalau dia menekan tombol P.S."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Lagu Latar",
+      "type": "music",
+      "description": "Lagu pelan yang diputar saat lampu dinyalakan. Pilih yang tenang dan nyaman didengar malam hari."
+    }
+  ]
+}

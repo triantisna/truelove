@@ -1,0 +1,62 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Your Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Enter your name"
+    },
+    {
+      "key": "receiverName",
+      "label": "Letter Recipient",
+      "type": "text",
+      "required": true,
+      "placeholder": "Enter your partner's name"
+    },
+    {
+      "key": "openingText",
+      "label": "Opening Text",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "To someone who means more than words could ever explain..."
+    },
+    {
+      "key": "mainMessage",
+      "label": "Letter Content",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Write everything you have been keeping in your heart..."
+    },
+    {
+      "key": "closingText",
+      "label": "Closing Message",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Until words become memories, and memories become forever."
+    },
+    {
+      "key": "heroImage",
+      "label": "Main Memory Photo",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "An optional special photo displayed alongside your letter."
+    },
+    {
+      "key": "gallery",
+      "label": "Memory Gallery",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Add photos of your favorite moments together."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Background Music",
+      "type": "music",
+      "required": false,
+      "placeholder": "https://..."
+    }
+  ]
+}

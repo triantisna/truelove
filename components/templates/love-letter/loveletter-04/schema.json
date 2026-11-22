@@ -1,0 +1,83 @@
+{
+  "fields": [
+    {
+      "key": "albumTitle",
+      "label": "Judul Album / Sampul",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: For You, Always"
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Naya"
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Reza"
+    },
+    {
+      "key": "coverImage",
+      "label": "Foto Sampul Album (1:1)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Foto utama yang tampil di sampul album pembuka."
+    },
+    {
+      "key": "letterHeadline",
+      "label": "Judul Catatan (Side A)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Catatan di Balik Lagu yang Selalu Mengingatkanku Padamu"
+    },
+    {
+      "key": "mainLetter",
+      "label": "Isi Surat Utama (Liner Notes)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis surat panjangmu di sini. Pisahkan paragraf dengan Enter."
+    },
+    {
+      "key": "tracklist",
+      "label": "Daftar Tracklist (Hal yang Aku Suka Darimu)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 4–5 poin dengan format: Judul Track | Penjelasan singkat (satu poin per baris)."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Contact Sheet (Side B)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah beberapa foto kenangan bersama."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Foto Contact Sheet",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris sesuai urutan foto di atas."
+    },
+    {
+      "key": "outroText",
+      "label": "Pesan Penutup (Outro)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Terima kasih sudah menjadi melodi paling tenang di hari-hariku."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Lagu diputar otomatis saat tombol Putar & Baca ditekan."
+    }
+  ]
+}
