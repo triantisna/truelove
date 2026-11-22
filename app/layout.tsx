@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Figtree } from 'next/font/google';
-// @ts-expect-error Next.js resolves global CSS imports at runtime.
 import '@/app/globals.css';
 
 const display = Cormorant_Garamond({
