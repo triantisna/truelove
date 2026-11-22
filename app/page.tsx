@@ -1,6 +1,5 @@
 'use client';
 
-// @ts-expect-error CSS side-effect imports are handled by Next.js.
 import './landing.css';
 import Link from 'next/link';
 import { FormEvent, useState, useEffect } from 'react';
