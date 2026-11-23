@@ -1,0 +1,288 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Raditya",
+      "description": "Nama kamu. Akan tampil di tiket pameran dan tanda tangan kurator."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Alena",
+      "description": "Nama pasanganmu yang menjadi tamu kehormatan pameran ini."
+    },
+    {
+      "key": "catalogNumber",
+      "label": "Nomor Katalog Pameran",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: EXH-06 · PRIVATE VIEWING",
+      "description": "Kode katalog kecil di tiket pembuka dan header ruang pameran."
+    },
+    {
+      "key": "openingLine",
+      "label": "Kalimat Pengantar di Tiket Pembuka",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Andai aku bisa membangun museum dari semua hal yang kucintai, setiap ruangannya tentangmu."
+    },
+    {
+      "key": "writtenDate",
+      "label": "Tanggal Pameran / Surat",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Sabtu, 14 November 2026",
+      "description": "Tanggal yang tertulis di bagian atas Catatan Kurator."
+    },
+    {
+      "key": "artifact1Label",
+      "label": "Artefak 1: Nama Benda / Momen",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Dua Gelas Kopi Dingin",
+      "description": "Judul singkat yang tampil di plakat museum sebelum dibuka."
+    },
+    {
+      "key": "artifact1Meta",
+      "label": "Artefak 1: Waktu / Lokasi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: OKTOBER 2023 · DAGO"
+    },
+    {
+      "key": "artifact1Story",
+      "label": "Artefak 1: Cerita di Baliknya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan kenapa hal kecil ini layak dipajang di museum kalian..."
+    },
+    {
+      "key": "artifact2Label",
+      "label": "Artefak 2: Nama Benda / Momen",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tiket Kereta Malam"
+    },
+    {
+      "key": "artifact2Meta",
+      "label": "Artefak 2: Waktu / Lokasi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: JANUARI 2024 · STASIUN BANDUNG"
+    },
+    {
+      "key": "artifact2Story",
+      "label": "Artefak 2: Cerita di Baliknya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Cerita singkat untuk artefak kedua..."
+    },
+    {
+      "key": "artifact3Label",
+      "label": "Artefak 3: Nama Benda / Momen",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Payung Lipat Hitam"
+    },
+    {
+      "key": "artifact3Meta",
+      "label": "Artefak 3: Waktu / Lokasi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: AGUSTUS 2024 · YOGYAKARTA"
+    },
+    {
+      "key": "artifact3Story",
+      "label": "Artefak 3: Cerita di Baliknya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Cerita singkat untuk artefak ketiga..."
+    },
+    {
+      "key": "artifact4Label",
+      "label": "Artefak 4: Nama Benda / Momen (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Playlist Tengah Malam"
+    },
+    {
+      "key": "artifact4Meta",
+      "label": "Artefak 4: Waktu / Lokasi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 2023 – SEKARANG"
+    },
+    {
+      "key": "artifact4Story",
+      "label": "Artefak 4: Cerita di Baliknya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Kosongkan seluruh bagian artefak 4 jika hanya ingin memakai 3 artefak."
+    },
+    {
+      "key": "curatorTitle",
+      "label": "Judul Surat Kurator",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Catatan Kurator untuk Ruang yang Paling Kujaga"
+    },
+    {
+      "key": "letterBody",
+      "label": "Isi Surat Utama (The Curator's Note)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Tulis surat panjangmu di sini. Beri satu baris kosong untuk pindah paragraf.",
+      "description": "Surat utama yang dicetak di lembaran katalog Museum Ivory. Pisahkan paragraf dengan satu baris kosong."
+    },
+    {
+      "key": "room1When",
+      "label": "Ruang 01: Tahun / Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 2023 · AWAL PERTEMUAN"
+    },
+    {
+      "key": "room1Title",
+      "label": "Ruang 01: Judul Ruangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Ruang Pertama — Saat Kita Masih Asing"
+    },
+    {
+      "key": "room1Story",
+      "label": "Ruang 01: Cerita Fase Ini",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan fase pertama perjalanan kalian..."
+    },
+    {
+      "key": "room2When",
+      "label": "Ruang 02: Tahun / Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 2024 · PERJALANAN PERTAMA"
+    },
+    {
+      "key": "room2Title",
+      "label": "Ruang 02: Judul Ruangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Ruang Kedua — Belajar Menjadi Kita"
+    },
+    {
+      "key": "room2Story",
+      "label": "Ruang 02: Cerita Fase Ini",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan fase kedua perjalanan kalian..."
+    },
+    {
+      "key": "room3When",
+      "label": "Ruang 03: Tahun / Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 2025 · HARI-HARI YANG TENANG"
+    },
+    {
+      "key": "room3Title",
+      "label": "Ruang 03: Judul Ruangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Ruang Ketiga — Menemukan Rumah"
+    },
+    {
+      "key": "room3Story",
+      "label": "Ruang 03: Cerita Fase Ini",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan fase ketiga perjalanan kalian..."
+    },
+    {
+      "key": "room4When",
+      "label": "Ruang 04: Tahun / Fase (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 2026 · HARI INI"
+    },
+    {
+      "key": "room4Title",
+      "label": "Ruang 04: Judul Ruangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Ruang Keempat — Tetap Memilihmu"
+    },
+    {
+      "key": "room4Story",
+      "label": "Ruang 04: Cerita Fase Ini",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Kosongkan seluruh bagian Ruang 04 jika hanya ingin memakai 3 ruangan."
+    },
+    {
+      "key": "mainPhoto",
+      "label": "Foto Utama (Centerpiece Gallery)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto terbaik kalian yang akan dipajang paling besar di The Main Wing."
+    },
+    {
+      "key": "mainPhotoCaption",
+      "label": "Plakat Keterangan Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Karya Utama No. 01 — Sore yang tidak pernah ingin kuakhiri."
+    },
+    {
+      "key": "galleryPhotos",
+      "label": "Galeri Foto Pameran",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 3–6 foto kenangan. Semua foto bisa diklik untuk diperbesar di Lightbox."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Plakat Keterangan Galeri Foto",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan",
+      "description": "Tulis satu keterangan per baris. Baris pertama untuk foto pertama, dan seterusnya."
+    },
+    {
+      "key": "signature",
+      "label": "Tanda Tangan Kurator",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Raditya",
+      "description": "Nama yang tertulis di akhir pameran. Jika kosong, memakai nama pengirim."
+    },
+    {
+      "key": "futureWingTitle",
+      "label": "Judul Ruang Masa Depan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Sayap yang Masih Sengaja Kubiarkan Kosong"
+    },
+    {
+      "key": "futureWingText",
+      "label": "Pesan Ruang Masa Depan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Tulis harapan tentang kenangan-kenangan baru yang ingin kalian pajang bersama...",
+      "description": "Terbuka saat pasanganmu menekan tombol Buka Ruang Masa Depan."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar Pameran (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Lagu yang diputar saat pintu ruang pameran dibuka. Pilih yang tenang dan hangat."
+    }
+  ]
+}

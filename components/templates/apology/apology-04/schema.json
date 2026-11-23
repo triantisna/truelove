@@ -1,0 +1,83 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Hana"
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Arya"
+    },
+    {
+      "key": "openingNote",
+      "label": "Kalimat Pengantar (Layar Pembuka)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tidak ada pembelaan di dalam sini, hanya kejujuran."
+    },
+    {
+      "key": "acknowledgment",
+      "label": "Pengakuan Kesalahan (Tanpa 'Tapi')",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Contoh: Aku salah karena terlalu egois dan tidak mendengarkanmu dengan sungguh-sungguh kemarin.",
+      "description": "Tulis pengakuan jujur atas kesalahanmu secara langsung, tanpa mencari pembenaran."
+    },
+    {
+      "key": "letterHeadline",
+      "label": "Judul Surat Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Maaf karena sudah membuatmu kecewa"
+    },
+    {
+      "key": "mainLetter",
+      "label": "Isi Surat Permintaan Maaf",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis isi suratmu di sini. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "memoryPhoto",
+      "label": "Foto Kenangan Bersama (Opsional)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto favorit berdua sebagai pengingat betapa berharganya hubungan ini."
+    },
+    {
+      "key": "memoryCaption",
+      "label": "Caption Foto Kenangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kita yang selalu ingin kuperjuangkan."
+    },
+    {
+      "key": "commitments",
+      "label": "Komitmen Nyata (Langkah Perbaikan)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 langkah konkret yang akan kamu perbaiki. Format: Judul | Penjelasan singkat (satu poin per baris)."
+    },
+    {
+      "key": "closingText",
+      "label": "Pesan Penutup (Tanpa Tekanan)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Ambil waktumu sebanyak yang kamu butuh. Aku di sini kapan pun kamu siap bicara."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik pelan akan diputar saat tombol buka ditekan."
+    }
+  ]
+}

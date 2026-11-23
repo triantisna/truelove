@@ -1,0 +1,120 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Dika",
+      "description": "Nama kamu. Akan tampil di label Prepared By dan stempel konfirmasi."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Tania",
+      "description": "Nama pasangan atau orang yang kamu ajak jalan santai."
+    },
+    {
+      "key": "orderNumber",
+      "label": "Nomor Order / Kode Tiket",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: ORDER #02 · DATE PASS",
+      "description": "Label kecil bergaya struk coffee shop di sampul dan header."
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Ajakan di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tidak perlu dress code ribet—cukup kopi enak, jalan santai, dan kamu."
+    },
+    {
+      "key": "moodPhoto",
+      "label": "Foto Utama / Foto Suasana",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto santai berdua atau foto suasana coffee shop / jalan sore."
+    },
+    {
+      "key": "moodCaption",
+      "label": "Caption Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Sore santai tanpa buru-buru pulang."
+    },
+    {
+      "key": "noteTitle",
+      "label": "Judul Pesan Ajakan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Yuk Kabur Sebentar dari Rutinitas"
+    },
+    {
+      "key": "casualNote",
+      "label": "Isi Pesan Santai",
+      "type": "textarea",
+      "required": true,
+      "description": "Pesan santai kenapa kamu mengajaknya hangout kali ini. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "dateText",
+      "label": "Hari & Tanggal",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Minggu, 29 November 2026"
+    },
+    {
+      "key": "timeText",
+      "label": "Jam",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: 15.30 WIB – Santai"
+    },
+    {
+      "key": "locationText",
+      "label": "Titik Kumpul / Lokasi",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Cihapit Coffee & Sekitarnya, Bandung"
+    },
+    {
+      "key": "outfitVibe",
+      "label": "Vibe / Outfit",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kaos santai, sneakers nyaman buat jalan"
+    },
+    {
+      "key": "gamePlan",
+      "label": "Rute Jalan Kita (The Game Plan)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 agenda santai berurutan. Format per baris: Jam/Urutan | Agenda | Catatan singkat."
+    },
+    {
+      "key": "perks",
+      "label": "Bonus Kencan (Complimentary Perks)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 bonus seru yang kamu siapkan (satu poin per baris, contoh: 1x Es Kopi Susu / Matcha favoritmu)."
+    },
+    {
+      "key": "closingNote",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Cukup datang bawa mood santai, sisanya biar aku yang traktir."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Lihat Pesanan Kencan ditekan."
+    }
+  ]
+}

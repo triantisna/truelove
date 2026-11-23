@@ -1,0 +1,120 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Reza",
+      "description": "Nama kamu. Akan tampil sebagai pengundang dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Clara",
+      "description": "Nama pasangan atau orang yang ingin kamu ajak berkencan."
+    },
+    {
+      "key": "reservationCode",
+      "label": "Kode Reservasi / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: TABLE FOR TWO · NO. 01",
+      "description": "Label kecil bergaya kartu reservasi di sampul dan bagian atas halaman."
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Ajakan di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kosongkan jadwalmu akhir pekan ini—sisanya sudah kuurus."
+    },
+    {
+      "key": "moodPhoto",
+      "label": "Foto Utama / Foto Suasana",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto kalian berdua atau foto suasana tempat yang ingin dikunjungi."
+    },
+    {
+      "key": "moodCaption",
+      "label": "Caption Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Satu malam tenang, tanpa terburu-buru."
+    },
+    {
+      "key": "inviteTitle",
+      "label": "Judul Surat Ajakan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Luangkan Satu Malam Untuk Kita Berdua"
+    },
+    {
+      "key": "inviteMessage",
+      "label": "Isi Pesan Ajakan",
+      "type": "textarea",
+      "required": true,
+      "description": "Ceritakan singkat kenapa kamu ingin mengajaknya pergi kali ini. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "dateText",
+      "label": "Hari & Tanggal",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Sabtu, 28 November 2026"
+    },
+    {
+      "key": "timeText",
+      "label": "Jam",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: 18.30 WIB – Selesai"
+    },
+    {
+      "key": "locationText",
+      "label": "Lokasi",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Braga Bistro & Coffee, Bandung"
+    },
+    {
+      "key": "dressCode",
+      "label": "Dress Code",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Casual Neat · Warna Earth Tone"
+    },
+    {
+      "key": "itinerary",
+      "label": "Rencana Kita (The Itinerary)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 agenda berurutan. Format per baris: Jam | Agenda | Catatan singkat."
+    },
+    {
+      "key": "littleNotes",
+      "label": "Catatan Kecil (Little Notes)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 2–3 catatan manis sebelum berangkat (satu poin per baris)."
+    },
+    {
+      "key": "closingNote",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Tidak sabar melihatmu malam itu. Sampai ketemu di meja kita."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Buka Undangan ditekan."
+    }
+  ]
+}

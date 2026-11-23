@@ -1,0 +1,122 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Bagas",
+      "description": "Nama kamu. Akan digabung otomatis dengan nama pasangan."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Laras",
+      "description": "Nama pasanganmu yang akan membaca cerita ini."
+    },
+    {
+      "key": "sinceYear",
+      "label": "Tahun Mulai Bersama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 2022",
+      "description": "Akan tampil sebagai penanda edisi di sampul, misalnya EST. 2022."
+    },
+    {
+      "key": "rollCode",
+      "label": "Kode Rol Film / Tahun",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: ROLL 02 · ISO 400 · 2023",
+      "description": "Penanda gaya kamera analog di bagian pembuka."
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Pembuka di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Beberapa momen terlalu berharga untuk dibiarkan pudar."
+    },
+    {
+      "key": "heroPhoto",
+      "label": "Foto Utama (Frame 00A)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto terbaik kalian untuk membuka gulungan kenangan."
+    },
+    {
+      "key": "heroMeta",
+      "label": "Tanggal / Lokasi Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: BANDUNG · NOV 2023"
+    },
+    {
+      "key": "introTitle",
+      "label": "Judul Pembuka Cerita",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Frame Pertama yang Mengubah Segalanya"
+    },
+    {
+      "key": "introText",
+      "label": "Narasi Pembuka",
+      "type": "textarea",
+      "required": true,
+      "description": "Cerita singkat tentang awal perjalanan kalian. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "exposures",
+      "label": "Daftar Momen (The Contact Sheet)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis 3–6 momen penting. Format per baris: Tanggal/Lokasi | Judul Momen | Cerita singkat."
+    },
+    {
+      "key": "productionNotes",
+      "label": "Catatan Produksi (Credits Tentang Kita)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 detail ala credit film. Format per baris: Peran/Label | Isi (contoh: Soundtrack | Hindia - Evaluasi)."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Foto (Darkroom Prints)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 3–6 foto kenangan terbaik kalian."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Galeri Foto",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris sesuai urutan foto di atas."
+    },
+    {
+      "key": "closingTitle",
+      "label": "Judul Penutup (End of Roll)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Gulungan Berikutnya Masih Menunggu Kita"
+    },
+    {
+      "key": "closingText",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Terima kasih sudah jadi alasan terbaikku untuk selalu membawa kamera ke mana pun kita pergi."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Buka Gulungan Film ditekan."
+    }
+  ]
+}

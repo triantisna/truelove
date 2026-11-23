@@ -188,12 +188,6 @@ export default function HomePage() {
             <a href="#paket">Paket</a>
           </nav>
           <div className="tl-nav-actions">
-            <Link
-              className="tl-btn tl-btn-ghost tl-btn-sm tl-hide-sm"
-              href="/for-melvina"
-            >
-              Demo Interaktif
-            </Link>
             <Link className="tl-btn tl-btn-primary tl-btn-sm" href="#order">
               Pesan
             </Link>
@@ -217,7 +211,7 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={0.2}>
               <div className="tl-hero-actions">
-                <Link className="tl-btn tl-btn-primary" href="/for-melvina">
+                <Link className="tl-btn tl-btn-primary" href="#momen">
                   Lihat Demo Interaktif
                 </Link>
                 <Link className="tl-btn tl-btn-ghost" href="#order">

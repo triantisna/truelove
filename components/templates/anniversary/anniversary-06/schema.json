@@ -1,0 +1,107 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Fajar",
+      "description": "Nama kamu. Akan tampil di sampul album dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Pasangan)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Laras",
+      "description": "Nama pasanganmu yang merayakan anniversary bersama."
+    },
+    {
+      "key": "yearLabel",
+      "label": "Tahun Anniversary",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: YEAR 03",
+      "description": "Label singkat tahun ke berapa hubungan kalian (tampil di sampul vinyl)."
+    },
+    {
+      "key": "catalogCode",
+      "label": "Kode Katalog Vinyl",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: LP-06 · ANNIVERSARY EDITION",
+      "description": "Penanda kecil bergaya piringan hitam di sampul dan header."
+    },
+    {
+      "key": "albumTitle",
+      "label": "Judul Album Kenangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Side A / Side B"
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Pengantar di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Setiap tahun bersamamu adalah rekaman favorit yang selalu ingin kuputar ulang."
+    },
+    {
+      "key": "linerNotesTitle",
+      "label": "Judul Surat (Liner Notes)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Catatan di Balik Sampul Tahun Ini"
+    },
+    {
+      "key": "linerNotesBody",
+      "label": "Isi Surat Anniversary (Liner Notes)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis pesan anniversary-mu di sini. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "sideATracks",
+      "label": "Side A: Momen Penting Tahun Ini (The Tracklist)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–5 momen berkesan berurutan. Format per baris: Bulan/Tanggal | Judul Momen | Cerita singkat."
+    },
+    {
+      "key": "sideBThings",
+      "label": "Side B: Hal-Hal Kecil Favorit (Little Things I Love)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 hal sederhana tentang pasanganmu yang paling kamu syukuri (satu poin per baris)."
+    },
+    {
+      "key": "snapshotPhoto",
+      "label": "Foto Favorit Tahun Ini (Album Snapshot)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto terbaik kalian berdua untuk tampil seperti insert photo di dalam kemasan vinyl."
+    },
+    {
+      "key": "snapshotCaption",
+      "label": "Caption Foto Favorit",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Salah satu sore paling tenang di tahun ketiga kita."
+    },
+    {
+      "key": "closingNote",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Terima kasih sudah selalu jadi rumah paling hangat. Mari putar tahun berikutnya bersama."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Putar Album Kenangan ditekan."
+    }
+  ]
+}

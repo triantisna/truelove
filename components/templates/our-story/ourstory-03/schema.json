@@ -1,0 +1,114 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Fajar",
+      "description": "Nama kamu. Akan tampil di alamat kartu pos dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Kirana",
+      "description": "Nama pasanganmu yang akan menerima kumpulan kartu pos ini."
+    },
+    {
+      "key": "postmarkOrigin",
+      "label": "Kota / Tahun Cap Pos",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: BANDUNG · EST. 2023",
+      "description": "Tampil sebagai stempel pos di bagian sampul dan atas halaman."
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Singkat di Sampul Kartu Pos",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Setiap tempat terasa seperti rumah selama aku ke sana bersamamu."
+    },
+    {
+      "key": "heroPhoto",
+      "label": "Foto Utama (First Stamp)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto perjalanan atau momen terbaik kalian berdua."
+    },
+    {
+      "key": "heroCaption",
+      "label": "Caption Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Perjalanan pertama yang bikin kita ketagihan pergi berdua."
+    },
+    {
+      "key": "openingTitle",
+      "label": "Judul Surat Pembuka",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Dari Satu Perjalanan ke Perjalanan Berikutnya"
+    },
+    {
+      "key": "openingLetter",
+      "label": "Isi Surat Pembuka",
+      "type": "textarea",
+      "required": true,
+      "description": "Cerita singkat tentang perjalanan kalian bersama. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "milestones",
+      "label": "Jejak Perjalanan (Places & Milestones)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis 3–5 tempat atau momen berkesan. Format per baris: Kota/Tanggal | Judul Momen | Cerita singkat."
+    },
+    {
+      "key": "souvenirs",
+      "label": "Oleh-Oleh Kecil Tentang Kita (Souvenirs of Us)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 4 detail kecil tentang kalian. Format per baris: Label | Isi (contoh: Lagu di Jalan | Sheila on 7 - Dan)."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Kartu Pos (Postcard Gallery)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 3–6 foto kenangan perjalanan kalian."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Galeri Kartu Pos",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris sesuai urutan foto di atas."
+    },
+    {
+      "key": "nextDestinationTitle",
+      "label": "Judul Penutup (Next Destination)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tujuan Berikutnya: Ke Mana Pun Bersamamu"
+    },
+    {
+      "key": "nextDestinationText",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Masih banyak kota, pantai, dan hari biasa yang ingin kutempuh bersamamu."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Buka Kumpulan Kartu Pos ditekan."
+    }
+  ]
+}

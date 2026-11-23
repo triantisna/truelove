@@ -1,0 +1,114 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Galih",
+      "description": "Nama kamu. Akan tampil di sampul album dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Ratna",
+      "description": "Nama pasanganmu yang akan menerima album perjalanan ini."
+    },
+    {
+      "key": "catalogCode",
+      "label": "Kode Katalog Vinyl / Tahun",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: LP-04 · 33 RPM · EST. 2023",
+      "description": "Penanda gaya piringan hitam di bagian sampul dan header."
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Singkat di Sampul Album",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kalau cerita kita adalah piringan hitam, aku mau memutarnya berulang kali."
+    },
+    {
+      "key": "heroPhoto",
+      "label": "Foto Utama (Album Insert)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto favorit kalian berdua untuk halaman Liner Notes."
+    },
+    {
+      "key": "heroCaption",
+      "label": "Caption Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Sampul depan dari hari-hari terbaik yang pernah kita jalani."
+    },
+    {
+      "key": "linerNotesTitle",
+      "label": "Judul Liner Notes (Catatan Sampul)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Catatan di Balik Album Kita"
+    },
+    {
+      "key": "linerNotesText",
+      "label": "Isi Liner Notes",
+      "type": "textarea",
+      "required": true,
+      "description": "Cerita singkat di balik perjalanan kalian berdua. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "tracklist",
+      "label": "Daftar Momen (The Tracklist)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis 3–6 momen penting ala daftar lagu. Format per baris: Judul Momen | Tanggal/Tahun | Cerita singkat."
+    },
+    {
+      "key": "albumCredits",
+      "label": "Album Credits (Detail Tentang Kita)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 detail kecil tentang kalian. Format per baris: Label | Isi (contoh: Lagu Wajib | Payung Teduh - Akad)."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Kenangan (Inside the Sleeve)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 3–6 foto kenangan terbaik kalian."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Galeri Kenangan",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris sesuai urutan foto di atas."
+    },
+    {
+      "key": "hiddenTrackTitle",
+      "label": "Judul Penutup (Hidden Track)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Hidden Track — Untuk Tahun-Tahun Berikutnya"
+    },
+    {
+      "key": "hiddenTrackText",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Side A sudah kita lewati dengan indah, dan aku tidak sabar memutar Side B bersamamu."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Putar Cerita Kita ditekan."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Editor / Penulis)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Dimas",
+      "description": "Nama kamu. Akan tampil di byline artikel dan stempel voucher ulang tahun."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Cover Star)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Alana",
+      "description": "Nama orang spesial yang menjadi bintang sampul edisi ini."
+    },
+    {
+      "key": "ageNumber",
+      "label": "Usia Baru (Nomor Volume)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 23",
+      "description": "Akan tampil sebagai VOL. [USIA] di sampul majalah dan rubrik By The Numbers."
+    },
+    {
+      "key": "issueDate",
+      "label": "Bulan & Tahun Edisi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: NOVEMBER 2026",
+      "description": "Label tanggal edisi di bagian atas sampul majalah."
+    },
+    {
+      "key": "coverPhoto",
+      "label": "Foto Sampul Utama (Cover Star)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto portrait terbaik penerima untuk tampil di sampul majalah."
+    },
+    {
+      "key": "coverHeadlines",
+      "label": "3 Headline Kecil di Sampul",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Satu baris untuk satu headline (maksimal 3 baris)",
+      "description": "Tampil di sisi sampul majalah layaknya edisi kolektor."
+    },
+    {
+      "key": "stat1Value",
+      "label": "Statistik 01: Angka / Nilai",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 23"
+    },
+    {
+      "key": "stat1Label",
+      "label": "Statistik 01: Keterangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tahun Bersinar"
+    },
+    {
+      "key": "stat2Value",
+      "label": "Statistik 02: Angka / Nilai",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 100%"
+    },
+    {
+      "key": "stat2Label",
+      "label": "Statistik 02: Keterangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Orang Favoritku"
+    },
+    {
+      "key": "stat3Value",
+      "label": "Statistik 03: Angka / Nilai",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 365"
+    },
+    {
+      "key": "stat3Label",
+      "label": "Statistik 03: Keterangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Hari Penuh Cerita"
+    },
+    {
+      "key": "superpowerText",
+      "label": "Statistik 04: Superpower Utamanya",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Bikin Ruangan Jadi Hangat"
+    },
+    {
+      "key": "storyTitle",
+      "label": "Judul Artikel Utama (The Cover Story)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Mengapa Tahun Ini Sepenuhnya Milikmu"
+    },
+    {
+      "key": "pullQuote",
+      "label": "Kutipan Sorotan (Pull Quote)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Kamu tidak pernah perlu berusaha keras untuk jadi istimewa—kehadiranmu saja sudah cukup."
+    },
+    {
+      "key": "storyBody",
+      "label": "Isi Artikel Utama",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Tulis cerita dan apresiasi ulang tahunmu di sini. Pisahkan paragraf dengan satu baris kosong.",
+      "description": "Tampil dengan tata letak editorial majalah yang bersih."
+    },
+    {
+      "key": "edit1Title",
+      "label": "The Edit 01: Judul Kategori",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Lagu yang Mengingatkanku Padamu"
+    },
+    {
+      "key": "edit1Text",
+      "label": "The Edit 01: Isi Kurasi",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Tulis detail kurasi pertama..."
+    },
+    {
+      "key": "edit2Title",
+      "label": "The Edit 02: Judul Kategori",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kebiasaan Kecil Favorit"
+    },
+    {
+      "key": "edit2Text",
+      "label": "The Edit 02: Isi Kurasi",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Tulis detail kurasi kedua..."
+    },
+    {
+      "key": "edit3Title",
+      "label": "The Edit 03: Judul Kategori",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Momen Paling Ikonik"
+    },
+    {
+      "key": "edit3Text",
+      "label": "The Edit 03: Isi Kurasi",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Tulis detail kurasi ketiga..."
+    },
+    {
+      "key": "edit4Title",
+      "label": "The Edit 04: Judul Kategori",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Harapan Terbesar Tahun Ini"
+    },
+    {
+      "key": "edit4Text",
+      "label": "The Edit 04: Isi Kurasi",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Tulis detail kurasi keempat..."
+    },
+    {
+      "key": "spreadPhotos",
+      "label": "Galeri Photo Spread (Lookbook)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 3–6 foto untuk halaman lookbook. Semua foto bisa diklik untuk diperbesar di Lightbox."
+    },
+    {
+      "key": "spreadCaptions",
+      "label": "Keterangan Foto Lookbook",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan"
+    },
+    {
+      "key": "voucherTitle",
+      "label": "Judul Voucher Hadiah (Sampul Belakang)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 1x Dinner & Hadiah Pilihanmu"
+    },
+    {
+      "key": "voucherDetail",
+      "label": "Syarat & Keterangan Voucher",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Bebas pilih tempat makan, menu, dan waktu kapan saja. Berlaku seumur hidup dan 100% ditanggung editor."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Diputar saat tombol Buka Edisi Khusus ditekan."
+    }
+  ]
+}

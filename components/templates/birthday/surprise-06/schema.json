@@ -1,0 +1,252 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Rayhan",
+      "description": "Nama kamu. Akan tampil di sampul perayaan dan tanda tangan surat."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Yang Berulang Tahun)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Nadine",
+      "description": "Nama orang spesial yang sedang berulang tahun."
+    },
+    {
+      "key": "ageNumber",
+      "label": "Usia Baru (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 24",
+      "description": "Akan tampil di tengah emblem segel emas pembuka. Jika kosong, otomatis memakai inisial penerima."
+    },
+    {
+      "key": "editionCode",
+      "label": "Kode Edisi Perayaan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: PRIVATE CELEBRATION · NO. 06",
+      "description": "Label kecil bergaya gala malam di bagian sampul dan header."
+    },
+    {
+      "key": "birthdayDate",
+      "label": "Tanggal Ulang Tahun",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 24 November 2026",
+      "description": "Tanggal yang tertulis di bagian atas surat ulang tahun."
+    },
+    {
+      "key": "openingLine",
+      "label": "Kalimat Pengantar di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Untuk satu tahun lagi bersamamu—babak terbaikmu baru saja dimulai."
+    },
+    {
+      "key": "toast1Title",
+      "label": "Toast 01: Judul Apresiasi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Untuk Tahun yang Sudah Dilewati"
+    },
+    {
+      "key": "toast1Text",
+      "label": "Toast 01: Isi Pesan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Apresiasi atas semua hal yang sudah ia lewati sepanjang tahun lalu..."
+    },
+    {
+      "key": "toast2Title",
+      "label": "Toast 02: Judul Apresiasi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Untuk Siapa Kamu Hari Ini"
+    },
+    {
+      "key": "toast2Text",
+      "label": "Toast 02: Isi Pesan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Hal-hal terbaik yang paling kamu kagumi dari dirinya saat ini..."
+    },
+    {
+      "key": "toast3Title",
+      "label": "Toast 03: Judul Apresiasi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Untuk Semua yang Akan Datang"
+    },
+    {
+      "key": "toast3Text",
+      "label": "Toast 03: Isi Pesan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Harapan hangat untuk langkah-langkah barunya di usia ini..."
+    },
+    {
+      "key": "letterTitle",
+      "label": "Judul Surat Ulang Tahun",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Selamat Bertambah Usia, Orang Paling Berharga"
+    },
+    {
+      "key": "letterBody",
+      "label": "Isi Surat Ulang Tahun (The Birthday Letter)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Tulis surat ulang tahunmu di sini. Beri satu baris kosong untuk pindah paragraf.",
+      "description": "Tampil di lembaran Warm Ivory dengan drop cap emas."
+    },
+    {
+      "key": "chapter1Tag",
+      "label": "Babak 01: Label / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: SOROTAN 01 · KETENANGANMU"
+    },
+    {
+      "key": "chapter1Title",
+      "label": "Babak 01: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Cara Kamu Menghadapi Hari yang Sulit"
+    },
+    {
+      "key": "chapter1Story",
+      "label": "Babak 01: Cerita",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan momen atau hal berkesan pertama tentang dirinya..."
+    },
+    {
+      "key": "chapter2Tag",
+      "label": "Babak 02: Label / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: SOROTAN 02 · KEHANGATANMU"
+    },
+    {
+      "key": "chapter2Title",
+      "label": "Babak 02: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tawa yang Selalu Menghidupkan Ruangan"
+    },
+    {
+      "key": "chapter2Story",
+      "label": "Babak 02: Cerita",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan momen atau hal berkesan kedua..."
+    },
+    {
+      "key": "chapter3Tag",
+      "label": "Babak 03: Label / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: SOROTAN 03 · PERTUMBUHANMU"
+    },
+    {
+      "key": "chapter3Title",
+      "label": "Babak 03: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Versi Dirimu yang Makin Dewasa"
+    },
+    {
+      "key": "chapter3Story",
+      "label": "Babak 03: Cerita",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan momen atau hal berkesan ketiga..."
+    },
+    {
+      "key": "chapter4Tag",
+      "label": "Babak 04: Label / Penanda (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: SOROTAN 04 · TAHUN BARUMU"
+    },
+    {
+      "key": "chapter4Title",
+      "label": "Babak 04: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Semua Hal Baik yang Menunggu di Depan"
+    },
+    {
+      "key": "chapter4Story",
+      "label": "Babak 04: Cerita",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Kosongkan seluruh bagian Babak 04 jika hanya ingin memakai 3 babak."
+    },
+    {
+      "key": "mainPhoto",
+      "label": "Foto Utama (Birthday Portrait)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto terbaik yang tampil paling besar di The Portrait Gallery."
+    },
+    {
+      "key": "mainPhotoCaption",
+      "label": "Keterangan Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Potret Utama — Senyum terbaik untuk mengawali babak baru."
+    },
+    {
+      "key": "galleryPhotos",
+      "label": "Galeri Foto Kenangan",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 3–6 foto terbaik. Semua foto bisa diklik untuk diperbesar di Lightbox."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Keterangan Galeri Foto",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan"
+    },
+    {
+      "key": "signature",
+      "label": "Tanda Tangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Rayhan",
+      "description": "Jika kosong, otomatis memakai nama pengirim."
+    },
+    {
+      "key": "goldenWishTitle",
+      "label": "Judul Doa Terbaik (Golden Toast)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Doa Terbaik untuk Babak Barumu"
+    },
+    {
+      "key": "goldenWishText",
+      "label": "Isi Doa & Harapan Khusus",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Tulis doa paling tulus yang akan terbuka saat ia menekan tombol Angkat Gelas...",
+      "description": "Terbuka saat tombol Angkat Gelas & Buka Doa Terbaik ditekan."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Lagu hangat yang diputar saat pintu perayaan dibuka."
+    }
+  ]
+}

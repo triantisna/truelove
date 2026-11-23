@@ -1,0 +1,114 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Arga",
+      "description": "Nama kamu. Akan tampil di byline redaksi dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Nadia",
+      "description": "Nama pasanganmu yang akan membaca edisi khusus ini."
+    },
+    {
+      "key": "editionMeta",
+      "label": "Volume / Penanda Edisi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: VOL. 05 · SPECIAL ISSUE · EST. 2023",
+      "description": "Tampil di bawah masthead koran pada sampul dan header."
+    },
+    {
+      "key": "coverSubheadline",
+      "label": "Sub-Headline di Halaman Depan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Semua momen kecil yang layak dicetak dan disimpan dalam satu edisi khusus."
+    },
+    {
+      "key": "heroPhoto",
+      "label": "Foto Utama (Lead Story)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto terbaik kalian untuk halaman berita utama."
+    },
+    {
+      "key": "heroCaption",
+      "label": "Caption Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Dokumentasi sore tenang yang menjadi awal dari banyak cerita berikutnya."
+    },
+    {
+      "key": "leadTitle",
+      "label": "Judul Berita Utama (Lead Story)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Bagaimana Hari-Hari Biasa Berubah Jadi Cerita Favorit"
+    },
+    {
+      "key": "leadStory",
+      "label": "Isi Berita Utama (Lead Story)",
+      "type": "textarea",
+      "required": true,
+      "description": "Artikel utama tentang perjalanan kalian berdua. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "chronicle",
+      "label": "Kilas Balik Perjalanan (The Chronicle)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis 3–5 momen penting. Format per baris: Tanggal/Bulan | Judul Momen | Cerita singkat."
+    },
+    {
+      "key": "quickFacts",
+      "label": "Fakta Singkat Tentang Kita (Quick Facts)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 4 fakta ringkas tentang kalian. Format per baris: Label | Isi (contoh: Menu Andalan | Kopi susu dingin & roti panggang)."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Foto (Photo Essay)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 3–6 foto kenangan terbaik kalian."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Galeri Foto",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris sesuai urutan foto di atas."
+    },
+    {
+      "key": "editorsNoteTitle",
+      "label": "Judul Catatan Redaksi (Editor's Note)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Catatan untuk Edisi-Edisi Berikutnya"
+    },
+    {
+      "key": "editorsNoteText",
+      "label": "Isi Catatan Redaksi (Penutup)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Terima kasih sudah menjadi bagian terbaik dari setiap halaman hidupku."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Buka Edisi Lengkap ditekan."
+    }
+  ]
+}

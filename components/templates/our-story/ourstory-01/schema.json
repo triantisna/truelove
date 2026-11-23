@@ -1,0 +1,114 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Raka",
+      "description": "Nama kamu. Akan digabung otomatis dengan nama pasangan."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Nadya",
+      "description": "Nama pasanganmu yang akan membaca cerita ini."
+    },
+    {
+      "key": "sinceYear",
+      "label": "Tahun Mulai Bersama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 2022",
+      "description": "Akan tampil sebagai penanda edisi di sampul, misalnya EST. 2022."
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Pengantar di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Dari obrolan singkat sampai jadi rumah paling tenang."
+    },
+    {
+      "key": "heroPhoto",
+      "label": "Foto Utama (Halaman Prolog)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto favorit berdua untuk membuka cerita."
+    },
+    {
+      "key": "heroCaption",
+      "label": "Caption Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Halaman pertama yang tidak pernah ingin kututup."
+    },
+    {
+      "key": "prologueTitle",
+      "label": "Judul Prolog",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Bagaimana Semuanya Dimulai"
+    },
+    {
+      "key": "prologueText",
+      "label": "Isi Prolog (Awal Mula Cerita)",
+      "type": "textarea",
+      "required": true,
+      "description": "Cerita singkat awal mula kalian bertemu atau memulai hubungan. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "chapters",
+      "label": "Bab-Bab Perjalanan (Timeline)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis 3–6 momen penting. Format per baris: Tanggal/Tahun | Judul Bab | Cerita singkat."
+    },
+    {
+      "key": "littleThings",
+      "label": "Catatan Kecil Tentang Kita",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 detail kecil tentang kalian. Format per baris: Label | Isi (contoh: Lagu Kita | Banda Neira - Sampai Jadi Debu)."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Kenangan (Collected Frames)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 3–6 foto perjalanan kalian berdua."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Galeri Kenangan",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris sesuai urutan foto di atas."
+    },
+    {
+      "key": "epilogueTitle",
+      "label": "Judul Epilog (Penutup)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Masih Banyak Bab yang Ingin Kutulis Bersamamu"
+    },
+    {
+      "key": "epilogueText",
+      "label": "Isi Epilog / Harapan Masa Depan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Terima kasih sudah berjalan sejauh ini bersamaku. Bab-bab berikutnya masih kosong, dan aku ingin terus mengisinya denganmu."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Buka Cerita Kita ditekan."
+    }
+  ]
+}

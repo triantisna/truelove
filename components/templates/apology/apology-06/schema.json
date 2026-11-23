@@ -1,0 +1,223 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "placeholder": "Contoh: Bima",
+      "description": "Nama kamu. Akan muncul sebagai tanda tangan di akhir surat.",
+      "required": true
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "placeholder": "Contoh: Sekar",
+      "description": "Nama orang yang akan membaca permintaan maafmu.",
+      "required": true
+    },
+    {
+      "key": "writtenTime",
+      "label": "Jam Menulis Surat",
+      "type": "text",
+      "placeholder": "22:40",
+      "description": "Jam yang tampil sebagai penanda suasana, misalnya HUJAN REDA · 22:40."
+    },
+    {
+      "key": "writtenDate",
+      "label": "Tanggal Surat",
+      "type": "text",
+      "placeholder": "Contoh: Selasa, 18 November 2025",
+      "description": "Tanggal yang tertulis di bagian atas surat."
+    },
+    {
+      "key": "openingLine",
+      "label": "Kalimat Jujur di Layar Pembuka",
+      "type": "text",
+      "placeholder": "Maaf, kemarin aku yang jadi penyebab mendungnya.",
+      "description": "Satu kalimat singkat dan jujur yang pertama kali dibaca sebelum hujan diredakan."
+    },
+    {
+      "key": "voice1Title",
+      "label": "Hal yang Tertahan #1: Judul Singkat",
+      "type": "text",
+      "placeholder": "Contoh: Waktu kamu menunggu jawabanku",
+      "description": "Momen saat kamu menahan kata-kata karena ego. Judul ini terlihat sebelum kartu dibuka."
+    },
+    {
+      "key": "voice1Text",
+      "label": "Hal yang Tertahan #1: Isi Pengakuan",
+      "type": "textarea",
+      "placeholder": "Apa yang sebenarnya ingin kamu katakan saat itu...",
+      "description": "Terbuka saat tombol putar ditekan. Tulis sejujur mungkin."
+    },
+    {
+      "key": "voice2Title",
+      "label": "Hal yang Tertahan #2: Judul Singkat",
+      "type": "text",
+      "placeholder": "Contoh: Waktu aku memilih diam",
+      "description": "Kosongkan seluruh bagian ini kalau tidak dipakai."
+    },
+    {
+      "key": "voice2Text",
+      "label": "Hal yang Tertahan #2: Isi Pengakuan",
+      "type": "textarea",
+      "placeholder": "Apa yang sebenarnya ingin kamu katakan...",
+      "description": "Terbuka saat tombol putar ditekan."
+    },
+    {
+      "key": "voice3Title",
+      "label": "Hal yang Tertahan #3: Judul Singkat",
+      "type": "text",
+      "placeholder": "Contoh: Waktu kamu menangis di ujung telepon",
+      "description": "Kosongkan seluruh bagian ini kalau tidak dipakai."
+    },
+    {
+      "key": "voice3Text",
+      "label": "Hal yang Tertahan #3: Isi Pengakuan",
+      "type": "textarea",
+      "placeholder": "Apa yang sebenarnya ingin kamu katakan...",
+      "description": "Terbuka saat tombol putar ditekan."
+    },
+    {
+      "key": "letterBody",
+      "label": "Isi Surat Permintaan Maaf",
+      "type": "textarea",
+      "placeholder": "Tulis suratmu di sini. Beri satu baris kosong untuk pindah paragraf.",
+      "description": "Surat utama. Tulis dengan tulus dan hindari pembelaan diri. Pisahkan paragraf dengan satu baris kosong.",
+      "required": true
+    },
+    {
+      "key": "realize1Title",
+      "label": "Hal yang Kusadari #1: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Aku meninggikan suara",
+      "description": "Kesalahan spesifik yang kamu sadari. Terlihat sebelum kartu dibuka."
+    },
+    {
+      "key": "realize1Confession",
+      "label": "Hal yang Kusadari #1: Pengakuan",
+      "type": "textarea",
+      "placeholder": "Akui kesalahannya apa adanya, tanpa kata 'tapi'...",
+      "description": "Tulis pengakuan tanpa alasan atau pembelaan."
+    },
+    {
+      "key": "realize1Fix",
+      "label": "Hal yang Kusadari #1: Langkah Perbaikan",
+      "type": "textarea",
+      "placeholder": "Apa yang akan kamu lakukan secara nyata...",
+      "description": "Langkah konkret yang bisa dibuktikan, bukan sekadar janji."
+    },
+    {
+      "key": "realize2Title",
+      "label": "Hal yang Kusadari #2: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Aku menganggap perasaanmu berlebihan",
+      "description": "Kosongkan seluruh bagian ini kalau tidak dipakai."
+    },
+    {
+      "key": "realize2Confession",
+      "label": "Hal yang Kusadari #2: Pengakuan",
+      "type": "textarea",
+      "placeholder": "Akui kesalahannya apa adanya...",
+      "description": "Tulis pengakuan tanpa alasan atau pembelaan."
+    },
+    {
+      "key": "realize2Fix",
+      "label": "Hal yang Kusadari #2: Langkah Perbaikan",
+      "type": "textarea",
+      "placeholder": "Apa yang akan kamu lakukan secara nyata...",
+      "description": "Langkah konkret yang bisa dibuktikan."
+    },
+    {
+      "key": "realize3Title",
+      "label": "Hal yang Kusadari #3: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Aku memakai diam sebagai senjata",
+      "description": "Kosongkan seluruh bagian ini kalau tidak dipakai."
+    },
+    {
+      "key": "realize3Confession",
+      "label": "Hal yang Kusadari #3: Pengakuan",
+      "type": "textarea",
+      "placeholder": "Akui kesalahannya apa adanya...",
+      "description": "Tulis pengakuan tanpa alasan atau pembelaan."
+    },
+    {
+      "key": "realize3Fix",
+      "label": "Hal yang Kusadari #3: Langkah Perbaikan",
+      "type": "textarea",
+      "placeholder": "Apa yang akan kamu lakukan secara nyata...",
+      "description": "Langkah konkret yang bisa dibuktikan."
+    },
+    {
+      "key": "realize4Title",
+      "label": "Hal yang Kusadari #4: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Aku terlalu sibuk membela diri",
+      "description": "Kosongkan seluruh bagian ini kalau tidak dipakai."
+    },
+    {
+      "key": "realize4Confession",
+      "label": "Hal yang Kusadari #4: Pengakuan",
+      "type": "textarea",
+      "placeholder": "Akui kesalahannya apa adanya...",
+      "description": "Tulis pengakuan tanpa alasan atau pembelaan."
+    },
+    {
+      "key": "realize4Fix",
+      "label": "Hal yang Kusadari #4: Langkah Perbaikan",
+      "type": "textarea",
+      "placeholder": "Apa yang akan kamu lakukan secara nyata...",
+      "description": "Langkah konkret yang bisa dibuktikan."
+    },
+    {
+      "key": "mainPhoto",
+      "label": "Foto Utama",
+      "type": "media",
+      "multiple": false,
+      "description": "Satu foto kenangan indah kalian. Akan tampil paling besar di galeri."
+    },
+    {
+      "key": "mainPhotoCaption",
+      "label": "Keterangan Foto Utama",
+      "type": "text",
+      "placeholder": "Contoh: Hari yang cerah itu masih nyata, dan aku ingin kembali ke sana.",
+      "description": "Tulisan kecil di bawah foto utama."
+    },
+    {
+      "key": "galleryPhotos",
+      "label": "Foto Kenangan Lainnya",
+      "type": "media",
+      "multiple": true,
+      "description": "Tambahkan beberapa foto kenangan yang menenangkan."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Keterangan Foto Kenangan",
+      "type": "textarea",
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan",
+      "description": "Tulis satu keterangan per baris. Baris pertama untuk foto pertama, dan seterusnya."
+    },
+    {
+      "key": "signature",
+      "label": "Tanda Tangan",
+      "type": "text",
+      "placeholder": "Contoh: Bima",
+      "description": "Nama yang tertulis di akhir surat. Kalau kosong, dipakai nama pengirim."
+    },
+    {
+      "key": "hopeText",
+      "label": "Harapan Setelah Hujan",
+      "type": "textarea",
+      "placeholder": "Tulis harapan untuk memulai lagi pelan-pelan, tanpa menekan...",
+      "description": "Pesan penutup yang hanya terbuka saat dia menekan tombol janji. Hindari kalimat yang menuntut jawaban."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Lagu Latar",
+      "type": "music",
+      "description": "Lagu yang diputar saat hujan diredakan. Pilih yang tenang dan tidak berlebihan."
+    }
+  ]
+}

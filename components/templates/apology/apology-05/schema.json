@@ -1,0 +1,98 @@
+{
+  "fields": [
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Clara"
+    },
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Dimas"
+    },
+    {
+      "key": "invitationLine",
+      "label": "Kalimat Ajakan (Layar Pembuka)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Boleh kita duduk sebentar dan bicara pelan-pelan?"
+    },
+    {
+      "key": "whatIDid",
+      "label": "Refleksi: Yang Kulakukan Kemarin",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Contoh: Aku terlalu cepat tersulut emosi dan malah memilih diam saat kamu butuh penjelasan.",
+      "description": "Tulis dengan jujur kesalahan yang kamu lakukan kemarin."
+    },
+    {
+      "key": "whatIShouldHaveDone",
+      "label": "Refleksi: Yang Seharusnya Kulakukan",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Contoh: Seharusnya aku menarik napas, mendengarkanmu dengan tenang, dan menyelesaikan masalahnya bersama.",
+      "description": "Tulis sikap yang seharusnya kamu ambil saat itu."
+    },
+    {
+      "key": "letterHeadline",
+      "label": "Judul Surat Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Maaf sudah membuat suasana kita jadi tidak nyaman"
+    },
+    {
+      "key": "mainLetter",
+      "label": "Isi Surat Permintaan Maaf",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis surat lengkapmu di sini. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "gallery",
+      "label": "Galeri Kenangan (Worth Fighting For)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 2–4 foto kenangan terbaik kalian berdua."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Caption Foto Kenangan",
+      "type": "textarea",
+      "required": false,
+      "description": "Satu caption per baris sesuai urutan foto di atas."
+    },
+    {
+      "key": "peaceOfferingTitle",
+      "label": "Judul Kartu Tawaran Damai (Peace Offering)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kopi & Obrolan Tanpa Buru-Buru"
+    },
+    {
+      "key": "peaceOfferingDetail",
+      "label": "Detail Tawaran Damai",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: 1x traktir kopi & makanan favoritmu, plus aku yang dengerin semua ceritamu tanpa menyela."
+    },
+    {
+      "key": "closingText",
+      "label": "Pesan Penutup (The Open Seat)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Kursi di seberangku selalu kosong untukmu. Kabari aku kapan pun kamu siap bicara."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Duduk & Baca ditekan."
+    }
+  ]
+}

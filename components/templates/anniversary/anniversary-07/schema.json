@@ -1,0 +1,107 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Arya",
+      "description": "Nama kamu. Akan tampil di sampul buku dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Pasangan)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Kirana",
+      "description": "Nama pasanganmu yang merayakan anniversary bersama."
+    },
+    {
+      "key": "chapterLabel",
+      "label": "Label Bab / Tahun",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: CHAPTER 04",
+      "description": "Penanda tahun ke berapa hubungan kalian di sampul buku dan header."
+    },
+    {
+      "key": "editionCode",
+      "label": "Kode Edisi Buku",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: EDITION NO. 07 · HARDCOVER",
+      "description": "Label kecil bergaya buku klasik di bagian atas sampul."
+    },
+    {
+      "key": "bookTitle",
+      "label": "Judul Buku Kenangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Pages of Us"
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Pengantar di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Setiap tahun menambah bab baru—dan kamu masih jadi cerita favoritku."
+    },
+    {
+      "key": "frontispiecePhoto",
+      "label": "Foto Utama (The Frontispiece)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto terbaik kalian berdua untuk tampil di halaman depan buku."
+    },
+    {
+      "key": "dedicationText",
+      "label": "Kalimat Dedikasi",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Untuk Kirana, yang selalu menjadi rumah di setiap bab."
+    },
+    {
+      "key": "forewordTitle",
+      "label": "Judul Surat (The Foreword)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kata Pengantar untuk Tahun Keempat"
+    },
+    {
+      "key": "forewordBody",
+      "label": "Isi Surat Anniversary (The Foreword)",
+      "type": "textarea",
+      "required": true,
+      "description": "Tulis pesan anniversary-mu di sini. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "bookmarkedMoments",
+      "label": "Momen Penting Tahun Ini (Bookmarked Moments)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 momen berkesan berurutan. Format per baris: Bulan/Tanggal | Judul Momen | Cerita singkat."
+    },
+    {
+      "key": "marginNotes",
+      "label": "Catatan Kecil Tentangmu (Margin Notes)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 hal sederhana tentang pasanganmu yang paling kamu syukuri (satu poin per baris)."
+    },
+    {
+      "key": "closingNote",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Masih banyak halaman kosong di depan, dan aku hanya ingin menulisnya bersamamu."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Buka Halaman Pertama ditekan."
+    }
+  ]
+}

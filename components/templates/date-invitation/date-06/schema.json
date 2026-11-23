@@ -1,0 +1,235 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Adrian",
+      "description": "Nama kamu. Akan tampil di amplop pembuka, tanda tangan surat, dan Golden RSVP Pass."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Celine",
+      "description": "Nama pasangan atau orang yang menjadi tamu kehormatan malam itu."
+    },
+    {
+      "key": "invitationCode",
+      "label": "Kode Undangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: SOIRÉE NO. 06 · PRIVATE INVITE",
+      "description": "Penanda eksklusif di sampul amplop dan header halaman."
+    },
+    {
+      "key": "openingLine",
+      "label": "Kalimat Pengantar di Amplop",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Berdandanlah yang paling kamu suka—malam ini sepenuhnya milik kita berdua."
+    },
+    {
+      "key": "clue1Title",
+      "label": "Petunjuk 01: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Suasana"
+    },
+    {
+      "key": "clue1Text",
+      "label": "Petunjuk 01: Isi Teaser",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Cahaya lampu temaram, angin malam yang sejuk, dan pemandangan kota dari atas."
+    },
+    {
+      "key": "clue2Title",
+      "label": "Petunjuk 02: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Rasa"
+    },
+    {
+      "key": "clue2Text",
+      "label": "Petunjuk 02: Isi Teaser",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Hidangan hangat yang sudah kupesankan khusus, ditambah dessert favoritmu di akhir malam."
+    },
+    {
+      "key": "clue3Title",
+      "label": "Petunjuk 03: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kejutan Kecil"
+    },
+    {
+      "key": "clue3Text",
+      "label": "Petunjuk 03: Isi Teaser",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Sesuatu yang sudah lama kamu sebut-sebut, kusiapkan diam-diam di meja kita."
+    },
+    {
+      "key": "dateText",
+      "label": "Hari & Tanggal",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Sabtu, 19 Desember 2026"
+    },
+    {
+      "key": "timeText",
+      "label": "Jam Acara",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: 19.00 WIB – Larut"
+    },
+    {
+      "key": "locationText",
+      "label": "Lokasi",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Rooftop Lounge & Bistro, Bandung"
+    },
+    {
+      "key": "dressCode",
+      "label": "Dress Code",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Evening Chic · Hitam, Ivory, atau Champagne"
+    },
+    {
+      "key": "letterTitle",
+      "label": "Judul Surat Undangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Satu Malam yang Sengaja Kusisihkan untuk Kita"
+    },
+    {
+      "key": "letterBody",
+      "label": "Isi Surat Undangan (The Personal Invitation)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Tulis alasan kamu menyiapkan malam spesial ini. Pisahkan paragraf dengan satu baris kosong.",
+      "description": "Tampil di lembaran surat Warm Ivory dengan drop cap emas."
+    },
+    {
+      "key": "chapter1Time",
+      "label": "Babak 01: Jam / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 18.30 WIB · PENJEMPUTAN"
+    },
+    {
+      "key": "chapter1Title",
+      "label": "Babak 01: Judul Agenda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Menjemputmu dengan Tenang"
+    },
+    {
+      "key": "chapter1Story",
+      "label": "Babak 01: Keterangan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan detail babak pertama malam itu..."
+    },
+    {
+      "key": "chapter2Time",
+      "label": "Babak 02: Jam / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 19.30 WIB · CANDLELIT DINNER"
+    },
+    {
+      "key": "chapter2Title",
+      "label": "Babak 02: Judul Agenda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Makan Malam di Meja Sudut"
+    },
+    {
+      "key": "chapter2Story",
+      "label": "Babak 02: Keterangan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan detail babak kedua malam itu..."
+    },
+    {
+      "key": "chapter3Time",
+      "label": "Babak 03: Jam / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 21.30 WIB · LATE NIGHT DRIVE"
+    },
+    {
+      "key": "chapter3Title",
+      "label": "Babak 03: Judul Agenda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Menutup Malam Tanpa Buru-Buru"
+    },
+    {
+      "key": "chapter3Story",
+      "label": "Babak 03: Keterangan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan detail babak ketiga malam itu..."
+    },
+    {
+      "key": "mainPhoto",
+      "label": "Foto Utama (Moodboard Centerpiece)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto suasana malam atau foto berdua yang tampil paling besar."
+    },
+    {
+      "key": "mainPhotoCaption",
+      "label": "Keterangan Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Cahaya hangat, meja untuk berdua, dan waktu yang berjalan pelan."
+    },
+    {
+      "key": "moodboardPhotos",
+      "label": "Galeri Moodboard (Suasana / Outfit / Foto Berdua)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 2–4 foto pendukung. Semua foto bisa diklik untuk diperbesar di Lightbox."
+    },
+    {
+      "key": "moodboardCaptions",
+      "label": "Keterangan Galeri Moodboard",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan"
+    },
+    {
+      "key": "signature",
+      "label": "Tanda Tangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Adrian",
+      "description": "Jika kosong, otomatis memakai nama pengirim."
+    },
+    {
+      "key": "closingNote",
+      "label": "Pesan Penutup di Bagian RSVP",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Pilih vibe-mu malam itu, lalu konfirmasi kehadiranmu di bawah."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Lagu jazz lembut atau akustik malam yang diputar saat segel amplop dibuka."
+    }
+  ]
+}

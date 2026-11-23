@@ -1,0 +1,136 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Bagas",
+      "description": "Nama kamu. Akan tampil di label Host dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Nabila",
+      "description": "Nama pasangan atau orang yang ingin kamu ajak short escape."
+    },
+    {
+      "key": "tripCode",
+      "label": "Kode Trip / Kelas Tiket",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: TRIP NO. 05 · FIRST CLASS",
+      "description": "Penanda kecil bergaya boarding pass di bagian sampul dan header."
+    },
+    {
+      "key": "routeFrom",
+      "label": "Kode Asal (3–7 Huruf)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: BDG",
+      "description": "Tampil besar di sisi kiri rute boarding pass (misal: BDG atau HOME)."
+    },
+    {
+      "key": "routeTo",
+      "label": "Kode Tujuan (3–7 Huruf)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: LEMBANG",
+      "description": "Tampil besar di sisi kanan rute boarding pass (misal: LEMBANG atau ESCAPE)."
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Ajakan di Sampul Tiket",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Bawa barang secukupnya—kita kabur sebentar dari rutinitas."
+    },
+    {
+      "key": "destinationPhoto",
+      "label": "Foto Utama / Suasana Perjalanan",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto destinasi, jalanan sore, atau foto perjalanan kalian berdua."
+    },
+    {
+      "key": "destinationCaption",
+      "label": "Caption Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Satu hari penuh di luar kota tanpa perlu memikirkan kerjaan."
+    },
+    {
+      "key": "briefTitle",
+      "label": "Judul Pesan Ajakan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Waktunya Kabur Sebentar dari Rutinitas"
+    },
+    {
+      "key": "briefMessage",
+      "label": "Isi Pesan Ajakan (Destination Brief)",
+      "type": "textarea",
+      "required": true,
+      "description": "Ceritakan singkat kenapa kamu mengajaknya jalan atau short escape kali ini. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "dateText",
+      "label": "Hari & Tanggal",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Sabtu, 12 Desember 2026"
+    },
+    {
+      "key": "timeText",
+      "label": "Jam Jemput / Berangkat",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: 08.00 WIB – Malam"
+    },
+    {
+      "key": "destinationText",
+      "label": "Rute / Tujuan Utama",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Lembang & Cikole, Bandung Utara"
+    },
+    {
+      "key": "packingNote",
+      "label": "Bawaan / Dress Code",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Jaket hangat, kacamata hitam, sepatu nyaman"
+    },
+    {
+      "key": "routeWaypoints",
+      "label": "Rute Perjalanan Kita (The Route)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 titik perhentian berurutan. Format per baris: Jam | Judul Perhentian | Catatan singkat."
+    },
+    {
+      "key": "onboardPerks",
+      "label": "Fasilitas Penumpang (On-Board Perks)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 hak istimewa selama di jalan (satu poin per baris)."
+    },
+    {
+      "key": "closingNote",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Kursi depan sudah siap atas namamu—tinggal duduk manis dan nikmati perjalanan."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Check-In & Buka Tiket ditekan."
+    }
+  ]
+}

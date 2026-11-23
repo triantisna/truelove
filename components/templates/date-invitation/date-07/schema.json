@@ -1,0 +1,235 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Rafael",
+      "description": "Nama kamu. Akan tampil di kartu pembuka, tanda tangan surat, dan Sunlit Pass."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Bianca",
+      "description": "Nama pasangan atau orang yang kamu undang untuk kencan sore ini."
+    },
+    {
+      "key": "editionCode",
+      "label": "Kode Edisi Undangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: EDITION NO. 07 · SUNLIT INVITE",
+      "description": "Label kecil bergaya boutique resort di sampul dan header halaman."
+    },
+    {
+      "key": "openingLine",
+      "label": "Kalimat Pengantar di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Cahaya matahari sore, obrolan pelan, dan satu siang yang khusus kupesan untuk kita."
+    },
+    {
+      "key": "promise1Title",
+      "label": "Janji 01: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tanpa Buru-buru"
+    },
+    {
+      "key": "promise1Text",
+      "label": "Janji 01: Isi Cerita",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Tidak ada jadwal padat atau target waktu—kita biarkan sore berjalan pelan."
+    },
+    {
+      "key": "promise2Title",
+      "label": "Janji 02: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Hidangan Favorit"
+    },
+    {
+      "key": "promise2Text",
+      "label": "Janji 02: Isi Cerita",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Meja dekat jendela dengan cahaya matahari terbaik, kopi hangat, dan pastry kesukaanmu."
+    },
+    {
+      "key": "promise3Title",
+      "label": "Janji 03: Judul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Waktu Penuh Untukmu"
+    },
+    {
+      "key": "promise3Text",
+      "label": "Janji 03: Isi Cerita",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Ponsel masuk mode senyap—hari itu perhatianku sepenuhnya hanya untuk ceritamu."
+    },
+    {
+      "key": "dateText",
+      "label": "Hari & Tanggal",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Minggu, 20 Desember 2026"
+    },
+    {
+      "key": "timeText",
+      "label": "Jam Acara",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: 11.30 WIB – Golden Hour"
+    },
+    {
+      "key": "locationText",
+      "label": "Lokasi",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Glasshouse Brunch & Terrace, Bandung"
+    },
+    {
+      "key": "dressCode",
+      "label": "Dress Code",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Sunlit Linen · Putih, Cream, atau Biru Muda"
+    },
+    {
+      "key": "letterTitle",
+      "label": "Judul Surat Undangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Satu Sore Cerah yang Ingin Kuhabiskan Bersamamu"
+    },
+    {
+      "key": "letterBody",
+      "label": "Isi Surat Undangan (The Sunlit Letter)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Tulis alasan kamu menyiapkan kencan sore ini. Pisahkan paragraf dengan satu baris kosong.",
+      "description": "Tampil di lembaran kertas katun terang dengan drop cap biru Mediterania."
+    },
+    {
+      "key": "chapter1Time",
+      "label": "Babak 01: Jam / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 11.30 WIB · BRUNCH & KOPI"
+    },
+    {
+      "key": "chapter1Title",
+      "label": "Babak 01: Judul Agenda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Meja Cerah di Dekat Jendela"
+    },
+    {
+      "key": "chapter1Story",
+      "label": "Babak 01: Keterangan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan detail babak pertama..."
+    },
+    {
+      "key": "chapter2Time",
+      "label": "Babak 02: Jam / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 14.00 WIB · JALAN SANTAI"
+    },
+    {
+      "key": "chapter2Title",
+      "label": "Babak 02: Judul Agenda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Menyusuri Sudut Kota & Galeri"
+    },
+    {
+      "key": "chapter2Story",
+      "label": "Babak 02: Keterangan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan detail babak kedua..."
+    },
+    {
+      "key": "chapter3Time",
+      "label": "Babak 03: Jam / Penanda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 16.30 WIB · GOLDEN HOUR"
+    },
+    {
+      "key": "chapter3Title",
+      "label": "Babak 03: Judul Agenda",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Gelato & Cahaya Sore"
+    },
+    {
+      "key": "chapter3Story",
+      "label": "Babak 03: Keterangan",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan detail babak ketiga..."
+    },
+    {
+      "key": "mainPhoto",
+      "label": "Foto Utama (Sunlit Centerpiece)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto suasana terang atau foto berdua yang tampil paling besar."
+    },
+    {
+      "key": "mainPhotoCaption",
+      "label": "Keterangan Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Cahaya siang yang hangat, meja berdua, dan waktu yang berjalan pelan."
+    },
+    {
+      "key": "moodboardPhotos",
+      "label": "Galeri Moodboard (Suasana / Outfit / Foto Berdua)",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 2–4 foto pendukung. Semua foto bisa diklik untuk diperbesar di Lightbox."
+    },
+    {
+      "key": "moodboardCaptions",
+      "label": "Keterangan Galeri Moodboard",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan"
+    },
+    {
+      "key": "signature",
+      "label": "Tanda Tangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Rafael",
+      "description": "Jika kosong, otomatis memakai nama pengirim."
+    },
+    {
+      "key": "closingNote",
+      "label": "Pesan Penutup di Bagian RSVP",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Pilih welcome treat favoritmu, lalu konfirmasi kehadiranmu di bawah."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Lagu bossa nova ringan atau akustik cerah yang diputar saat kartu pembuka dibuka."
+    }
+  ]
+}

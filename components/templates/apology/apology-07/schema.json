@@ -1,0 +1,167 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "placeholder": "Contoh: Arya",
+      "description": "Nama kamu. Akan muncul sebagai tanda tangan di akhir surat.",
+      "required": true
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "placeholder": "Contoh: Kinanti",
+      "description": "Nama orang yang akan membaca permintaan maafmu.",
+      "required": true
+    },
+    {
+      "key": "writtenDate",
+      "label": "Tanggal Surat",
+      "type": "text",
+      "placeholder": "Contoh: Kamis, 20 November 2025",
+      "description": "Tanggal yang tertulis di bagian atas surat."
+    },
+    {
+      "key": "openingLine",
+      "label": "Kalimat Pengantar di Sampul",
+      "type": "text",
+      "placeholder": "Tidak ada yang perlu dijawab hari ini. Baca saja, pelan-pelan.",
+      "description": "Satu kalimat tenang yang dibaca pertama kali, sebelum segel dibuka."
+    },
+    {
+      "key": "ledgerSaid",
+      "label": "Yang Terucap",
+      "type": "textarea",
+      "placeholder": "Sikap atau kata-kata yang menyakitinya...",
+      "description": "Akui apa yang pernah kamu katakan atau lakukan. Pisahkan paragraf dengan satu baris kosong."
+    },
+    {
+      "key": "ledgerRegret",
+      "label": "Yang Kusesali",
+      "type": "textarea",
+      "placeholder": "Penyesalanmu, tanpa kata 'tapi' atau 'kalau saja'...",
+      "description": "Tulis kesadaranmu secara utuh tanpa pembelaan. Pisahkan paragraf dengan satu baris kosong."
+    },
+    {
+      "key": "ledgerDeserve",
+      "label": "Yang Kamu Layak Dapat",
+      "type": "textarea",
+      "placeholder": "Perlakuan yang seharusnya kamu berikan kepadanya...",
+      "description": "Tulis apa yang seharusnya dia terima dari kamu. Pisahkan paragraf dengan satu baris kosong."
+    },
+    {
+      "key": "letterBody",
+      "label": "Isi Surat Permintaan Maaf",
+      "type": "textarea",
+      "placeholder": "Tulis suratmu di sini. Beri satu baris kosong untuk pindah paragraf.",
+      "description": "Surat utama. Tulis dengan tulus dan hindari pembelaan diri. Pisahkan paragraf dengan satu baris kosong.",
+      "required": true
+    },
+    {
+      "key": "commit1Title",
+      "label": "Langkah Perbaikan #1: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Mengakui lebih dulu",
+      "description": "Komitmen nyata pertamamu. Judul singkat saja."
+    },
+    {
+      "key": "commit1Detail",
+      "label": "Langkah Perbaikan #1: Penjelasan",
+      "type": "textarea",
+      "placeholder": "Jelaskan bagaimana kamu akan melakukannya...",
+      "description": "Satu atau dua kalimat yang konkret dan bisa dibuktikan."
+    },
+    {
+      "key": "commit2Title",
+      "label": "Langkah Perbaikan #2: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Menunggu giliran bicara",
+      "description": "Kosongkan seluruh bagian ini kalau tidak dipakai."
+    },
+    {
+      "key": "commit2Detail",
+      "label": "Langkah Perbaikan #2: Penjelasan",
+      "type": "textarea",
+      "placeholder": "Jelaskan bagaimana kamu akan melakukannya...",
+      "description": "Satu atau dua kalimat yang konkret."
+    },
+    {
+      "key": "commit3Title",
+      "label": "Langkah Perbaikan #3: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Jeda yang jelas",
+      "description": "Kosongkan seluruh bagian ini kalau tidak dipakai."
+    },
+    {
+      "key": "commit3Detail",
+      "label": "Langkah Perbaikan #3: Penjelasan",
+      "type": "textarea",
+      "placeholder": "Jelaskan bagaimana kamu akan melakukannya...",
+      "description": "Satu atau dua kalimat yang konkret."
+    },
+    {
+      "key": "commit4Title",
+      "label": "Langkah Perbaikan #4: Judul",
+      "type": "text",
+      "placeholder": "Contoh: Menjaga nada",
+      "description": "Kosongkan seluruh bagian ini kalau tidak dipakai."
+    },
+    {
+      "key": "commit4Detail",
+      "label": "Langkah Perbaikan #4: Penjelasan",
+      "type": "textarea",
+      "placeholder": "Jelaskan bagaimana kamu akan melakukannya...",
+      "description": "Satu atau dua kalimat yang konkret."
+    },
+    {
+      "key": "mainPhoto",
+      "label": "Foto Utama",
+      "type": "media",
+      "multiple": false,
+      "description": "Satu foto kenangan yang menenangkan. Akan tampil paling besar di galeri."
+    },
+    {
+      "key": "mainPhotoCaption",
+      "label": "Keterangan Foto Utama",
+      "type": "text",
+      "placeholder": "Contoh: Hari yang tenang itu masih ingin kujaga.",
+      "description": "Tulisan kecil di bawah foto utama."
+    },
+    {
+      "key": "galleryPhotos",
+      "label": "Foto Kenangan Lainnya",
+      "type": "media",
+      "multiple": true,
+      "description": "Tambahkan beberapa foto kenangan. Semuanya akan dipasang dalam bingkai bersih."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Keterangan Foto Kenangan",
+      "type": "textarea",
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan",
+      "description": "Tulis satu keterangan per baris. Baris pertama untuk foto pertama, dan seterusnya."
+    },
+    {
+      "key": "signature",
+      "label": "Tanda Tangan",
+      "type": "text",
+      "placeholder": "Contoh: Arya",
+      "description": "Nama yang tertulis di akhir surat. Kalau kosong, dipakai nama pengirim."
+    },
+    {
+      "key": "closingNote",
+      "label": "Catatan Terakhir",
+      "type": "textarea",
+      "placeholder": "Pesan penutup tanpa tekanan. Contoh: Pintu ini selalu terbuka, ambil waktumu...",
+      "description": "Pesan di dalam kartu lipat yang terbuka saat tombol ditekan. Hindari kalimat yang menuntut jawaban."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Lagu Latar",
+      "type": "music",
+      "description": "Lagu yang diputar saat segel dibuka. Pilih yang lembut dan tidak berlebihan."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Kevin",
+      "description": "Nama kamu. Akan tampil di tiket bioskop dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Vania",
+      "description": "Nama pasangan atau orang yang ingin kamu ajak movie date."
+    },
+    {
+      "key": "ticketCode",
+      "label": "Kode Tiket / Studio",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: ADMIT TWO · STUDIO 03",
+      "description": "Penanda gaya tiket bioskop klasik di bagian sampul dan header."
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Ajakan di Sampul Tiket",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Dua kursi, satu layar, dan orang favoritku duduk tepat di sebelahku."
+    },
+    {
+      "key": "posterPhoto",
+      "label": "Foto Utama (Indie Movie Poster)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto kalian berdua atau foto suasana bioskop / malam hari."
+    },
+    {
+      "key": "posterCaption",
+      "label": "Caption Poster",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tayang perdana khusus untuk kita berdua malam ini."
+    },
+    {
+      "key": "movieTitle",
+      "label": "Judul Film / Tema Kencan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Malam Minggu di Baris Tengah"
+    },
+    {
+      "key": "synopsis",
+      "label": "Sinopsis / Pesan Ajakan",
+      "type": "textarea",
+      "required": true,
+      "description": "Ceritakan singkat kenapa kamu mengajaknya nonton kali ini. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "dateText",
+      "label": "Hari & Tanggal",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Sabtu, 5 Desember 2026"
+    },
+    {
+      "key": "timeText",
+      "label": "Jam Tayang",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: 19.00 WIB – Selesai"
+    },
+    {
+      "key": "locationText",
+      "label": "Lokasi / Bioskop",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Cinema XXI Ciwalk / Home Cinema"
+    },
+    {
+      "key": "seatInfo",
+      "label": "Kursi / Dress Code",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Row E Seat 07–08 · Hoodie atau Jaket Nyaman"
+    },
+    {
+      "key": "schedule",
+      "label": "Rangkaian Acara (The Feature Schedule)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 sesi berurutan. Format per baris: Sesi/Jam | Judul Agenda | Catatan singkat."
+    },
+    {
+      "key": "concessions",
+      "label": "Menu & Fasilitas (Concession Stand)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 snack atau fasilitas seru yang sudah kamu siapkan (satu poin per baris)."
+    },
+    {
+      "key": "closingNote",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Tiket dan popcorn sudah aman—tinggal tunggu kamu duduk di sebelahku."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Ambil Tiket & Masuk Studio ditekan."
+    }
+  ]
+}

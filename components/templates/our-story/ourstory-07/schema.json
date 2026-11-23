@@ -1,0 +1,287 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Bima",
+      "description": "Nama kamu. Akan tampil di sampul arsip dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Sekar",
+      "description": "Nama pasanganmu yang akan membuka arsip kenangan ini."
+    },
+    {
+      "key": "archiveNumber",
+      "label": "Nomor Arsip",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: ARCHIVE NO. 07 · PRESSED IN TIME",
+      "description": "Penanda edisi arsip di bagian sampul dan header."
+    },
+    {
+      "key": "openingLine",
+      "label": "Kalimat Pengantar di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Beberapa momen terlalu rapuh jika hanya diserahkan pada ingatan—jadi kuawetkan di sini."
+    },
+    {
+      "key": "writtenDate",
+      "label": "Tanggal Arsip / Surat",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Minggu, 22 November 2026",
+      "description": "Tanggal yang tertulis di bagian atas surat utama."
+    },
+    {
+      "key": "specimen1Label",
+      "label": "Spesimen 1: Nama Momen / Hal Kecil",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Sore Pertama di Teras"
+    },
+    {
+      "key": "specimen1Meta",
+      "label": "Spesimen 1: Waktu / Tempat",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: APRIL 2023 · BANDUNG"
+    },
+    {
+      "key": "specimen1Story",
+      "label": "Spesimen 1: Cerita di Baliknya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan kenapa momen kecil ini ingin kamu awetkan..."
+    },
+    {
+      "key": "specimen2Label",
+      "label": "Spesimen 2: Nama Momen / Hal Kecil",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Bunga Kering di Halaman Buku"
+    },
+    {
+      "key": "specimen2Meta",
+      "label": "Spesimen 2: Waktu / Tempat",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: SEPTEMBER 2023 · TOKO BUKU"
+    },
+    {
+      "key": "specimen2Story",
+      "label": "Spesimen 2: Cerita di Baliknya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Cerita singkat untuk spesimen kedua..."
+    },
+    {
+      "key": "specimen3Label",
+      "label": "Spesimen 3: Nama Momen / Hal Kecil",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Teh Hangat Setelah Hujan"
+    },
+    {
+      "key": "specimen3Meta",
+      "label": "Spesimen 3: Waktu / Tempat",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: FEBRUARI 2024 · YOGYAKARTA"
+    },
+    {
+      "key": "specimen3Story",
+      "label": "Spesimen 3: Cerita di Baliknya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Cerita singkat untuk spesimen ketiga..."
+    },
+    {
+      "key": "specimen4Label",
+      "label": "Spesimen 4: Nama Momen / Hal Kecil (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Jalan Pagi Hari Minggu"
+    },
+    {
+      "key": "specimen4Meta",
+      "label": "Spesimen 4: Waktu / Tempat",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 2024 – SEKARANG"
+    },
+    {
+      "key": "specimen4Story",
+      "label": "Spesimen 4: Cerita di Baliknya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Kosongkan seluruh bagian spesimen 4 jika hanya ingin memakai 3 spesimen."
+    },
+    {
+      "key": "letterTitle",
+      "label": "Judul Surat Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Untuk Semua Musim yang Kita Lewati Bersama"
+    },
+    {
+      "key": "letterBody",
+      "label": "Isi Surat Utama (The Archive Letter)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Tulis surat panjangmu di sini. Beri satu baris kosong untuk pindah paragraf.",
+      "description": "Surat inti yang tampil di lembaran katun terang. Pisahkan paragraf dengan satu baris kosong."
+    },
+    {
+      "key": "season1When",
+      "label": "Musim 01: Waktu / Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: MUSIM 01 · AWAL MULA"
+    },
+    {
+      "key": "season1Title",
+      "label": "Musim 01: Judul Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Saat Semuanya Baru Tumbuh"
+    },
+    {
+      "key": "season1Story",
+      "label": "Musim 01: Cerita Fase Ini",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan fase pertama perjalanan kalian..."
+    },
+    {
+      "key": "season2When",
+      "label": "Musim 02: Waktu / Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: MUSIM 02 · BERTUMBUH"
+    },
+    {
+      "key": "season2Title",
+      "label": "Musim 02: Judul Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Belajar Saling Mengerti"
+    },
+    {
+      "key": "season2Story",
+      "label": "Musim 02: Cerita Fase Ini",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan fase kedua perjalanan kalian..."
+    },
+    {
+      "key": "season3When",
+      "label": "Musim 03: Waktu / Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: MUSIM 03 · BERTAHAN"
+    },
+    {
+      "key": "season3Title",
+      "label": "Musim 03: Judul Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tetap Hangat di Hari yang Teduh"
+    },
+    {
+      "key": "season3Story",
+      "label": "Musim 03: Cerita Fase Ini",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Ceritakan fase ketiga perjalanan kalian..."
+    },
+    {
+      "key": "season4When",
+      "label": "Musim 04: Waktu / Fase (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: MUSIM 04 · KINI"
+    },
+    {
+      "key": "season4Title",
+      "label": "Musim 04: Judul Fase",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Rumah yang Terus Kita Rawat"
+    },
+    {
+      "key": "season4Story",
+      "label": "Musim 04: Cerita Fase Ini",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Kosongkan seluruh bagian Musim 04 jika hanya ingin memakai 3 musim."
+    },
+    {
+      "key": "mainPhoto",
+      "label": "Foto Utama (Sunlit Centerpiece)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto favorit kalian berdua yang akan tampil paling besar di galeri."
+    },
+    {
+      "key": "mainPhotoCaption",
+      "label": "Keterangan Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Pagi yang tenang, dan senyummu yang selalu jadi favoritku."
+    },
+    {
+      "key": "galleryPhotos",
+      "label": "Galeri Foto Kenangan",
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "description": "Unggah 3–6 foto kenangan. Semua foto bisa diklik untuk diperbesar di Lightbox."
+    },
+    {
+      "key": "galleryCaptions",
+      "label": "Keterangan Galeri Foto",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Satu baris untuk satu foto, sesuai urutan unggahan",
+      "description": "Tulis satu keterangan per baris. Baris pertama untuk foto pertama, dan seterusnya."
+    },
+    {
+      "key": "signature",
+      "label": "Tanda Tangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Bima",
+      "description": "Nama yang tertulis miring di akhir arsip. Jika kosong, memakai nama pengirim."
+    },
+    {
+      "key": "tomorrowTitle",
+      "label": "Judul Pesan Masa Depan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Benih Kecil untuk Musim-Musim Berikutnya"
+    },
+    {
+      "key": "tomorrowText",
+      "label": "Isi Pesan untuk Musim Berikutnya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Tulis harapan hangatmu untuk hari-hari yang akan datang bersama...",
+      "description": "Terbuka saat pasanganmu menekan tombol Buka Pesan untuk Musim Berikutnya."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Lagu lembut yang diputar saat pita sampul dilepas."
+    }
+  ]
+}

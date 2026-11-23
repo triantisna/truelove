@@ -1,0 +1,120 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Naufal",
+      "description": "Nama kamu. Akan tampil di sampul undangan dan tanda tangan penutup."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Salma",
+      "description": "Nama pasangan atau orang yang ingin kamu ajak piknik sore."
+    },
+    {
+      "key": "inviteCode",
+      "label": "Label / Kode Undangan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: OUTDOOR DATE · NO. 04",
+      "description": "Penanda kecil bergaya kartu piknik di bagian sampul dan header."
+    },
+    {
+      "key": "coverTagline",
+      "label": "Kalimat Ajakan di Sampul",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Tikar hangat, cahaya sore, dan tidak ada tempat lain yang perlu kita buru."
+    },
+    {
+      "key": "moodPhoto",
+      "label": "Foto Utama / Foto Suasana",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto suasana taman, pantai sore, atau foto santai kalian berdua."
+    },
+    {
+      "key": "moodCaption",
+      "label": "Caption Foto Utama",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Sore yang pelan di bawah langit hangat."
+    },
+    {
+      "key": "noteTitle",
+      "label": "Judul Pesan Ajakan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Menikmati Sore Tanpa Terburu-buru"
+    },
+    {
+      "key": "picnicNote",
+      "label": "Isi Pesan Ajakan",
+      "type": "textarea",
+      "required": true,
+      "description": "Ceritakan singkat kenapa kamu mengajaknya piknik kali ini. Pisahkan paragraf dengan satu baris kosong (Enter)."
+    },
+    {
+      "key": "dateText",
+      "label": "Hari & Tanggal",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Minggu, 6 Desember 2026"
+    },
+    {
+      "key": "timeText",
+      "label": "Jam",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: 15.30 WIB – Sunset"
+    },
+    {
+      "key": "locationText",
+      "label": "Spot Piknik / Lokasi",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Taman Hutan Raya / Lapangan Rumput Teduh"
+    },
+    {
+      "key": "outfitNote",
+      "label": "Outfit Nyaman",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Warna terang / pastel, bahan adem & nyaman duduk lesehan"
+    },
+    {
+      "key": "afternoonFlow",
+      "label": "Alur Sore Kita (Afternoon Flow)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 agenda santai berurutan. Format per baris: Jam | Agenda | Catatan singkat."
+    },
+    {
+      "key": "picnicBasket",
+      "label": "Isi Keranjang Piknik (Inside the Picnic Basket)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3–4 makanan atau perlengkapan yang sudah kamu siapkan (satu poin per baris)."
+    },
+    {
+      "key": "closingNote",
+      "label": "Pesan Penutup",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Cukup bawa diri dan senyum paling santai—keranjang pikniknya sudah kusiapkan."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan diputar saat tombol Buka Undangan Piknik ditekan."
+    }
+  ]
+}
