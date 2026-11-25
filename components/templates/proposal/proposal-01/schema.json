@@ -1,0 +1,128 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Keenan",
+      "description": "Nama kamu. Akan tampil di halaman janji dan layar perayaan setelah ia menjawab Iya."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Aura",
+      "description": "Nama orang spesial yang ingin kamu nyatakan perasaan atau lamar."
+    },
+    {
+      "key": "hookTitle",
+      "label": "Kalimat Pembuka (Slide 01)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Ada satu hal yang sudah lama ingin kutanyakan padamu..."
+    },
+    {
+      "key": "hookSubtext",
+      "label": "Catatan Kecil Pembuka (Slide 01)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Baca pelan-pelan sampai halaman terakhir, ya."
+    },
+    {
+      "key": "momentPhoto",
+      "label": "Foto Utama (Slide 02 - Bingkai Arch)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto favorit kalian berdua atau foto momen berkesan. Akan tampil dalam bingkai melengkung (Arch)."
+    },
+    {
+      "key": "momentTitle",
+      "label": "Judul Momen Sadar (Slide 02)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Di Momen Ini, Aku Sadar"
+    },
+    {
+      "key": "momentStory",
+      "label": "Cerita Singkat (Slide 02)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Contoh: Sejak hari itu, setiap hal kecil terasa jauh lebih ringan dan menyenangkan kalau ada kamu di sampingku."
+    },
+    {
+      "key": "reasonsTitle",
+      "label": "Judul Bagian Alasan (Slide 03)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kenapa Harus Kamu?"
+    },
+    {
+      "key": "reasonsList",
+      "label": "3 Alasan Memilihnya (Slide 03)",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3 alasan singkat (satu alasan per baris). Akan muncul satu per satu dengan animasi lembut."
+    },
+    {
+      "key": "promiseTitle",
+      "label": "Judul Janji (Slide 04)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Sebelum Aku Bertanya..."
+    },
+    {
+      "key": "promiseBody",
+      "label": "Isi Janji Tulus (Slide 04)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Tulis satu paragraf janji tulusmu sebelum masuk ke pertanyaan utama."
+    },
+    {
+      "key": "questionText",
+      "label": "Pertanyaan Utama (Slide 05)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Maukah kamu menjadi pasanganku? / Will you marry me?",
+      "description": "Bebas dipakai untuk menyatakan perasaan (confession) maupun lamaran (marriage proposal)."
+    },
+    {
+      "key": "yesButtonLabel",
+      "label": "Teks Tombol Iya",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Iya, Aku Mau!"
+    },
+    {
+      "key": "celebrationTitle",
+      "label": "Judul Layar Perayaan (Setelah Klik Iya)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: She Said Yes! / Resmi Mulai Hari Ini"
+    },
+    {
+      "key": "celebrationMessage",
+      "label": "Pesan Manis Setelah Ia Menjawab Iya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Terima kasih sudah memilihku juga. Tidak sabar menulis hari-hari berikutnya bersamamu."
+    },
+    {
+      "key": "officialDate",
+      "label": "Tanggal Spesial (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 25 November 2026",
+      "description": "Jika kosong, otomatis menampilkan tanggal hari ini saat dibuka."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan mulai diputar saat tombol Lanjut di Slide 01 ditekan."
+    }
+  ]
+}

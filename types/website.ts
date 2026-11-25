@@ -20,6 +20,7 @@ export interface WebsiteRecord {
   expiresAt?: string;
   createdAt: string;
   content?: Record<string, unknown>;
+  receiverResponse?: Record<string, unknown> | null;
   media?: WebsiteMedia[];
 }
 

@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import FloatingMusicPlayer from '@/components/motion/FloatingMusicPlayer';
 import type { WebsiteRecord } from '@/types/website';
+import { saveWebsiteResponse } from '@/lib/website-response';
 
 type ContentValue = Record<string, unknown>;
 
@@ -23,7 +24,26 @@ function getMediaUrl(value: unknown): string {
 
 export default function Date03({ website }: { website: WebsiteRecord }) {
   const [opened, setOpened] = useState(false);
-  const [reserved, setReserved] = useState(false);
+
+  const isPublished = website.status === 'published';
+  const savedResponse = (website.receiverResponse ?? {}) as Record<
+    string,
+    unknown
+  >;
+  const [reserved, setReserved] = useState(
+    isPublished && Boolean(savedResponse.rsvpConfirmed),
+  );
+
+  const handleReserve = () => {
+    setReserved(true);
+    if (isPublished) {
+      void saveWebsiteResponse(website.id, {
+        rsvpConfirmed: true,
+        confirmedAt: new Date().toISOString(),
+      });
+    }
+  };
+
   const content = (website.content ?? {}) as ContentValue;
 
   const senderName = getString(
@@ -812,7 +832,7 @@ export default function Date03({ website }: { website: WebsiteRecord }) {
               {!reserved ? (
                 <motion.button
                   type="button"
-                  onClick={() => setReserved(true)}
+                  onClick={handleReserve}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   style={{
@@ -836,37 +856,49 @@ export default function Date03({ website }: { website: WebsiteRecord }) {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4 }}
                   style={{
-                    maxWidth: '410px',
+                    maxWidth: '400px',
                     margin: '0 auto',
                     backgroundColor: c.crimsonBg,
                     border: `1.5px solid ${c.crimson}`,
-                    padding: '18px 20px',
+                    padding: '20px 22px',
                   }}
                 >
                   <span
                     style={{
                       fontFamily: mono,
-                      fontSize: '0.68rem',
+                      fontSize: '0.66rem',
                       fontWeight: 700,
                       letterSpacing: '0.16em',
                       color: '#f28b82',
                       display: 'block',
-                      marginBottom: '6px',
+                      marginBottom: '8px',
                     }}
                   >
-                    SEAT RESERVED · ENJOY THE SHOW
+                    ✓ SEAT RESERVED · ENJOY THE SHOW
                   </span>
-                  <p
+                  <div
                     style={{
-                      margin: 0,
-                      fontSize: '0.92rem',
+                      fontFamily: serif,
+                      fontSize: '1.45rem',
+                      fontStyle: 'italic',
                       color: c.ivory,
-                      lineHeight: 1.55,
+                      marginBottom: '12px',
                     }}
                   >
-                    Dua kursi untuk {senderName} & {receiverName} sudah dipesan
-                    untuk {dateText}.
-                  </p>
+                    {senderName} &amp; {receiverName}
+                  </div>
+                  <div
+                    style={{
+                      paddingTop: '10px',
+                      borderTop: `1px dashed ${c.goldLine}`,
+                      fontFamily: mono,
+                      fontSize: '0.66rem',
+                      letterSpacing: '0.14em',
+                      color: c.gold,
+                    }}
+                  >
+                    2 KURSI VIP · {dateText}
+                  </div>
                 </motion.div>
               )}
 

@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import FloatingMusicPlayer from '@/components/motion/FloatingMusicPlayer';
 import type { WebsiteRecord } from '@/types/website';
+import { saveWebsiteResponse } from '@/lib/website-response';
 
 type ContentValue = Record<string, unknown>;
 
@@ -23,7 +24,26 @@ function getMediaUrl(value: unknown): string {
 
 export default function Date04({ website }: { website: WebsiteRecord }) {
   const [opened, setOpened] = useState(false);
-  const [confirmed, setConfirmed] = useState(false);
+
+  const isPublished = website.status === 'published';
+  const savedResponse = (website.receiverResponse ?? {}) as Record<
+    string,
+    unknown
+  >;
+  const [confirmed, setConfirmed] = useState(
+    isPublished && Boolean(savedResponse.rsvpConfirmed),
+  );
+
+  const handleConfirm = () => {
+    setConfirmed(true);
+    if (isPublished) {
+      void saveWebsiteResponse(website.id, {
+        rsvpConfirmed: true,
+        confirmedAt: new Date().toISOString(),
+      });
+    }
+  };
+
   const content = (website.content ?? {}) as ContentValue;
 
   const senderName = getString(
@@ -781,7 +801,7 @@ export default function Date04({ website }: { website: WebsiteRecord }) {
                 {!confirmed ? (
                   <motion.button
                     type="button"
-                    onClick={() => setConfirmed(true)}
+                    onClick={handleConfirm}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     style={{
@@ -805,54 +825,52 @@ export default function Date04({ website }: { website: WebsiteRecord }) {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4 }}
                     style={{
-                      maxWidth: '420px',
+                      maxWidth: '400px',
                       margin: '0 auto',
                       backgroundColor: c.terracottaSoft,
                       border: `1.5px solid ${c.terracotta}`,
-                      padding: '18px 20px',
+                      padding: '20px 22px',
                     }}
                   >
                     <span
                       style={{
                         fontFamily: mono,
-                        fontSize: '0.66rem',
+                        fontSize: '0.64rem',
                         fontWeight: 700,
                         letterSpacing: '0.16em',
                         color: c.terracotta,
                         display: 'block',
-                        marginBottom: '6px',
+                        marginBottom: '8px',
                       }}
                     >
-                      PICNIC SET · SEE YOU AT GOLDEN HOUR
+                      ✓ PICNIC SET · GOLDEN HOUR
                     </span>
-                    <p
+                    <div
                       style={{
-                        margin: 0,
-                        fontSize: '0.92rem',
+                        fontFamily: serif,
+                        fontSize: '1.45rem',
+                        fontStyle: 'italic',
                         color: c.ink,
-                        lineHeight: 1.55,
+                        marginBottom: '12px',
                       }}
                     >
-                      Tikar piknik untuk {senderName} &amp; {receiverName} siap
-                      digelar pada {dateText}.
-                    </p>
+                      {senderName} &amp; {receiverName}
+                    </div>
+                    <div
+                      style={{
+                        paddingTop: '10px',
+                        borderTop: `1px dashed ${c.terracotta}`,
+                        fontFamily: mono,
+                        fontSize: '0.66rem',
+                        letterSpacing: '0.14em',
+                        color: c.sage,
+                        fontWeight: 600,
+                      }}
+                    >
+                      TIKAR SIAP DIGELAR · {dateText}
+                    </div>
                   </motion.div>
                 )}
-
-                <div
-                  style={{
-                    marginTop: '34px',
-                    paddingTop: '16px',
-                    borderTop: `1px dashed ${c.line}`,
-                    fontFamily: mono,
-                    fontSize: '0.62rem',
-                    letterSpacing: '0.14em',
-                    textTransform: 'uppercase',
-                    color: c.muted,
-                  }}
-                >
-                  SUNDAY IN THE PARK · {dateText}
-                </div>
               </div>
             </footer>
           </motion.div>

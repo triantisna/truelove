@@ -101,6 +101,7 @@ model Website {
 
   // Semua isi website template disimpan disini
   content     Json          @default("{}")
+  receiverResponse Json?
   status      WebsiteStatus @default(DRAFT)
   expiresAt   DateTime?     @map("expires_at")
   publishedAt DateTime?     @map("published_at")

@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import FloatingMusicPlayer from '@/components/motion/FloatingMusicPlayer';
 import type { WebsiteRecord } from '@/types/website';
+import { saveWebsiteResponse } from '@/lib/website-response';
 
 // --- HELPER FUNCTIONS ---
 function getString(
@@ -100,7 +101,15 @@ export default function Apology03({ website }: { website: WebsiteRecord }) {
 
   // --- STATE INTERAKSI ---
   const [isEntered, setIsEntered] = useState(false); // 👈 State baru buat layar pembuka
-  const [isForgiven, setIsForgiven] = useState(false);
+  const isPublished = website.status === 'published';
+  const savedResponse = (website.receiverResponse ?? {}) as Record<
+    string,
+    unknown
+  >;
+
+  const [isForgiven, setIsForgiven] = useState(
+    isPublished && Boolean(savedResponse.forgiven),
+  );
 
   // State untuk pergerakan tombol NO
   const [noHoverCount, setNoHoverCount] = useState(0);
@@ -132,6 +141,13 @@ export default function Apology03({ website }: { website: WebsiteRecord }) {
     setTimeout(() => {
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     }, 100);
+
+    if (isPublished) {
+      void saveWebsiteResponse(website.id, {
+        forgiven: true,
+        forgivenAt: new Date().toISOString(),
+      });
+    }
   };
 
   return (

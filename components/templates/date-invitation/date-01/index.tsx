@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import FloatingMusicPlayer from '@/components/motion/FloatingMusicPlayer';
 import type { WebsiteRecord } from '@/types/website';
+import { saveWebsiteResponse } from '@/lib/website-response';
 
 type ContentValue = Record<string, unknown>;
 
@@ -23,7 +24,26 @@ function getMediaUrl(value: unknown): string {
 
 export default function Date01({ website }: { website: WebsiteRecord }) {
   const [opened, setOpened] = useState(false);
-  const [confirmed, setConfirmed] = useState(false);
+
+  const isPublished = website.status === 'published';
+  const savedResponse = (website.receiverResponse ?? {}) as Record<
+    string,
+    unknown
+  >;
+  const [confirmed, setConfirmed] = useState(
+    isPublished && Boolean(savedResponse.rsvpConfirmed),
+  );
+
+  const handleConfirm = () => {
+    setConfirmed(true);
+    if (isPublished) {
+      void saveWebsiteResponse(website.id, {
+        rsvpConfirmed: true,
+        confirmedAt: new Date().toISOString(),
+      });
+    }
+  };
+
   const content = (website.content ?? {}) as ContentValue;
 
   const senderName = getString(
@@ -733,7 +753,7 @@ export default function Date01({ website }: { website: WebsiteRecord }) {
                 {!confirmed ? (
                   <motion.button
                     type="button"
-                    onClick={() => setConfirmed(true)}
+                    onClick={handleConfirm}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     style={{
@@ -753,58 +773,55 @@ export default function Date01({ website }: { website: WebsiteRecord }) {
                   </motion.button>
                 ) : (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.96 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.45 }}
                     style={{
-                      maxWidth: '420px',
+                      maxWidth: '400px',
                       margin: '0 auto',
                       backgroundColor: c.cream,
-                      border: `1px solid ${c.burgundy}`,
-                      padding: '18px 20px',
+                      border: `1.5px solid ${c.burgundy}`,
+                      padding: '20px 22px',
                     }}
                   >
                     <span
                       style={{
                         fontFamily: mono,
-                        fontSize: '0.66rem',
-                        fontWeight: 600,
+                        fontSize: '0.64rem',
+                        fontWeight: 700,
                         letterSpacing: '0.16em',
                         color: c.burgundy,
                         display: 'block',
-                        marginBottom: '6px',
+                        marginBottom: '8px',
                       }}
                     >
-                      RESERVATION CONFIRMED · SEE YOU SOON
+                      ✓ RESERVATION CONFIRMED
                     </span>
-                    <p
+                    <div
                       style={{
-                        margin: 0,
-                        fontSize: '0.92rem',
+                        fontFamily: serif,
+                        fontSize: '1.45rem',
+                        fontStyle: 'italic',
                         color: c.espresso,
-                        lineHeight: 1.55,
+                        marginBottom: '12px',
                       }}
                     >
-                      Meja untuk {senderName} &amp; {receiverName} sudah
-                      tercatat pada {dateText}.
-                    </p>
+                      {senderName} &amp; {receiverName}
+                    </div>
+                    <div
+                      style={{
+                        paddingTop: '10px',
+                        borderTop: `1px dashed ${c.burgundySoft}`,
+                        fontFamily: mono,
+                        fontSize: '0.68rem',
+                        letterSpacing: '0.12em',
+                        color: c.taupe,
+                      }}
+                    >
+                      TABLE FOR TWO · {dateText}
+                    </div>
                   </motion.div>
                 )}
-
-                <div
-                  style={{
-                    marginTop: '34px',
-                    paddingTop: '16px',
-                    borderTop: `1px dashed ${c.line}`,
-                    fontFamily: mono,
-                    fontSize: '0.62rem',
-                    letterSpacing: '0.14em',
-                    textTransform: 'uppercase',
-                    color: c.taupe,
-                  }}
-                >
-                  TABLE FOR TWO · {dateText}
-                </div>
               </div>
             </footer>
           </motion.div>

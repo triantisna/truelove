@@ -46,6 +46,12 @@ import dateInvitation05 from '@/components/templates/date-invitation/date-05';
 import dateInvitation06 from '@/components/templates/date-invitation/date-06';
 import dateInvitation07 from '@/components/templates/date-invitation/date-07';
 
+import Proposal01 from '@/components/templates/proposal/proposal-01';
+import Proposal02 from '@/components/templates/proposal/proposal-02';
+import Proposal03 from '@/components/templates/proposal/proposal-03';
+import Proposal04 from '@/components/templates/proposal/proposal-04';
+import Proposal05 from '@/components/templates/proposal/proposal-05';
+
 import type { WebsiteRecord } from '@/types/website';
 
 const rendererMap = {
@@ -91,6 +97,11 @@ const rendererMap = {
   'date-05': dateInvitation05,
   'date-06': dateInvitation06,
   'date-07': dateInvitation07,
+  'proposal-01': Proposal01,
+  'proposal-02': Proposal02,
+  'proposal-03': Proposal03,
+  'proposal-04': Proposal04,
+  'proposal-05': Proposal05,
 };
 
 export function WebsiteRenderer({ website }: { website: WebsiteRecord }) {

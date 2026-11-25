@@ -1,0 +1,128 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Bagas",
+      "description": "Nama kamu. Akan tampil di kartu janji dan kartu keepsake resmi setelah ia menjawab Iya."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Tania",
+      "description": "Nama orang spesial yang sedang kamu kirimi tumpukan kartu ini."
+    },
+    {
+      "key": "deckTitle",
+      "label": "Judul Kartu Pembuka (Card 01)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: The Final Card"
+    },
+    {
+      "key": "coverNote",
+      "label": "Catatan Singkat Pembuka (Card 01)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Empat kartu untuk menceritakan perasaanku, dan satu kartu terakhir untuk bertanya padamu."
+    },
+    {
+      "key": "photoImage",
+      "label": "Foto Kenangan (Card 02)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto favorit kalian berdua atau momen berkesan untuk tampil di kartu kedua."
+    },
+    {
+      "key": "photoTitle",
+      "label": "Judul Kartu Foto (Card 02)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Salah Satu Momen Favoritku"
+    },
+    {
+      "key": "photoCaption",
+      "label": "Cerita Singkat Foto (Card 02)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Contoh: Setiap kali melihat foto ini, aku selalu ingat betapa mudahnya aku merasa nyaman di dekatmu."
+    },
+    {
+      "key": "feelingTitle",
+      "label": "Judul Kartu Perasaan (Card 03)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Apa yang Berubah Sejak Mengenalmu"
+    },
+    {
+      "key": "feelingStory",
+      "label": "Isi Cerita Perasaan (Card 03)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Ceritakan hal paling nyata yang berubah sejak dia hadir di harimu..."
+    },
+    {
+      "key": "promiseTitle",
+      "label": "Judul Kartu Janji (Card 04)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Sebelum Kartu Terakhir"
+    },
+    {
+      "key": "promiseBody",
+      "label": "Isi Janji Tulus (Card 04)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Tulis satu paragraf janji tulusmu sebelum masuk ke kartu pertanyaan terakhir."
+    },
+    {
+      "key": "questionText",
+      "label": "Pertanyaan Utama (Card 05 - Kartu Burgundy)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Maukah kamu menjadi pasanganku? / Will you marry me?",
+      "description": "Akan tampil di kartu terakhir berwarna Deep Burgundy."
+    },
+    {
+      "key": "yesButtonLabel",
+      "label": "Teks Tombol Iya",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Iya, Aku Mau!"
+    },
+    {
+      "key": "keepsakeTitle",
+      "label": "Judul Kartu Keepsake (Setelah Klik Iya)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Official Keepsake"
+    },
+    {
+      "key": "keepsakeMessage",
+      "label": "Pesan Penutup Setelah Ia Menjawab Iya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Terima kasih sudah memilihku juga. Simpan kartu ini sebagai awal cerita kita."
+    },
+    {
+      "key": "officialDate",
+      "label": "Tanggal Spesial (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 25 November 2026",
+      "description": "Jika kosong, otomatis menampilkan tanggal hari ini saat dibuka."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan mulai diputar saat tombol Tarik Kartu Pertama ditekan."
+    }
+  ]
+}

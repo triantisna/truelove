@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import FloatingMusicPlayer from '@/components/motion/FloatingMusicPlayer';
 import type { WebsiteRecord } from '@/types/website';
+import { saveWebsiteResponse } from '@/lib/website-response';
 
 type ContentValue = Record<string, unknown>;
 
@@ -23,7 +24,26 @@ function getMediaUrl(value: unknown): string {
 
 export default function Date05({ website }: { website: WebsiteRecord }) {
   const [opened, setOpened] = useState(false);
-  const [checkedIn, setCheckedIn] = useState(false);
+
+  const isPublished = website.status === 'published';
+  const savedResponse = (website.receiverResponse ?? {}) as Record<
+    string,
+    unknown
+  >;
+  const [checkedIn, setCheckedIn] = useState(
+    isPublished && Boolean(savedResponse.rsvpConfirmed),
+  );
+
+  const handleCheckIn = () => {
+    setCheckedIn(true);
+    if (isPublished) {
+      void saveWebsiteResponse(website.id, {
+        rsvpConfirmed: true,
+        confirmedAt: new Date().toISOString(),
+      });
+    }
+  };
+
   const content = (website.content ?? {}) as ContentValue;
 
   const senderName = getString(
@@ -867,7 +887,7 @@ export default function Date05({ website }: { website: WebsiteRecord }) {
               {!checkedIn ? (
                 <motion.button
                   type="button"
-                  onClick={() => setCheckedIn(true)}
+                  onClick={handleCheckIn}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   style={{
@@ -892,38 +912,50 @@ export default function Date05({ website }: { website: WebsiteRecord }) {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4 }}
                   style={{
-                    maxWidth: '410px',
+                    maxWidth: '400px',
                     margin: '0 auto',
                     backgroundColor: c.amberSoft,
-                    border: `1.5px solid #fbbf24`,
+                    border: '1.5px solid #fbbf24',
                     borderRadius: '10px',
-                    padding: '16px 20px',
+                    padding: '18px 20px',
                   }}
                 >
                   <span
                     style={{
                       fontFamily: mono,
-                      fontSize: '0.68rem',
+                      fontSize: '0.66rem',
                       fontWeight: 700,
                       letterSpacing: '0.16em',
                       color: '#fbbf24',
                       display: 'block',
-                      marginBottom: '6px',
+                      marginBottom: '8px',
                     }}
                   >
-                    CHECK-IN CONFIRMED · SEAT 01A
+                    ✓ CHECK-IN CONFIRMED · SEAT 01A
                   </span>
-                  <p
+                  <div
                     style={{
-                      margin: 0,
-                      fontSize: '0.9rem',
+                      fontFamily: mono,
+                      fontSize: '1.05rem',
+                      fontWeight: 700,
                       color: c.card,
-                      lineHeight: 1.55,
+                      marginBottom: '12px',
                     }}
                   >
-                    Penumpang {receiverName} terdaftar untuk rute {routeFrom} →{' '}
-                    {routeTo} pada {dateText}.
-                  </p>
+                    {routeFrom} → {routeTo}
+                  </div>
+                  <div
+                    style={{
+                      paddingTop: '10px',
+                      borderTop: '1px dashed rgba(251, 191, 36, 0.4)',
+                      fontFamily: mono,
+                      fontSize: '0.66rem',
+                      letterSpacing: '0.12em',
+                      color: 'rgba(255, 255, 255, 0.85)',
+                    }}
+                  >
+                    PASSENGER: {receiverName.toUpperCase()} · {dateText}
+                  </div>
                 </motion.div>
               )}
 

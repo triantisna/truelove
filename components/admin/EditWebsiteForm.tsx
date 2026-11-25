@@ -47,6 +47,12 @@ export default function EditWebsiteForm({ website }: Props) {
     message: '',
   });
 
+  const [receiverResponse, setReceiverResponse] = useState<Record<
+    string,
+    unknown
+  > | null>(website.receiverResponse ?? null);
+  const [resetting, setResetting] = useState(false);
+
   const template = useMemo(() => getTemplateById(templateId), [templateId]);
 
   const selectedPackage = useMemo(
@@ -254,12 +260,41 @@ export default function EditWebsiteForm({ website }: Props) {
     }
   }
 
+  async function handleResetResponse() {
+    const confirmed = window.confirm(
+      'Reset jawaban penerima? Status website akan kembali seperti belum dijawab.',
+    );
+    if (!confirmed) return;
+
+    setResetting(true);
+    setSaveState({ type: 'idle', message: '' });
+
+    try {
+      const res = await fetch(`/api/websites/${website.id}/response`, {
+        method: 'DELETE',
+      });
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error ?? 'RESET_FAILED');
+      }
+
+      setReceiverResponse(null);
+      setSaveState({
+        type: 'success',
+        message: 'Jawaban penerima berhasil direset.',
+      });
+    } catch (error) {
+      const errMsg = error instanceof Error ? error.message : 'RESET_FAILED';
+      setSaveState({ type: 'error', message: errMsg });
+    } finally {
+      setResetting(false);
+    }
+  }
+
   const senderName = String(content.sender_name ?? '');
-
   const receiverName = String(content.receiver_name ?? '');
-
   const title = String(content.title ?? '');
-
   const message = String(content.message ?? '');
 
   return (
@@ -426,6 +461,66 @@ export default function EditWebsiteForm({ website }: Props) {
         </div>
 
         <p className="preview-url">/{slug || 'your-slug'}</p>
+        <div
+          style={{
+            marginTop: '20px',
+            paddingTop: '16px',
+            borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '10px',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              letterSpacing: '0.08em',
+            }}
+          >
+            <span>RECEIVER RESPONSE</span>
+            <span style={{ opacity: 0.7 }}>
+              {receiverResponse ? '● Tersimpan' : '○ Kosong'}
+            </span>
+          </div>
+
+          {receiverResponse ? (
+            <>
+              <pre
+                style={{
+                  margin: 0,
+                  padding: '10px 12px',
+                  borderRadius: '10px',
+                  backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                  fontSize: '0.72rem',
+                  lineHeight: 1.5,
+                  overflowX: 'auto',
+                  whiteSpace: 'pre-wrap',
+                  wordBreak: 'break-word',
+                }}
+              >
+                {JSON.stringify(receiverResponse, null, 2)}
+              </pre>
+
+              <button
+                type="button"
+                className="button ghost"
+                disabled={resetting}
+                onClick={handleResetResponse}
+                style={{ width: '100%' }}
+              >
+                {resetting ? 'Mereset…' : '↺ Reset Jawaban Penerima'}
+              </button>
+            </>
+          ) : (
+            <p style={{ margin: 0, fontSize: '0.8rem', opacity: 0.65 }}>
+              Belum ada jawaban atau pilihan tersimpan dari penerima.
+            </p>
+          )}
+        </div>
       </aside>
     </div>
   );

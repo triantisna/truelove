@@ -1,0 +1,135 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Rafa",
+      "description": "Nama kamu. Akan tampil di header kontak chat dan banner resmi di akhir percakapan."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Syifa",
+      "description": "Nama orang spesial yang sedang kamu kirimi pesan ini."
+    },
+    {
+      "key": "openingMsg1",
+      "label": "Pesan Pembuka 1",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Hai, lagi sibuk gak?"
+    },
+    {
+      "key": "openingMsg2",
+      "label": "Pesan Pembuka 2",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Ada sesuatu yang dari kemarin kutetik terus kuhapus lagi. Tapi malam ini aku mau kirim beneran."
+    },
+    {
+      "key": "replyBtn1",
+      "label": "Teks Tombol Balasan 1",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Enggak kok, ada apa?"
+    },
+    {
+      "key": "chatPhoto",
+      "label": "Foto Kenangan (Photo Bubble)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto kalian berdua atau momen berkesan yang akan dikirim di dalam ruang chat."
+    },
+    {
+      "key": "photoMessage",
+      "label": "Pesan Setelah Foto",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Contoh: Setiap lihat foto ini, aku selalu ingat betapa nyamannya hari itu. Dari situ aku mulai sadar kalau aku selalu nungguin kabar darimu."
+    },
+    {
+      "key": "replyBtn2",
+      "label": "Teks Tombol Balasan 2",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Haha inget banget! Terus?"
+    },
+    {
+      "key": "confessionMsg1",
+      "label": "Pesan Perasaan (Bagian 1)",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Contoh: Aku suka caramu dengerin ceritaku, caramu ketawa, dan gimana hari yang capek selalu jadi lebih ringan kalau sudah ngobrol sama kamu."
+    },
+    {
+      "key": "confessionMsg2",
+      "label": "Pesan Janji Singkat (Bagian 2)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Aku mungkin bukan orang yang paling sempurna, tapi aku janji akan selalu usaha jadi tempat yang aman dan jujur buat kamu."
+    },
+    {
+      "key": "replyBtn3",
+      "label": "Teks Tombol Balasan 3",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Jujur ini bikin deg-degan..."
+    },
+    {
+      "key": "questionText",
+      "label": "Pesan Pertanyaan Utama",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Jadi... maukah kamu jadi pasanganku? / Will you marry me?",
+      "description": "Akan tampil sebagai gelembung pertanyaan khusus sebelum tombol jawaban muncul."
+    },
+    {
+      "key": "yesReplyLabel",
+      "label": "Teks Balasan Iya",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Iya, aku mau! ❤️"
+    },
+    {
+      "key": "playfulReplyLabel",
+      "label": "Teks Balasan Playful (Salting)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Bentar, masih salting 😅"
+    },
+    {
+      "key": "playfulSenderResponse",
+      "label": "Balasan Pengirim Jika Ia Klik Salting",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Haha ambil napas dulu, aku tunggu di sini kok ✨"
+    },
+    {
+      "key": "closingReply",
+      "label": "Pesan Penutup Pengirim (Setelah Dijawab Iya)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Serius?! Makasih banyak ya sudah mau jalan bareng aku. Mulai hari ini, resmi ya!"
+    },
+    {
+      "key": "officialDate",
+      "label": "Tanggal Spesial (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 25 November 2026",
+      "description": "Jika kosong, otomatis menampilkan tanggal hari ini saat dibuka."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan mulai diputar saat balasan pertama ditekan."
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import FloatingMusicPlayer from '@/components/motion/FloatingMusicPlayer';
 import type { WebsiteRecord } from '@/types/website';
+import { saveWebsiteResponse } from '@/lib/website-response';
 
 type ContentValue = Record<string, unknown>;
 
@@ -23,7 +24,26 @@ function getMediaUrl(value: unknown): string {
 
 export default function Date02({ website }: { website: WebsiteRecord }) {
   const [opened, setOpened] = useState(false);
-  const [claimed, setClaimed] = useState(false);
+
+  const isPublished = website.status === 'published';
+  const savedResponse = (website.receiverResponse ?? {}) as Record<
+    string,
+    unknown
+  >;
+  const [claimed, setClaimed] = useState(
+    isPublished && Boolean(savedResponse.rsvpConfirmed),
+  );
+
+  const handleClaim = () => {
+    setClaimed(true);
+    if (isPublished) {
+      void saveWebsiteResponse(website.id, {
+        rsvpConfirmed: true,
+        confirmedAt: new Date().toISOString(),
+      });
+    }
+  };
+
   const content = (website.content ?? {}) as ContentValue;
 
   const senderName = getString(
@@ -770,7 +790,7 @@ export default function Date02({ website }: { website: WebsiteRecord }) {
               {!claimed ? (
                 <motion.button
                   type="button"
-                  onClick={() => setClaimed(true)}
+                  onClick={handleClaim}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   style={{
@@ -799,33 +819,64 @@ export default function Date02({ website }: { website: WebsiteRecord }) {
                     margin: '0 auto',
                     backgroundColor: c.tangerineSoft,
                     border: `2px solid ${c.tangerine}`,
-                    borderRadius: '8px',
-                    padding: '16px 20px',
+                    borderRadius: '10px',
+                    padding: '18px 20px',
                   }}
                 >
                   <span
                     style={{
                       fontFamily: mono,
-                      fontSize: '0.72rem',
+                      fontSize: '0.7rem',
                       fontWeight: 700,
                       letterSpacing: '0.16em',
                       color: c.tangerine,
                       display: 'block',
-                      marginBottom: '6px',
+                      marginBottom: '12px',
                     }}
                   >
-                    PASS CLAIMED · ON ME
+                    ✓ PASS CLAIMED · ON ME
                   </span>
-                  <p
+                  <div
                     style={{
-                      margin: 0,
-                      fontSize: '0.9rem',
-                      color: c.ink,
-                      lineHeight: 1.5,
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 1fr',
+                      gap: '10px',
+                      paddingTop: '12px',
+                      borderTop: `1.5px dashed ${c.tangerine}`,
+                      textAlign: 'left',
                     }}
                   >
-                    Ditraktir {senderName}. Sampai ketemu {dateText}!
-                  </p>
+                    <div>
+                      <span
+                        style={{
+                          fontFamily: mono,
+                          fontSize: '0.58rem',
+                          color: c.slate,
+                          display: 'block',
+                        }}
+                      >
+                        DITRAKTIR OLEH
+                      </span>
+                      <strong style={{ fontSize: '0.88rem', color: c.ink }}>
+                        {senderName}
+                      </strong>
+                    </div>
+                    <div>
+                      <span
+                        style={{
+                          fontFamily: mono,
+                          fontSize: '0.58rem',
+                          color: c.slate,
+                          display: 'block',
+                        }}
+                      >
+                        TANGGAL
+                      </span>
+                      <strong style={{ fontSize: '0.88rem', color: c.ink }}>
+                        {dateText}
+                      </strong>
+                    </div>
+                  </div>
                 </motion.div>
               )}
 

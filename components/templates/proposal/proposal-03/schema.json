@@ -1,0 +1,128 @@
+{
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Bima",
+      "description": "Nama kamu. Akan tampil di kartu janji dan kartu perayaan setelah ia menjawab Iya."
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Naya",
+      "description": "Nama orang spesial yang sedang kamu kirimi halaman ini."
+    },
+    {
+      "key": "boardTitle",
+      "label": "Judul Papan (Header)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: All The Little Pieces"
+    },
+    {
+      "key": "boardSubtitle",
+      "label": "Subjudul Singkat",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Ketuk 3 kepingan di bawah ini untuk membuka satu pertanyaan penting dariku."
+    },
+    {
+      "key": "momentPhoto",
+      "label": "Widget 01: Foto Momen Favorit",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "Satu foto kalian berdua atau momen berkesan untuk kartu Bento teratas."
+    },
+    {
+      "key": "momentTitle",
+      "label": "Widget 01: Judul Momen",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Momen yang Bikin Aku Yakin"
+    },
+    {
+      "key": "momentNote",
+      "label": "Widget 01: Catatan Singkat Momen",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Contoh: Di hari ini aku sadar kalau waktu selalu terasa kurang tiap kali lagi ngobrol sama kamu."
+    },
+    {
+      "key": "reasonsTitle",
+      "label": "Widget 02: Judul Alasan (Kartu Matcha)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Kenapa Harus Kamu?"
+    },
+    {
+      "key": "reasonsList",
+      "label": "Widget 02: 3 Alasan Memilihnya",
+      "type": "textarea",
+      "required": false,
+      "description": "Tulis 3 alasan singkat (satu alasan per baris)."
+    },
+    {
+      "key": "promiseTitle",
+      "label": "Widget 03: Judul Janji (Kartu Butter)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Janji Kecilku"
+    },
+    {
+      "key": "promiseText",
+      "label": "Widget 03: Isi Janji Tulus",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "Tulis satu paragraf janji tulusmu untuknya..."
+    },
+    {
+      "key": "questionText",
+      "label": "Widget 04: Pertanyaan Utama (Terbuka Setelah 3/3)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Maukah kamu jadi pasanganku? / Will you marry me?",
+      "description": "Otomatis terbuka saat ketiga kepingan di atasnya sudah diketuk."
+    },
+    {
+      "key": "yesButtonLabel",
+      "label": "Teks Tombol Iya",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Iya, Aku Mau!"
+    },
+    {
+      "key": "celebrationTitle",
+      "label": "Judul Kartu Perayaan (Setelah Klik Iya)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: Semua Kepingan Lengkap"
+    },
+    {
+      "key": "celebrationMessage",
+      "label": "Pesan Penutup Setelah Ia Menjawab Iya",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Contoh: Terima kasih sudah memilihku juga. Tidak sabar menjalani hari-hari berikutnya bersamamu."
+    },
+    {
+      "key": "officialDate",
+      "label": "Tanggal Spesial (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Contoh: 25 November 2026",
+      "description": "Jika kosong, otomatis menampilkan tanggal hari ini saat dibuka."
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar (Opsional)",
+      "type": "music",
+      "required": false,
+      "description": "Opsional. Jika diisi, musik akan mulai diputar saat kepingan pertama diketuk."
+    }
+  ]
+}

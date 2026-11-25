@@ -94,6 +94,9 @@ function toWebsiteRecord(row: any): WebsiteRecord {
 
     content,
 
+    receiverResponse:
+      (row.receiverResponse as Record<string, unknown> | null) ?? null,
+
     media: (row.media ?? []).map((media: any) => ({
       id: media.id,
       websiteId: media.websiteId,

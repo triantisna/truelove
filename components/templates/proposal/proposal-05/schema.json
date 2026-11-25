@@ -1,0 +1,84 @@
+{
+  "id": "proposal-05",
+  "name": "The Official Agreement",
+  "category": "proposal",
+  "fields": [
+    {
+      "key": "senderName",
+      "label": "Nama Pengirim (Pihak Pertama)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Raka"
+    },
+    {
+      "key": "receiverName",
+      "label": "Nama Penerima (Pihak Kedua)",
+      "type": "text",
+      "required": true,
+      "placeholder": "Contoh: Nadya"
+    },
+    {
+      "key": "documentTitle",
+      "label": "Judul Dokumen",
+      "type": "text",
+      "required": false,
+      "placeholder": "Perjanjian Resmi Hati"
+    },
+    {
+      "key": "exhibitPhoto",
+      "label": "Foto Lampiran (Exhibit A)",
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "description": "1 foto momen berdua yang ingin dilampirkan sebagai bukti."
+    },
+    {
+      "key": "exhibitCaption",
+      "label": "Keterangan Foto Lampiran",
+      "type": "text",
+      "required": false,
+      "placeholder": "Lampiran A — Bukti nyata betapa nyamannya kita saat bersama."
+    },
+    {
+      "key": "clausesList",
+      "label": "Pasal-Pasal Perjanjian (Maks. 3, pisahkan per baris)",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Pihak Pertama wajib menjadi tempat pulang yang aman dan pendengar yang sabar.\nTidak ada tidur dalam keadaan marahan tanpa saling mencari jalan tengah.\nSelalu menyisihkan waktu untuk kencan kecil di tengah kesibukan."
+    },
+    {
+      "key": "questionText",
+      "label": "Pertanyaan Inti Pengesahan",
+      "type": "text",
+      "required": true,
+      "placeholder": "Maukah kamu menandatangani perjanjian ini dan menjadi pasanganku?"
+    },
+    {
+      "key": "yesButtonLabel",
+      "label": "Teks Tombol Pengesahan",
+      "type": "text",
+      "required": false,
+      "placeholder": "Tanda Tangani & Resmikan ✒️"
+    },
+    {
+      "key": "closingNote",
+      "label": "Catatan Setelah Stempel SAH",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Perjanjian ini berlaku mulai hari ini dan seterusnya. Terima kasih sudah memilih berjalan bersamaku."
+    },
+    {
+      "key": "officialDate",
+      "label": "Tanggal Resmi (Opsional)",
+      "type": "text",
+      "required": false,
+      "placeholder": "Kosongkan agar otomatis memakai tanggal saat disetujui"
+    },
+    {
+      "key": "backgroundMusic",
+      "label": "Musik Latar",
+      "type": "music",
+      "required": false
+    }
+  ]
+}

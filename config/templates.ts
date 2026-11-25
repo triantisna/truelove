@@ -46,6 +46,12 @@ import dateInvitation05Config from '@/components/templates/date-invitation/date-
 import dateInvitation06Config from '@/components/templates/date-invitation/date-06/config';
 import dateInvitation07Config from '@/components/templates/date-invitation/date-07/config';
 
+import proposal01Config from '@/components/templates/proposal/proposal-01/config';
+import proposal02Config from '@/components/templates/proposal/proposal-02/config';
+import proposal03Config from '@/components/templates/proposal/proposal-03/config';
+import proposal04Config from '@/components/templates/proposal/proposal-04/config';
+import proposal05Config from '@/components/templates/proposal/proposal-05/config';
+
 import type { TemplateDefinition } from '@/types/template';
 
 export const templates: TemplateDefinition[] = [
@@ -91,6 +97,11 @@ export const templates: TemplateDefinition[] = [
   dateInvitation05Config,
   dateInvitation06Config,
   dateInvitation07Config,
+  proposal01Config,
+  proposal02Config,
+  proposal03Config,
+  proposal04Config,
+  proposal05Config,
 ];
 
 export function getTemplateById(id: string): TemplateDefinition | undefined {

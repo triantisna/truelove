@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import FloatingMusicPlayer from '@/components/motion/FloatingMusicPlayer';
 import type { WebsiteRecord } from '@/types/website';
+import { saveWebsiteResponse } from '@/lib/website-response';
 
 type ContentValue = Record<string, unknown>;
 
@@ -49,8 +50,33 @@ export default function Date07({ website }: { website: WebsiteRecord }) {
   });
   const [activeChapter, setActiveChapter] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [selectedTreat, setSelectedTreat] = useState<string>(TREAT_OPTIONS[0]);
-  const [rsvpConfirmed, setRsvpConfirmed] = useState(false);
+
+  const isPublished = website.status === 'published';
+  const savedResponse = (website.receiverResponse ?? {}) as Record<
+    string,
+    unknown
+  >;
+
+  const [selectedTreat, setSelectedTreat] = useState<string>(
+    isPublished && typeof savedResponse.selectedTreat === 'string'
+      ? savedResponse.selectedTreat
+      : TREAT_OPTIONS[0],
+  );
+  const [rsvpConfirmed, setRsvpConfirmed] = useState(
+    isPublished && Boolean(savedResponse.rsvpConfirmed),
+  );
+
+  const handleConfirmRsvp = () => {
+    setRsvpConfirmed(true);
+
+    if (isPublished) {
+      void saveWebsiteResponse(website.id, {
+        rsvpConfirmed: true,
+        selectedTreat,
+        confirmedAt: new Date().toISOString(),
+      });
+    }
+  };
 
   const content = (website.content ?? {}) as ContentValue;
 
@@ -590,7 +616,7 @@ export default function Date07({ website }: { website: WebsiteRecord }) {
                     <motion.button
                       type="button"
                       className="lda7-btn-azure"
-                      onClick={() => setRsvpConfirmed(true)}
+                      onClick={handleConfirmRsvp}
                       whileHover={{ scale: 1.015 }}
                       whileTap={{ scale: 0.985 }}
                     >

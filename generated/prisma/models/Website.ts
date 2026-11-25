@@ -57,6 +57,7 @@ export type WebsiteCountAggregateOutputType = {
   packageId: number
   musicId: number
   content: number
+  receiverResponse: number
   status: number
   expiresAt: number
   publishedAt: number
@@ -99,6 +100,7 @@ export type WebsiteCountAggregateInputType = {
   packageId?: true
   musicId?: true
   content?: true
+  receiverResponse?: true
   status?: true
   expiresAt?: true
   publishedAt?: true
@@ -186,6 +188,7 @@ export type WebsiteGroupByOutputType = {
   packageId: string
   musicId: string | null
   content: runtime.JsonValue
+  receiverResponse: runtime.JsonValue | null
   status: $Enums.WebsiteStatus
   expiresAt: Date | null
   publishedAt: Date | null
@@ -221,6 +224,7 @@ export type WebsiteWhereInput = {
   packageId?: Prisma.StringFilter<"Website"> | string
   musicId?: Prisma.StringNullableFilter<"Website"> | string | null
   content?: Prisma.JsonFilter<"Website">
+  receiverResponse?: Prisma.JsonNullableFilter<"Website">
   status?: Prisma.EnumWebsiteStatusFilter<"Website"> | $Enums.WebsiteStatus
   expiresAt?: Prisma.DateTimeNullableFilter<"Website"> | Date | string | null
   publishedAt?: Prisma.DateTimeNullableFilter<"Website"> | Date | string | null
@@ -240,6 +244,7 @@ export type WebsiteOrderByWithRelationInput = {
   packageId?: Prisma.SortOrder
   musicId?: Prisma.SortOrderInput | Prisma.SortOrder
   content?: Prisma.SortOrder
+  receiverResponse?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   expiresAt?: Prisma.SortOrderInput | Prisma.SortOrder
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -262,6 +267,7 @@ export type WebsiteWhereUniqueInput = Prisma.AtLeast<{
   packageId?: Prisma.StringFilter<"Website"> | string
   musicId?: Prisma.StringNullableFilter<"Website"> | string | null
   content?: Prisma.JsonFilter<"Website">
+  receiverResponse?: Prisma.JsonNullableFilter<"Website">
   status?: Prisma.EnumWebsiteStatusFilter<"Website"> | $Enums.WebsiteStatus
   expiresAt?: Prisma.DateTimeNullableFilter<"Website"> | Date | string | null
   publishedAt?: Prisma.DateTimeNullableFilter<"Website"> | Date | string | null
@@ -281,6 +287,7 @@ export type WebsiteOrderByWithAggregationInput = {
   packageId?: Prisma.SortOrder
   musicId?: Prisma.SortOrderInput | Prisma.SortOrder
   content?: Prisma.SortOrder
+  receiverResponse?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   expiresAt?: Prisma.SortOrderInput | Prisma.SortOrder
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -301,6 +308,7 @@ export type WebsiteScalarWhereWithAggregatesInput = {
   packageId?: Prisma.StringWithAggregatesFilter<"Website"> | string
   musicId?: Prisma.StringNullableWithAggregatesFilter<"Website"> | string | null
   content?: Prisma.JsonWithAggregatesFilter<"Website">
+  receiverResponse?: Prisma.JsonNullableWithAggregatesFilter<"Website">
   status?: Prisma.EnumWebsiteStatusWithAggregatesFilter<"Website"> | $Enums.WebsiteStatus
   expiresAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Website"> | Date | string | null
   publishedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Website"> | Date | string | null
@@ -312,6 +320,7 @@ export type WebsiteCreateInput = {
   id?: string
   slug: string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -331,6 +340,7 @@ export type WebsiteUncheckedCreateInput = {
   packageId: string
   musicId?: string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -344,6 +354,7 @@ export type WebsiteUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -363,6 +374,7 @@ export type WebsiteUncheckedUpdateInput = {
   packageId?: Prisma.StringFieldUpdateOperationsInput | string
   musicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -379,6 +391,7 @@ export type WebsiteCreateManyInput = {
   packageId: string
   musicId?: string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -390,6 +403,7 @@ export type WebsiteUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -404,6 +418,7 @@ export type WebsiteUncheckedUpdateManyInput = {
   packageId?: Prisma.StringFieldUpdateOperationsInput | string
   musicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -428,6 +443,7 @@ export type WebsiteCountOrderByAggregateInput = {
   packageId?: Prisma.SortOrder
   musicId?: Prisma.SortOrder
   content?: Prisma.SortOrder
+  receiverResponse?: Prisma.SortOrder
   status?: Prisma.SortOrder
   expiresAt?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrder
@@ -639,6 +655,7 @@ export type WebsiteCreateWithoutTemplateInput = {
   id?: string
   slug: string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -656,6 +673,7 @@ export type WebsiteUncheckedCreateWithoutTemplateInput = {
   packageId: string
   musicId?: string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -701,6 +719,7 @@ export type WebsiteScalarWhereInput = {
   packageId?: Prisma.StringFilter<"Website"> | string
   musicId?: Prisma.StringNullableFilter<"Website"> | string | null
   content?: Prisma.JsonFilter<"Website">
+  receiverResponse?: Prisma.JsonNullableFilter<"Website">
   status?: Prisma.EnumWebsiteStatusFilter<"Website"> | $Enums.WebsiteStatus
   expiresAt?: Prisma.DateTimeNullableFilter<"Website"> | Date | string | null
   publishedAt?: Prisma.DateTimeNullableFilter<"Website"> | Date | string | null
@@ -712,6 +731,7 @@ export type WebsiteCreateWithoutPackageInput = {
   id?: string
   slug: string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -729,6 +749,7 @@ export type WebsiteUncheckedCreateWithoutPackageInput = {
   templateId: string
   musicId?: string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -768,6 +789,7 @@ export type WebsiteCreateWithoutMediaInput = {
   id?: string
   slug: string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -786,6 +808,7 @@ export type WebsiteUncheckedCreateWithoutMediaInput = {
   packageId: string
   musicId?: string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -814,6 +837,7 @@ export type WebsiteUpdateWithoutMediaInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -832,6 +856,7 @@ export type WebsiteUncheckedUpdateWithoutMediaInput = {
   packageId?: Prisma.StringFieldUpdateOperationsInput | string
   musicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -844,6 +869,7 @@ export type WebsiteCreateWithoutMusicInput = {
   id?: string
   slug: string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -861,6 +887,7 @@ export type WebsiteUncheckedCreateWithoutMusicInput = {
   templateId: string
   packageId: string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -900,6 +927,7 @@ export type WebsiteCreateWithoutOrdersInput = {
   id?: string
   slug: string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -918,6 +946,7 @@ export type WebsiteUncheckedCreateWithoutOrdersInput = {
   packageId: string
   musicId?: string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -946,6 +975,7 @@ export type WebsiteUpdateWithoutOrdersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -964,6 +994,7 @@ export type WebsiteUncheckedUpdateWithoutOrdersInput = {
   packageId?: Prisma.StringFieldUpdateOperationsInput | string
   musicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -978,6 +1009,7 @@ export type WebsiteCreateManyTemplateInput = {
   packageId: string
   musicId?: string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -989,6 +1021,7 @@ export type WebsiteUpdateWithoutTemplateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1006,6 +1039,7 @@ export type WebsiteUncheckedUpdateWithoutTemplateInput = {
   packageId?: Prisma.StringFieldUpdateOperationsInput | string
   musicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1021,6 +1055,7 @@ export type WebsiteUncheckedUpdateManyWithoutTemplateInput = {
   packageId?: Prisma.StringFieldUpdateOperationsInput | string
   musicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1034,6 +1069,7 @@ export type WebsiteCreateManyPackageInput = {
   templateId: string
   musicId?: string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -1045,6 +1081,7 @@ export type WebsiteUpdateWithoutPackageInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1062,6 +1099,7 @@ export type WebsiteUncheckedUpdateWithoutPackageInput = {
   templateId?: Prisma.StringFieldUpdateOperationsInput | string
   musicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1077,6 +1115,7 @@ export type WebsiteUncheckedUpdateManyWithoutPackageInput = {
   templateId?: Prisma.StringFieldUpdateOperationsInput | string
   musicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1090,6 +1129,7 @@ export type WebsiteCreateManyMusicInput = {
   templateId: string
   packageId: string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: $Enums.WebsiteStatus
   expiresAt?: Date | string | null
   publishedAt?: Date | string | null
@@ -1101,6 +1141,7 @@ export type WebsiteUpdateWithoutMusicInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1118,6 +1159,7 @@ export type WebsiteUncheckedUpdateWithoutMusicInput = {
   templateId?: Prisma.StringFieldUpdateOperationsInput | string
   packageId?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1133,6 +1175,7 @@ export type WebsiteUncheckedUpdateManyWithoutMusicInput = {
   templateId?: Prisma.StringFieldUpdateOperationsInput | string
   packageId?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  receiverResponse?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   status?: Prisma.EnumWebsiteStatusFieldUpdateOperationsInput | $Enums.WebsiteStatus
   expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1187,6 +1230,7 @@ export type WebsiteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   packageId?: boolean
   musicId?: boolean
   content?: boolean
+  receiverResponse?: boolean
   status?: boolean
   expiresAt?: boolean
   publishedAt?: boolean
@@ -1207,6 +1251,7 @@ export type WebsiteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   packageId?: boolean
   musicId?: boolean
   content?: boolean
+  receiverResponse?: boolean
   status?: boolean
   expiresAt?: boolean
   publishedAt?: boolean
@@ -1224,6 +1269,7 @@ export type WebsiteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   packageId?: boolean
   musicId?: boolean
   content?: boolean
+  receiverResponse?: boolean
   status?: boolean
   expiresAt?: boolean
   publishedAt?: boolean
@@ -1241,6 +1287,7 @@ export type WebsiteSelectScalar = {
   packageId?: boolean
   musicId?: boolean
   content?: boolean
+  receiverResponse?: boolean
   status?: boolean
   expiresAt?: boolean
   publishedAt?: boolean
@@ -1248,7 +1295,7 @@ export type WebsiteSelectScalar = {
   updatedAt?: boolean
 }
 
-export type WebsiteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "templateId" | "packageId" | "musicId" | "content" | "status" | "expiresAt" | "publishedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["website"]>
+export type WebsiteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "templateId" | "packageId" | "musicId" | "content" | "receiverResponse" | "status" | "expiresAt" | "publishedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["website"]>
 export type WebsiteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   template?: boolean | Prisma.TemplateDefaultArgs<ExtArgs>
   package?: boolean | Prisma.PackageDefaultArgs<ExtArgs>
@@ -1284,6 +1331,7 @@ export type $WebsitePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     packageId: string
     musicId: string | null
     content: runtime.JsonValue
+    receiverResponse: runtime.JsonValue | null
     status: $Enums.WebsiteStatus
     expiresAt: Date | null
     publishedAt: Date | null
@@ -1723,6 +1771,7 @@ export interface WebsiteFieldRefs {
   readonly packageId: Prisma.FieldRef<"Website", 'String'>
   readonly musicId: Prisma.FieldRef<"Website", 'String'>
   readonly content: Prisma.FieldRef<"Website", 'Json'>
+  readonly receiverResponse: Prisma.FieldRef<"Website", 'Json'>
   readonly status: Prisma.FieldRef<"Website", 'WebsiteStatus'>
   readonly expiresAt: Prisma.FieldRef<"Website", 'DateTime'>
   readonly publishedAt: Prisma.FieldRef<"Website", 'DateTime'>
